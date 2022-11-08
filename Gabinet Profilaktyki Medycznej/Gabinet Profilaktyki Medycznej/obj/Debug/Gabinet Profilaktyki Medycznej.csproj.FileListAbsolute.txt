@@ -1,0 +1,11 @@
+C:\Users\jakub\OneDrive\Dokumenty\Semestr 5\IPZ\Gabinet Profilaktyki Medycznej\Gabinet Profilaktyki Medycznej\bin\Debug\Gabinet Profilaktyki Medycznej.exe.config
+C:\Users\jakub\OneDrive\Dokumenty\Semestr 5\IPZ\Gabinet Profilaktyki Medycznej\Gabinet Profilaktyki Medycznej\bin\Debug\Gabinet Profilaktyki Medycznej.exe
+C:\Users\jakub\OneDrive\Dokumenty\Semestr 5\IPZ\Gabinet Profilaktyki Medycznej\Gabinet Profilaktyki Medycznej\bin\Debug\Gabinet Profilaktyki Medycznej.pdb
+C:\Users\jakub\OneDrive\Dokumenty\Semestr 5\IPZ\Gabinet Profilaktyki Medycznej\Gabinet Profilaktyki Medycznej\obj\Debug\Gabinet Profilaktyki Medycznej.csproj.AssemblyReference.cache
+C:\Users\jakub\OneDrive\Dokumenty\Semestr 5\IPZ\Gabinet Profilaktyki Medycznej\Gabinet Profilaktyki Medycznej\obj\Debug\Gabinet Profilaktyki Medycznej.csproj.SuggestedBindingRedirects.cache
+C:\Users\jakub\OneDrive\Dokumenty\Semestr 5\IPZ\Gabinet Profilaktyki Medycznej\Gabinet Profilaktyki Medycznej\obj\Debug\Gabinet_Profilaktyki_Medycznej.Form1.resources
+C:\Users\jakub\OneDrive\Dokumenty\Semestr 5\IPZ\Gabinet Profilaktyki Medycznej\Gabinet Profilaktyki Medycznej\obj\Debug\Gabinet_Profilaktyki_Medycznej.Properties.Resources.resources
+C:\Users\jakub\OneDrive\Dokumenty\Semestr 5\IPZ\Gabinet Profilaktyki Medycznej\Gabinet Profilaktyki Medycznej\obj\Debug\Gabinet Profilaktyki Medycznej.csproj.GenerateResource.cache
+C:\Users\jakub\OneDrive\Dokumenty\Semestr 5\IPZ\Gabinet Profilaktyki Medycznej\Gabinet Profilaktyki Medycznej\obj\Debug\Gabinet Profilaktyki Medycznej.csproj.CoreCompileInputs.cache
+C:\Users\jakub\OneDrive\Dokumenty\Semestr 5\IPZ\Gabinet Profilaktyki Medycznej\Gabinet Profilaktyki Medycznej\obj\Debug\Gabinet Profilaktyki Medycznej.exe
+C:\Users\jakub\OneDrive\Dokumenty\Semestr 5\IPZ\Gabinet Profilaktyki Medycznej\Gabinet Profilaktyki Medycznej\obj\Debug\Gabinet Profilaktyki Medycznej.pdb
