@@ -1,0 +1,27 @@
+pytania:
+ -badania przesiewowe
+ -magazyn lekow/wyposażenie
+ -bilanse
+ -maile do rodzicow
+ -inne badania
+
+wyjebac rodzica i ucznia
+
+-logowanie
+-przesyłanie maili do rodzica (automatyczne)
+-dodawanie wizyt do terminarza
+-sprawdzenie zaplanowanych wizyt
+-archiwizacja wizyt
+-sprawdzenie historii wizyt
+-dodawanie bilansu i informacji o uczniu (formularz)
+-tworzenie raportów z badań przesiewowych i fluoryzacji oraz sytuacji awaryjnych (formularz + tekstowy)
+-tworzenie dokumentów gotowych do wydruku
+
+--------------BAZA DANYCH--------------
+usunac:
+ rodzica
+dodac: 
+ numer telefonu rodzica
+ mail rodzica
+zamienic:
+ badania -> wizyty
