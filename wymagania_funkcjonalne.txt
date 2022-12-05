@@ -5,7 +5,7 @@ pytania:
  -maile do rodzicow
  -inne badania
 
-wyjebac rodzica i ucznia
+usunac rodzica i ucznia
 
 -logowanie
 -przesyłanie maili do rodzica (automatyczne)
@@ -25,3 +25,31 @@ dodac:
  mail rodzica
 zamienic:
  badania -> wizyty
+
+
+INFORMACJE PO ROZMOWIE Z PIELĘGNIARKĄ Z 1LO W SZCZECINIE:
+
+- informacje o uczniach pielęgniarki dostają od sekretarek
+- oprócz imienia, nazwiska, peselu konieczny jest adres zamieszkania ucznia
+zasugerowała że miło by było jakby informacje zdrowotne ucznia można było wymieniać między gabinetami szkolnymi podstawówka -> liceum kiedy uczeń przechodzi do nowej szkoły
+- uczniowie z chorobami przewlekłymi raz w roku powinni mieć wizytę u pielęgniarki szkolnej ale zazywczaj nie działa to w praktyce
+- ciśnienie krwi mierzone w 3 pomiarach
+- w przypadkach wszawicy mail do wszystkich rodziców z klasy
+- nie ma kalendarza prywatnych wizyt, co do badań przesiewowych rodzice informowani są na zebraniu. Czyli kalendarz badań przesiewowych całych klas a nie indywidualnych wizyt.
+- spisu leków nie ma, jest informacja co może się znajdować w apteczce, nie ma większego sensu w dodawaniu tego do systemu
+- badania nanoszone są na listy klasowe dostarczane od sekretarek
+- [WAŻNE::RODO] trzeba zbierać oświadczenia od rodzica na wyrażenie zgody na profilaktykę medyczną w szkole i na fluoryzację
+- na koniec roku pielęgniarka robi sprawozdanie do wojewody i ministerstwa zdrowia. sprawozdanie zawiera: (wszystko w liczbach, anonimowo jeśli chodzi o uczniów)
+główne problemy zdrowotne i społeczne uczniów w szkołach
+stan sanitarny, liczba spotkań pielęgniarki z uczniami, zidentyfikowane problemy, tabela z liczbą uczniów z problemami zdrowotnymi, uśrednione ile uczniow ma problemy, ile problemów na jednego ucznia, ile wykonanych poewszechnych badań lekarskich i ile przesiewowych, liczba udzielonych porad
+bardzo przydałoby się to zautomatyzować, 
+
+- formularz do ministerstwa mz06 sprawozdanie z realizacji opieki zdrowotnej,
+
+- na początku roku całą szkołę podstawową bierze się na pomiary wzrostu do ławek (można to dodać jako funkcjonalność).
+
+
+
+
+
+
