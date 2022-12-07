@@ -50,6 +50,17 @@ bardzo przydałoby się to zautomatyzować,
 
 
 
+UWAGI Z ZAJĘĆ 07.12.2022r. :
+- dodawanie szablonów, bo mogą być szablony do różnych badań
+- dodawanie wydarzeń do kalendarza i wyśwletlanie powaidomień związanych z nimi
+- drukowanie dokumentów
+- okresowe raporty, np. miesięczne, tygodniowe, randomowe
+- dodanie do bazy danych i systemu admina
+- dodawanie, edycja i usuwanie uczniów
+- archiwizacja wszystkich danych, np. bazy uczniów
+- wyszukiwanie ucznia po imieniu i nazwisku, peselu itp.
+
+
 
 
 
