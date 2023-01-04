@@ -35,8 +35,6 @@ function createEvents()
             modal.style.display = "none";
         }
     });
-
-    
 }
 
 window.addEventListener("load", createEvents)
