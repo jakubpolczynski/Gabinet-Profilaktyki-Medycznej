@@ -1,0 +1,47 @@
+/* stylizacja tabeli i komórek */
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+  }
+  td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+  th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    background-color: #dddddd;
+  }
+  /* stylizacja okna modalnego */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+  }
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }

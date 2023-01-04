@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../styles/calendar.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabinet Profilaktyki Medycznej</title>
+</head>
+<body>
+    <h1>Terminarz</h1>
+  <!-- tabela z kalendarzem -->
+  <div id="calendar-container"></div>
+  <!-- <table id="calendar">
+    <thead>
+      <tr>
+        <th>Poniedziałek</th>
+        <th>Wtorek</th>
+        <th>Środa</th>
+        <th>Czwartek</th>
+        <th>Piątek</th>
+        <th>Sobota</th>
+        <th>Niedziela</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+      </tr>
+    </tbody>
+  </table> -->
+  <!-- okno modalne do dodawania wydarzenia -->
+  <div id="event-modal" class="modal">
+    <!-- treść okna modalnego -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Dodaj wydarzenie</h2>
+      <form>
+        <label for="event-name">Nazwa wydarzenia:</label><br>
+        <input type="text" id="event-name" name="event-name"><br>
+        <label for="event-date">Data:</label><br>
+        <input type="text" id="event-date" name="event-date" disabled><br>
+        <label for="event-time">Godzina:</label><br>
+        <input type="time" id="event-time" name="event-time"><br><br>
+        <button type="button" onclick="addEvent()">Dodaj</button>
+      </form> 
+    </div>
+  </div>
+  <script src="../scripts/calendar_calendar.js"></script>
+  <script src="../scripts/calendar_events.js"></script>
+</body>
+</html>
