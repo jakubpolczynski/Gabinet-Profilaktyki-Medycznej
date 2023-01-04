@@ -45,3 +45,17 @@ table {
     text-decoration: none;
     cursor: pointer;
   }
+
+  .today {
+    background-color: rgb(0, 255, 0);
+  }
+
+  .weekend {
+    background-color: rgb(255, 125, 125);
+  }
+
+  #months {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;;
+  }
