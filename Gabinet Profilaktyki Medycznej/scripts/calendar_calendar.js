@@ -84,13 +84,24 @@ function createCalendar()
 
             else {
                 cell = document.createElement("td");
-                if (j > 4) {
-                    cell.classList.add("weekend")
-                }
+                
                 cellText = document.createTextNode(date);
+                //Zaznaczenie dnia dzisiejszego
                 if (date === now.getDate() && currentYear === now.getFullYear() && currentMonth === now.getMonth()) {
                     cell.classList.add("today");
-                } // color today's date
+                } 
+                //Zaznaczenie weekendu
+                //------------
+                //Sobota i niedziela osobno
+                //------------
+                if (j == 5) {
+                    cell.classList.add("saturday")
+                }
+
+                if (j == 6)
+                {
+                    cell.classList.add("sunday")
+                }
                 cell.appendChild(cellText);
                 row.appendChild(cell);
                 date++;
