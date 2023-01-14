@@ -2,20 +2,51 @@ function createEvents()
 {
     // pobierz wszystkie komórki z kalendarza
     const cells = document.querySelectorAll("#calendar td");
-    console.log(cells)
     // pobierz okno modalne
     const modal = document.getElementById("event-modal");
     // pobierz przycisk zamykania okna modalnego
     const closeButton = document.querySelector(".close");
+    // pobierz przycisk edytowania zdarzen 
     const btn = document.getElementById("btn-edit");
+
+    // pobierz akutalny miesiac i rok na podstawie naszego kalendarza
+    currMonth = document.getElementById("currMonthValue").textContent;
+    currYear = document.getElementById("currYearValue").textContent;
+
     // dodaj obsługę kliknięcia na komórki kalendarza
     btn.addEventListener("click", function() 
     {
         // ustaw wartość pola formularza "event-date" na wybrany dzień
-        document.getElementById("event-date").value = this.textContent;
-        document.getElementById("timetable-day").value = this.textContent;
+        document.getElementById("event-date").value = document.getElementById("timetable-day").textContent;
+
         // pokaż okno modalne
         modal.style.display = "block";
+    });
+
+    cells.forEach(function(cell) 
+    {   
+        cell.addEventListener("click", function() 
+        {
+
+            // ustaw wartość pola formularza "event-date" na wybrany dzień
+            if (this.textContent < 10) {
+                if (currMonth < 10) {
+                    document.getElementById("timetable-day").innerHTML = "0" + this.textContent + ".0" + currMonth + "." + currYear;
+                }
+                else {
+                    document.getElementById("timetable-day").innerHTML = "0" + this.textContent + "." + currMonth + "." + currYear;
+                }
+            }
+            else {
+                if (currMonth < 10) {
+                    document.getElementById("timetable-day").innerHTML = this.textContent + ".0" + currMonth + "." + currYear;
+                }
+                else {
+                    document.getElementById("timetable-day").innerHTML = this.textContent + "." + currMonth + "." + currYear;
+                }
+            }
+            
+        });
     });
 
 
@@ -36,7 +67,7 @@ function createEvents()
     });
 }
 
-window.addEventListener("load", createEvents)
+window.addEventListener("click", createEvents)
 
 function addEvent() 
     {

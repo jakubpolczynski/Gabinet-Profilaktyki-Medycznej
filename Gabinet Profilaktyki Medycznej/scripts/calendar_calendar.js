@@ -1,5 +1,3 @@
-function createCalendar() 
-{
     // pobierz aktualną datę
     const now = new Date();
     // oblicz numer aktualnego dnia tygodnia (0 = niedziela, 1 = poniedziałek itd.)
@@ -9,19 +7,27 @@ function createCalendar()
     // oblicz aktualny rok
     const currentYear = now.getFullYear();
     // oblicz liczbę dni w aktualnym miesiącu
-    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
+
+    // zrobione to tylko po to zeby miec dostep do aktualnego miesiaca i roku z pliku html
+    document.getElementById("currMonthValue").innerHTML = currentMonth+1;
+    document.getElementById("currYearValue").innerHTML = currentYear;
+
+function createCalendar(now, currentDay, currentMonth, currentYear, daysInMonth, counter) 
+{
     // utwórz tabelę z kalendarzem
     const calendar = document.createElement("table");
     calendar.setAttribute("id", "calendar");
 
     // utwórz nagłówek tabeli z nazwami dni tygodnia
     const weekdays = ["Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"];
-    const months = ["Styczeń", "Luty", "Marzec", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
+    const months = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
     const header = document.createElement("thead");
     const headerRow = document.createElement("tr");
 
     // utwórz nazwę miesiąca na samej górze
-    month_container = document.getElementById("months") 
+    month_container = document.getElementById("months")
+    month_container.innerHTML = "";
     celltxt = document.createTextNode(months[currentMonth]);
     month_container.appendChild(celltxt);
 
@@ -57,6 +63,20 @@ function createCalendar()
     //     }
     //     day++;
     // }
+    //
+    if (counter > 10) {
+        document.getElementById("btn-month-next").style.display = "none";
+    }
+    else {
+        document.getElementById("btn-month-next").style.display = "inline";
+    }
+
+    if (counter == 0){
+        document.getElementById("btn-month-prev").style.display = "none";
+    }
+    else {
+        document.getElementById("btn-month-prev").style.display = "inline";
+    }
 
     let firstDay = (new Date(currentYear, currentMonth)).getDay() - 1;
     if (firstDay <= 0) {
@@ -117,5 +137,39 @@ function createCalendar()
     calendarContainer.appendChild(calendar);
 }
 
+counter = currentMonth;
+
 // utwórz kalendarz po załadowaniu strony
-window.addEventListener("load", createCalendar);
+window.addEventListener("load", createCalendar(now, currentDay, currentMonth, currentYear, daysInMonth, counter));
+
+document.getElementById("btn-month-prev").onclick = function() {
+    // jezeli klikam poprzedni miesiac, zmniejsza sie licznik ktory dodaje sie do zmiennej currentMonth
+    counter--;
+
+    const now = new Date();
+    const currentDay = now.getDay();
+    const currentMonth = now.getMonth()+counter;
+    const currentYear = now.getFullYear();
+    const daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
+    createCalendar(now, currentDay, currentMonth, currentYear, daysInMonth, counter);
+
+    // zrobione to tylko po to zeby miec dostep do aktualnego miesiaca i roku z pliku html
+    document.getElementById("currMonthValue").innerHTML = currentMonth+1;
+    document.getElementById("currYearValue").innerHTML = currentYear;
+}
+
+document.getElementById("btn-month-next").onclick = function() {
+    // jezeli klikam kolejny miesiac, zwieksza sie licznik ktory dodaje sie do zmiennej currentMonth
+    counter++;
+
+    const now = new Date();
+    const currentDay = now.getDay();
+    const currentMonth = now.getMonth()+counter;
+    const currentYear = now.getFullYear();
+    const daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
+    createCalendar(now, currentDay, currentMonth, currentYear, daysInMonth, counter);
+
+    // zrobione to tylko po to zeby miec dostep do aktualnego miesiaca i roku z pliku html
+    document.getElementById("currMonthValue").innerHTML = currentMonth+1;
+    document.getElementById("currYearValue").innerHTML = currentYear;
+}

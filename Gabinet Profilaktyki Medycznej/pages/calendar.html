@@ -12,7 +12,7 @@
   <h1>Terminarz</h1>
   <div id="timetable-container">
     <div id="timetable-head">Terminarz</div>
-    <div id="timetable-day">24.01.2023</div>
+    <div id="timetable-day">Wybierz dzień z kalendarza</div>
     <div id="timetable-content-container">
       <div id="timetable-content">przykladowe wydarzenie</div>
     </div>
@@ -22,7 +22,13 @@
     </div>
   </div>
   <!-- tabela z kalendarzem -->
-  <p id="months"></p>
+  <div id="calendar-month-container">
+    <button id="btn-month-prev">Poprzedni</button>
+    <p id="months"></p>
+    <div id="next">
+    <button id="btn-month-next">Następny</button>
+    </div>
+  </div>
   <div id="calendar-container"></div>
   <!-- <table id="calendar">
     <thead>
@@ -74,6 +80,8 @@
       </form> 
     </div>
   </div>
+  <div id="currMonthValue" style="display: none;"></div>
+  <div id="currYearValue" style="display: none;"></div>
   <script src="../scripts/calendar_calendar.js"></script>
   <script src="../scripts/calendar_events.js"></script>
 </body>
