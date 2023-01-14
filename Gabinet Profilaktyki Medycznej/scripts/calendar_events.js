@@ -7,18 +7,17 @@ function createEvents()
     const modal = document.getElementById("event-modal");
     // pobierz przycisk zamykania okna modalnego
     const closeButton = document.querySelector(".close");
-
+    const btn = document.getElementById("btn-edit");
     // dodaj obsługę kliknięcia na komórki kalendarza
-    cells.forEach(function(cell) 
+    btn.addEventListener("click", function() 
     {
-        cell.addEventListener("click", function() 
-        {
-            // ustaw wartość pola formularza "event-date" na wybrany dzień
-            document.getElementById("event-date").value = this.textContent;
-            // pokaż okno modalne
-            modal.style.display = "block";
-        });
+        // ustaw wartość pola formularza "event-date" na wybrany dzień
+        document.getElementById("event-date").value = this.textContent;
+        document.getElementById("timetable-day").value = this.textContent;
+        // pokaż okno modalne
+        modal.style.display = "block";
     });
+
 
     // dodaj obsługę kliknięcia na przycisk zamykania okna modalnego
     closeButton.addEventListener("click", function() 
