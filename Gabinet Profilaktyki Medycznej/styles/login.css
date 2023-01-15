@@ -15,25 +15,41 @@
     width:50%;
     height:100vh;
     float:left;
-    text-align:center;
-    line-height:100px;
     position:relative;
     background: linear-gradient(154.28deg, #1D4DF7 -47.18%, #7BF99E 140.18%);
-    
+
 }
+
 .login_form {
     width:50%;
     height:100vh;
     float:left;
-    text-align:center;
-    line-height:100px;
     position:relative;
 }
 
 img {
-    position:absolute;
+    position:relative;
     width: auto;
-    height: 95vh;
+    height: 98vh;
     left: 45px;
-    top: 20px;
+    top: 0px;
+}
+
+h1 {
+    position: absolute;
+    left: 35%;
+    right: 0%;
+    top: 0%;
+    bottom: 50%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 75px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #292929;
 }
