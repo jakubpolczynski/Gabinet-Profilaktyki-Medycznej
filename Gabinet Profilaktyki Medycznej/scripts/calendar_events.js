@@ -69,7 +69,7 @@ function createEvents()
 
 window.addEventListener("click", createEvents)
 
-function addEvent() 
+function addEvent(event) 
     {
         const modal = document.getElementById("event-modal");
         // pobierz dane wydarzenia z pól formularza
@@ -81,13 +81,10 @@ function addEvent()
         if (name && date && time) 
         {
             // wszystkie pola są wypełnione, więc można dodać wydarzenie
-            // tutaj możesz dodać kod, który wysyła dane wydarzenia do bazy danych lub zapisuje je w pliku
-            // ...
-
+            submitForm(name, date, time);
             // ukryj okno modalne
             modal.style.display = "none";
             // wyświetl komunikat o pomyślnym dodaniu wydarzenia
-            alert("Wydarzenie zostało dodane");
         } 
         else 
         {
@@ -95,3 +92,40 @@ function addEvent()
             alert("Wypełnij wszystkie pola formularza");
         }
     }
+
+async function submitForm(name, date, time) {
+    console.log("Tworzenie nowego rządania")
+    const xhr = new XMLHttpRequest();
+    console.log("Otwieramy połączenie z serwerem")
+    xhr.open('POST', '../php/calendar.php');
+    console.log("Ustawiamy nagłówki")
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    console.log("Przygotowanie danych")
+    const data = `name=${name}&date=${date}&time=${time}`;
+    console.log(name, date, time)
+    console.log("Wysłanie żądania")
+    xhr.send(data);
+    console.log("Oczekiwanie na odpowiedz")
+    xhr.onreadystatechange = await function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                if (xhr.responseText === "success"){
+                    console.log("Dodawanie zakończone pomyślnie")
+                    alert("Wydarzenie zostało dodane");
+                }
+                else {
+                    console.error(xhr.responseText)
+                    alert(xhr.responseText)
+                }
+            } 
+            else {
+                console.error(xhr.responseText)
+                alert(xhr.responseText)
+            }
+        }
+        else {
+            console.error(xhr.responseText)
+            alert(xhr.responseText)
+        }
+    }
+}
