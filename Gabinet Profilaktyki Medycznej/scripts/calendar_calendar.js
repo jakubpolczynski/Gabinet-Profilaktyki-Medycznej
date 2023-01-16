@@ -40,30 +40,6 @@ function createCalendar(now, currentDay, currentMonth, currentYear, daysInMonth,
     });
     header.appendChild(headerRow);
     calendar.appendChild(header);
-
-    // utwórz ciało tabeli z dniami miesiąca
-    // const body = document.createElement("tbody");
-    // let day = 1;
-    // let row;
-    // while (day <= daysInMonth) 
-    // {
-    //     if (day == 1 || day % 7 == 1) 
-    //     {
-    //         // utwórz nowy wiersz tabeli co niedziele
-    //         row = document.createElement("tr");
-    //     }
-    //     // utwórz komórkę z numerem dnia
-    //     const cell = document.createElement("td");
-    //     cell.textContent = day;
-    //     row.appendChild(cell);
-    //     if (day == daysInMonth || (day + 1) % 7 == 1) 
-    //     {
-    //         // dodaj wiersz do tabeli, jeśli jest to ostatni dzień miesiąca lub następny dzień to poniedziałek
-    //         body.appendChild(row);
-    //     }
-    //     day++;
-    // }
-    //
     if (counter > 10) {
         document.getElementById("btn-month-next").style.display = "none";
     }
@@ -111,9 +87,6 @@ function createCalendar(now, currentDay, currentMonth, currentYear, daysInMonth,
                     cell.classList.add("today");
                 } 
                 //Zaznaczenie weekendu
-                //------------
-                //Sobota i niedziela osobno
-                //------------
                 if (j == 5) {
                     cell.classList.add("saturday")
                 }

@@ -1,3 +1,4 @@
+let dataAlreadySent = false;
 function createEvents()
 {
     // pobierz wszystkie komórki z kalendarza
@@ -31,21 +32,29 @@ function createEvents()
             // ustaw wartość pola formularza "event-date" na wybrany dzień
             if (this.textContent < 10) {
                 if (currMonth < 10) {
-                    document.getElementById("timetable-day").innerHTML = "0" + this.textContent + ".0" + currMonth + "." + currYear;
+                    var date = "0" + this.textContent + ".0" + currMonth + "." + currYear;
+                    document.getElementById("timetable-day").innerHTML = date;
                 }
                 else {
-                    document.getElementById("timetable-day").innerHTML = "0" + this.textContent + "." + currMonth + "." + currYear;
+                    var date = "0" + this.textContent + "." + currMonth + "." + currYear;
+                    document.getElementById("timetable-day").innerHTML = date;
                 }
             }
             else {
                 if (currMonth < 10) {
-                    document.getElementById("timetable-day").innerHTML = this.textContent + ".0" + currMonth + "." + currYear;
+                    var date = this.textContent + ".0" + currMonth + "." + currYear
+                    document.getElementById("timetable-day").innerHTML = date;
                 }
                 else {
-                    document.getElementById("timetable-day").innerHTML = this.textContent + "." + currMonth + "." + currYear;
+                    var date = this.textContent + "." + currMonth + "." + currYear;
+                    document.getElementById("timetable-day").innerHTML = date;
                 }
             }
-            
+            var tcc = document.getElementById("timetable-content-container");
+            while (tcc.hasChildNodes()) {
+                tcc.removeChild(tcc.firstChild);
+              }
+            checkEvents(date);
         });
     });
 
@@ -94,10 +103,11 @@ function addEvent(event)
     }
 
 async function submitForm(name, date, time) {
+    var errormsg = "";
     console.log("Tworzenie nowego rządania")
     const xhr = new XMLHttpRequest();
     console.log("Otwieramy połączenie z serwerem")
-    xhr.open('POST', '../php/calendar.php');
+    xhr.open('POST', '../php/add_event_calendar.php');
     console.log("Ustawiamy nagłówki")
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     console.log("Przygotowanie danych")
@@ -112,20 +122,104 @@ async function submitForm(name, date, time) {
                 if (xhr.responseText === "success"){
                     console.log("Dodawanie zakończone pomyślnie")
                     alert("Wydarzenie zostało dodane");
+                    var tcc = document.getElementById("timetable-content-container");
+                    while (tcc.hasChildNodes()) {
+                        tcc.removeChild(tcc.firstChild);
+                    }
+                    checkEvents(date);
                 }
                 else {
-                    console.error(xhr.responseText)
-                    alert(xhr.responseText)
+                    errormsg += xhr.responseText;
                 }
             } 
             else {
-                console.error(xhr.responseText)
-                alert(xhr.responseText)
+                errormsg += xhr.responseText;
             }
         }
         else {
-            console.error(xhr.responseText)
-            alert(xhr.responseText)
+            errormsg += xhr.responseText;
         }
+        console.log(errormsg);
     }
+}
+async function checkEvents(date) {
+    var errormsg = "";
+    // Tworzenie nowego rządania
+    const xhr = new XMLHttpRequest();
+    // Otwieramy połączenie z serwerem
+    xhr.open('POST', '../php/print_event_calendar.php');
+    // Ustawiamy nagłówki
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // Przygotowanie danych
+    const data = `date=${date}`;
+    // console.log(date)
+    // Wysłanie żądania
+    if(!dataAlreadySent){
+        xhr.send(data);
+        dataAlreadySent = true;
+    }
+    // Oczekiwanie na odpowiedz
+    xhr.onreadystatechange = await function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                var response = xhr.responseText;
+                var status = cutStatus(response);
+                if (status === "success"){
+                    events = cutEvent(response);
+                    var timetable_content_container = document.getElementById("timetable-content-container");
+                    for (let item of events)
+                    {
+                        var timetable_content = document.createElement("div")
+                        timetable_content.id = "timetable-content";
+
+                        var event_paragraph = document.createElement("p");
+                        event_paragraph.innerText = item;
+
+                        timetable_content.appendChild(event_paragraph)
+                        timetable_content_container.appendChild(timetable_content);
+                    }
+                }
+                else {
+                    errormsg += xhr.responseText;
+                }
+            } 
+            else {
+                errormsg += xhr.responseText;
+            }
+        }
+        else {
+            errormsg += xhr.responseText;
+        }
+        console.log(errormsg);
+        errormsg = "";
+        xhr.responseText = null;
+        dataAlreadySent= false;
+    }
+}
+
+function cutStatus(response)
+{
+    var index = response.indexOf("|");
+    if(index != -1)
+    {
+        return response.substring(0, index);
+    }
+    return response;
+}
+
+function cutEvent(response)
+{
+    var parts = response.split("|");
+    parts.shift();
+    parts.pop();
+    var i = 0;
+    for (let part of parts)
+    {
+        var time = part.substring(0, part.lastIndexOf(":"))
+        var name = part.substring(part.indexOf(" ")) 
+        parts[i] =  time + " " + name;
+        i++;
+    }
+    console.log(parts)
+    return parts;
 }
