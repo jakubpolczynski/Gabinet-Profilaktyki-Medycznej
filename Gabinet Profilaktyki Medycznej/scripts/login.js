@@ -41,6 +41,7 @@ function submitForm(event) {
                     window.location.href = '../pages/start_page.html';
                 }
                 else {
+                    console.error(xhr.responseText)
                     console.error("Błąd logowania")
                     document.getElementById("error").innerText = "Błędny login lub hasło"
                 }

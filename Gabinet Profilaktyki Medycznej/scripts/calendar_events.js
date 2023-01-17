@@ -1,4 +1,32 @@
 let dataAlreadySent = false;
+
+
+let date = new Date();
+let cDay = date.getDate();
+currMonth = document.getElementById("currMonthValue").textContent;
+currYear = document.getElementById("currYearValue").textContent;
+if (cDay < 10) {
+    if (date < 10) {
+        var d = "0" + cDay + ".0" + currMonth + "." + currYear;
+        document.getElementById("timetable-day").innerHTML = d;
+    }
+    else {
+        var d = "0" + cDay + "." + currMonth + "." + currYear;
+        document.getElementById("timetable-day").innerHTML = d;
+    }
+}
+else {
+    if (currMonth < 10) {
+        var d = cDay + ".0" + currMonth + "." + currYear
+        document.getElementById("timetable-day").innerHTML = d;
+    }
+    else {
+        var d = cDay + "." + currMonth + "." + currYear;
+        document.getElementById("timetable-day").innerHTML = d;
+    }
+}
+
+
 function createEvents()
 {
     // pobierz wszystkie komórki z kalendarza
@@ -8,14 +36,12 @@ function createEvents()
     // pobierz przycisk zamykania okna modalnego
     const closeButton = document.querySelector(".close");
     // pobierz przycisk edytowania zdarzen 
-    const btn = document.getElementById("btn-edit");
-
-    // pobierz akutalny miesiac i rok na podstawie naszego kalendarza
-    currMonth = document.getElementById("currMonthValue").textContent;
-    currYear = document.getElementById("currYearValue").textContent;
+    const btn_edit = document.getElementById("btn-edit");
+    // pobierz przycisk usuwania zdarzen
+    const btn_delete = document.getElementById("btn-delete");
 
     // dodaj obsługę kliknięcia na komórki kalendarza
-    btn.addEventListener("click", function() 
+    btn_edit.addEventListener("click", function() 
     {
         // ustaw wartość pola formularza "event-date" na wybrany dzień
         document.getElementById("event-date").value = document.getElementById("timetable-day").textContent;
@@ -23,6 +49,9 @@ function createEvents()
         // pokaż okno modalne
         modal.style.display = "block";
     });
+
+    // dodaj obsługę kliknięcia na komórki kalendarza
+
 
     cells.forEach(function(cell) 
     {   
@@ -102,6 +131,10 @@ function addEvent(event)
         }
     }
 
+
+
+
+
 async function submitForm(name, date, time) {
     var errormsg = "";
     console.log("Tworzenie nowego rządania")
@@ -172,6 +205,16 @@ async function checkEvents(date) {
                         var timetable_content = document.createElement("div")
                         timetable_content.id = "timetable-content";
 
+                        // przycisk do usuniecia zdarzenia
+                        var deleteButton = document.createElement("button");
+                        deleteButton.id = "delete-event";
+                        deleteButton.onclick = function() {
+                            deleteEvent(date);
+                        };
+                        var txt = document.createTextNode("X");
+                        deleteButton.appendChild(txt);
+                        timetable_content.appendChild(deleteButton);
+
                         var event_paragraph = document.createElement("p");
                         event_paragraph.innerText = item;
 
@@ -222,4 +265,9 @@ function cutEvent(response)
     }
     console.log(parts)
     return parts;
+}
+
+function deleteEvent(date) {
+    alert("AAA");
+    checkEvents(date);
 }
