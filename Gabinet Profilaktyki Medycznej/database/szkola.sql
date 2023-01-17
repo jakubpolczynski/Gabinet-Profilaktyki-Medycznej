@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 13 Sty 2023, 19:59
+-- Czas generowania: 18 Sty 2023, 00:47
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -78,7 +78,7 @@ CREATE TABLE `uczniowie` (
   `pesel` varchar(11) NOT NULL,
   `adres` varchar(50) NOT NULL,
   `id_klasy` int(10) NOT NULL,
-  `numerTelRodzica` int(9) NOT NULL,
+  `numerTelRodzica` varchar(30) NOT NULL,
   `adresEmailRodzica` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
@@ -87,12 +87,12 @@ CREATE TABLE `uczniowie` (
 --
 
 INSERT INTO `uczniowie` (`id_uczen`, `imie`, `nazwisko`, `dataUrodzenia`, `pesel`, `adres`, `id_klasy`, `numerTelRodzica`, `adresEmailRodzica`) VALUES
-(1, 'Aneta', 'Kowalska', '2016-06-16', '16316875619', 'Wąska 16/3, Szczecin', 1, 753498127, 'm.kowalska@o2.pl'),
-(2, 'Szymon', 'Lagański', '2016-03-21', '16429812367', 'Policyjna 3/2, Szczecin', 1, 682398751, 'z.lagan@gmail.com'),
-(3, 'Maksymilian', 'Barański', '2016-02-26', '16248715430', 'Akwenowa 43/12, Szczecin', 1, 786423908, 'd.baran@gmail.com'),
-(4, 'Dominika', 'Atleta', '2016-07-02', '16654098781', 'Rajska 1/4, Szczecin', 2, 654712809, 'janatleta@o2.pl'),
-(5, 'Zuzanna', 'Piliska', '2016-01-14', '16267098933', 'Ragańska 4/40, Szczecin', 2, 654109987, 'piliska.anna@gmail.com'),
-(6, 'Paweł', 'Czarny', '2016-04-11', '16012564897', 'Klinicka 2/5, Szczecin', 2, 643876109, 's.czarny@gmail.com');
+(1, 'Aneta', 'Kowalska', '2016-06-16', '16316875619', 'Wąska 16/3, Szczecin', 1, '753498127', 'm.kowalska@o2.pl'),
+(2, 'Szymon', 'Lagański', '2016-03-21', '16429812367', 'Policyjna 3/2, Szczecin', 1, '682398751', 'z.lagan@gmail.com'),
+(3, 'Maksymilian', 'Barański', '2016-02-26', '16248715430', 'Akwenowa 43/12, Szczecin', 1, '786423908', 'd.baran@gmail.com'),
+(4, 'Dominika', 'Atleta', '2016-07-02', '16654098781', 'Rajska 1/4, Szczecin', 2, '654712809', 'janatleta@o2.pl'),
+(5, 'Zuzanna', 'Piliska', '2016-01-14', '16267098933', 'Ragańska 4/40, Szczecin', 2, '654109987', 'piliska.anna@gmail.com'),
+(6, 'Paweł', 'Czarny', '2016-04-11', '16012564897', 'Klinicka 2/5, Szczecin', 2, '643876109', 's.czarny@gmail.com');
 
 --
 -- Indeksy dla zrzutów tabel

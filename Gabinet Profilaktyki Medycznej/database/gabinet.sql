@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 13 Sty 2023, 20:00
+-- Czas generowania: 18 Sty 2023, 00:46
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -76,9 +76,9 @@ CREATE TABLE `badaniaprzesiewowe` (
   `id_klasy` int(10) NOT NULL,
   `id_pielegniarki` int(10) NOT NULL,
   `dataBilansu` date NOT NULL,
-  `wzrost` float NOT NULL,
-  `waga` float NOT NULL,
-  `BMI` float NOT NULL,
+  `wzrost` decimal(10,0) NOT NULL,
+  `waga` decimal(10,0) NOT NULL,
+  `BMI` decimal(10,0) NOT NULL,
   `wzrok` varchar(255) NOT NULL,
   `sluch` varchar(255) NOT NULL,
   `cisnienie` varchar(255) NOT NULL,
@@ -100,8 +100,8 @@ CREATE TABLE `kartaucznia` (
   `nazwisko` varchar(40) NOT NULL,
   `id_klasy` int(100) NOT NULL,
   `adresZamieszkania` varchar(100) NOT NULL,
-  `pesel` int(11) NOT NULL,
-  `numerTelefonuRodzica` int(9) NOT NULL,
+  `pesel` varchar(11) NOT NULL,
+  `numerTelefonuRodzica` varchar(30) NOT NULL,
   `adresEmailRodzica` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
