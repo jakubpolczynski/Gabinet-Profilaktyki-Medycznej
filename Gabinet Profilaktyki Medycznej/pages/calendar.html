@@ -8,7 +8,7 @@
     <title>Gabinet Profilaktyki Medycznej</title>
     <link rel="shortcut icon" href="logo.svg">
 </head>
-<body>
+<body onload="loadCurrentDay()">
   <h1>Terminarz</h1>
   <div id="timetable-container">
     <div id="timetable-head">Terminarz</div>
@@ -16,7 +16,7 @@
     <div id="timetable-content-container">
     </div>
     <div id="timetable-bottom">
-      <button id="btn-edit">Edytuj</button>
+      <button id="btn-edit">Dodaj</button>
     </div>
   </div>
   <!-- tabela z kalendarzem -->

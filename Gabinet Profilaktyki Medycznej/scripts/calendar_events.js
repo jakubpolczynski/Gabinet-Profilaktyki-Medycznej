@@ -1,31 +1,33 @@
 let dataAlreadySent = false;
-
-
-let date = new Date();
-let cDay = date.getDate();
-currMonth = document.getElementById("currMonthValue").textContent;
-currYear = document.getElementById("currYearValue").textContent;
-if (cDay < 10) {
-    if (date < 10) {
-        var d = "0" + cDay + ".0" + currMonth + "." + currYear;
-        document.getElementById("timetable-day").innerHTML = d;
+let eventDeleted = false;
+function loadCurrentDay()
+{
+    let date = new Date();
+    let cDay = date.getDate();
+    currMonth = document.getElementById("currMonthValue").textContent;
+    currYear = document.getElementById("currYearValue").textContent;
+    if (cDay < 10) {
+        if (date < 10) {
+            var d = "0" + cDay + ".0" + currMonth + "." + currYear;
+            document.getElementById("timetable-day").innerHTML = d;
+        }
+        else {
+            var d = "0" + cDay + "." + currMonth + "." + currYear;
+            document.getElementById("timetable-day").innerHTML = d;
+        }
     }
     else {
-        var d = "0" + cDay + "." + currMonth + "." + currYear;
-        document.getElementById("timetable-day").innerHTML = d;
+        if (currMonth < 10) {
+            var d = cDay + ".0" + currMonth + "." + currYear
+            document.getElementById("timetable-day").innerHTML = d;
+        }
+        else {
+            var d = cDay + "." + currMonth + "." + currYear;
+            document.getElementById("timetable-day").innerHTML = d;
+        }
     }
+    checkEvents(d)
 }
-else {
-    if (currMonth < 10) {
-        var d = cDay + ".0" + currMonth + "." + currYear
-        document.getElementById("timetable-day").innerHTML = d;
-    }
-    else {
-        var d = cDay + "." + currMonth + "." + currYear;
-        document.getElementById("timetable-day").innerHTML = d;
-    }
-}
-
 
 function createEvents()
 {
@@ -79,10 +81,7 @@ function createEvents()
                     document.getElementById("timetable-day").innerHTML = date;
                 }
             }
-            var tcc = document.getElementById("timetable-content-container");
-            while (tcc.hasChildNodes()) {
-                tcc.removeChild(tcc.firstChild);
-              }
+            
             checkEvents(date);
         });
     });
@@ -131,24 +130,14 @@ function addEvent(event)
         }
     }
 
-
-
-
-
 async function submitForm(name, date, time) {
     var errormsg = "";
-    console.log("Tworzenie nowego rządania")
     const xhr = new XMLHttpRequest();
-    console.log("Otwieramy połączenie z serwerem")
     xhr.open('POST', '../php/add_event_calendar.php');
-    console.log("Ustawiamy nagłówki")
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    console.log("Przygotowanie danych")
     const data = `name=${name}&date=${date}&time=${time}`;
     console.log(name, date, time)
-    console.log("Wysłanie żądania")
     xhr.send(data);
-    console.log("Oczekiwanie na odpowiedz")
     xhr.onreadystatechange = await function() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
@@ -176,6 +165,10 @@ async function submitForm(name, date, time) {
     }
 }
 async function checkEvents(date) {
+    var tcc = document.getElementById("timetable-content-container");
+            while (tcc.hasChildNodes()) {
+                tcc.removeChild(tcc.firstChild);
+              }
     var errormsg = "";
     // Tworzenie nowego rządania
     const xhr = new XMLHttpRequest();
@@ -185,7 +178,6 @@ async function checkEvents(date) {
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     // Przygotowanie danych
     const data = `date=${date}`;
-    // console.log(date)
     // Wysłanie żądania
     if(!dataAlreadySent){
         xhr.send(data);
@@ -208,11 +200,11 @@ async function checkEvents(date) {
                         // przycisk do usuniecia zdarzenia
                         var deleteButton = document.createElement("button");
                         deleteButton.id = "delete-event";
+                        deleteButton.innerText = "X"
                         deleteButton.onclick = function() {
-                            deleteEvent(date);
+                            this_ = this
+                            deleteEvent(this_, date);
                         };
-                        var txt = document.createTextNode("X");
-                        deleteButton.appendChild(txt);
                         timetable_content.appendChild(deleteButton);
 
                         var event_paragraph = document.createElement("p");
@@ -237,7 +229,9 @@ async function checkEvents(date) {
         errormsg = "";
         xhr.responseText = null;
         dataAlreadySent= false;
+        
     }
+    
 }
 
 function cutStatus(response)
@@ -263,11 +257,59 @@ function cutEvent(response)
         parts[i] =  time + " " + name;
         i++;
     }
-    console.log(parts)
     return parts;
 }
 
-function deleteEvent(date) {
-    alert("AAA");
-    checkEvents(date);
+function deleteEvent(this_, date) {
+    var timetable_content = this_.parentElement;
+    var time_name = timetable_content.querySelector("p")
+    temp = String(time_name.innerText)
+    temp = temp.split(" ")
+    var time = temp[0] + ":00"
+    console.log(date, time)
+    var errormsg = "";
+    // Tworzenie nowego rządania
+    const xhr = new XMLHttpRequest();
+    // Otwieramy połączenie z serwerem
+    xhr.open('POST', '../php/delete_event_calendar.php');
+    // Ustawiamy nagłówki
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // Przygotowanie danych
+    const data = `date=${date}&time=${time}`;
+    // Wysłanie żądania
+    if(!dataAlreadySent){
+        xhr.send(data);
+        dataAlreadySent = true;
+    }
+    // Oczekiwanie na odpowiedz
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                var response = xhr.responseText;
+                var status = cutStatus(response);
+                if (status === "success"){
+                    eventDeleted = true;
+                    if (eventDeleted)
+                    {
+                        console.log("Data:", date);
+                        checkEvents(date);
+                        eventDeleted = false;
+                    }
+                }
+                else {
+                    errormsg += xhr.responseText;
+                }
+            } 
+            else {
+                errormsg += xhr.responseText;
+            }
+        }
+        else {
+            errormsg += xhr.responseText;
+        }
+        console.log(errormsg);
+        errormsg = "";
+        xhr.responseText = null;
+        dataAlreadySent= false;
+    }
 }
