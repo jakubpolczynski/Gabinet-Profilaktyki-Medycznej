@@ -13,7 +13,9 @@ body {
 }
 
 .logo {
-    float:left;
+	display: flex;
+	justify-content: center;
+	float:left;
     width: 50vw;
     height: 100vh;
 }
@@ -22,39 +24,41 @@ body {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     float:left;
     width: 50vw;
 	height: 100vh;
 }
 
 img {
-    margin-left: 6vw;
-    margin-bottom: auto;
-    margin-right: auto;
-    width: 34vw;
-    height: auto;
+    width: auto;
+    height: 100vh;
 }
 
 h1 {
     color: #292929;
-    font-size: 6vh;
+    font-size: 2.6vw;
     font-weight: bold;
+	text-align: center;
 }
 
 p {
+	color: rgb(185, 0, 0);
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
 	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
+	
 }
 
 a {
-	color: #333;
-	font-size: 2vh;
+	color: rgb(79, 149, 255);
+	font-size: 0.8vw;
+	text-align: left;
+	margin-left: 1vw;
 	text-decoration: none;
-	margin-bottom: 1vh;
+	margin-bottom: 3vh;
+	margin-top: auto;
 }
 
 input[type=submit] {
@@ -62,16 +66,16 @@ input[type=submit] {
     border-radius: 50px;
 	color: #FFFFFF;
     width: 14vw;
-    height: 8vh;
-	font-size: 24px;
-	font-weight: bold;
-    font-family: 'Poppins';
-	padding: 12px 45px;
+    height: 13vh;
+	min-width: 160px;
+	min-height: 50px;
+	font-size: 1.7vw;
 	letter-spacing: 1px;
 	text-transform: uppercase;
+	line-height: 0;
     text-align: center;
-    justify-content: center;
-    margin-left: 2vw;
+    margin: auto;
+	filter: drop-shadow(6px 4px 20px rgba(0, 0, 0, 0.2));
 }
 
 input[type=submit]:active {
@@ -89,43 +93,34 @@ input[type=submit].ghost {
 
 form {
     position: fixed;
-	background-color: #ffffff00;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	padding: 0 1vw;
-    width: 20vw;
-	height: 40vh;
+    width: 25vw;
+	height: 45vh;
     margin-left: 13.5vw;
     margin-bottom: 8vh;
 	text-align: center;
 }
 
 input::placeholder{
-    font-size: 16px;
-}
-
-input[type=text] {
-    width: 18vw;
-    height: 6vh;
-    font-family: 'Poppins';
-    text-align: left;
-    vertical-align: center;
-}
-
-input[type=password] {
-    width: 18vw;
-    height: 6vh;
-    font-family: 'Poppins';
-    text-align: left;
-    vertical-align: center;
+    font-size: 120%;
 }
 
 input {
+	font-family: 'Poppins';
+	font-size: 1vw;
+	text-align: left;
+    vertical-align: center;
+
 	background-color: #eee;
     border-radius: 30px;
 	border: none;
-	padding: 12px 15px;
+	padding: 20px 24px;
 	margin: 4px 0;
 	width: 100%;
+
+	min-width: 160px;
+	min-height: 50px;
 }
