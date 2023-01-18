@@ -143,3 +143,13 @@ table {
     padding: 2%;
     border-bottom: 3px dashed black;
   }
+
+  #delete-event {
+    width: 25px;
+    height: 25px;
+  }
+
+  #edit-event {
+    width: 25px;
+    height: 25px;
+  }
