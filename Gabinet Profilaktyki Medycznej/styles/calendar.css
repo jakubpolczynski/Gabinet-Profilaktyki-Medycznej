@@ -145,11 +145,18 @@ table {
   }
 
   #delete-event {
-    width: 25px;
-    height: 25px;
+    max-width: 25px;
+    max-height: 25px;
   }
 
   #edit-event {
-    width: 25px;
-    height: 25px;
+    padding: 0;
+    max-width: 25px;
+    max-height: 25px;
+    justify-content: center;
+  }
+  
+  #edit-event img {
+    max-width: 21px;
+    max-height: 21px;
   }

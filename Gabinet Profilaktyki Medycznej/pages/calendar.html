@@ -45,6 +45,21 @@
       </form> 
     </div>
   </div>
+  <!-- okno modalne do dycji wydarzenia -->
+  <div id="event-edit-modal" class="modal">
+    <!-- treść okna modalnego -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Edytuj wydarzenie</h2>
+      <form id="event-form">
+        <label for="event-name">Nazwa wydarzenia:</label><br>
+        <input type="text" id="event-name" name="event-name"><br>
+        <label for="event-time">Godzina:</label><br>
+        <input type="time" id="event-time" name="event-time"><br><br>
+        <button type="button" onclick="addEvent()">Dodaj</button>
+      </form> 
+    </div>
+  </div>
   <div id="currMonthValue" style="display: none;"></div>
   <div id="currYearValue" style="display: none;"></div>
   <script src="../scripts/calendar_calendar.js"></script>
