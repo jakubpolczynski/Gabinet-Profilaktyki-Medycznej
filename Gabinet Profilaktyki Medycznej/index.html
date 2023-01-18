@@ -4,20 +4,27 @@
     <link rel="stylesheet" href="styles/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/logo.svg">
     <title>Gabinet Profilaktyki Medycznej</title>
 </head>
 <body>
-<p>Logowanie</p>
-<form method="post" id="login-form">
-    <label for="username">Nazwa użytkownika:</label>
-    <input type="text" id="username" name="username" required>
-    <br>
-    <label for="password">Hasło:</label>
-    <input type="password" id="password" name="password" required>
-    <br>
-    <input type="submit" name="submit" value="Zaloguj">
-</form>
-<p id="error"></p>
-<script src="scripts/login.js"></script>
+    <div class="container"></div>
+        <div class="logo"><img src="./images/logo.svg" alt="Logo"></div>
+        <div class="form-container">
+            <form method="post" id="login-form">
+                <h1>Logowanie</h1>
+                <!-- <label for="username">Nazwa użytkownika:</label> -->
+                <input type="text" id="username" name="username" placeholder="Nazwa użytkownika" required>
+                <br>
+                <!-- <label for="password">Hasło:</label> -->
+                <input type="password" id="password" name="password" placeholder="Hasło" required>
+                <br>
+                <a href="#">Przypomnij hasło</a>
+                <input type="submit" name="submit" value="Zaloguj">
+            </form>
+            <p id="error"></p>
+            <script src="scripts/login.js"></script>
+        </div>
+    </div>
 </body>
 </html>
