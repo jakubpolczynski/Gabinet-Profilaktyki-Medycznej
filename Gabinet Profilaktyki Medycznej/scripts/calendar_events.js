@@ -205,8 +205,15 @@ async function checkEvents(date) {
                             this_ = this
                             deleteEvent(this_, date);
                         };
+                        var editButton = document.createElement("button");
+                        editButton.id = "edit-event";
+                        editButton.innerHTML = "<img src='../images/edit-icon.svg' alt='edit'>"
+                        editButton.onclick = function() {
+                            this_ = this
+                            editEvent(this_, date)
+                        }
                         timetable_content.appendChild(deleteButton);
-
+                        timetable_content.appendChild(editButton);
                         var event_paragraph = document.createElement("p");
                         event_paragraph.innerText = item;
 
@@ -229,7 +236,6 @@ async function checkEvents(date) {
         errormsg = "";
         xhr.responseText = null;
         dataAlreadySent= false;
-        
     }
     
 }
@@ -312,4 +318,74 @@ function deleteEvent(this_, date) {
         xhr.responseText = null;
         dataAlreadySent= false;
     }
+}
+async function editEvent(date)
+{
+    var timetable_content = this_.parentElement;
+    var time_name = timetable_content.querySelector("p")
+    temp = String(time_name.innerText)
+    temp = temp.split(" ")
+    var time = temp[0] + ":00"
+    var errormsg = "";
+    // Tworzenie nowego rządania
+    const xhr = new XMLHttpRequest();
+    // Otwieramy połączenie z serwerem
+    xhr.open('POST', '../php/edit_event_calendar.php');
+    // Ustawiamy nagłówki
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // Przygotowanie danych
+    const data = `date=${date}&time=${time}`;
+    // Wysłanie żądania
+    if(!dataAlreadySent){
+        xhr.send(data);
+        dataAlreadySent = true;
+    }
+    // Oczekiwanie na odpowiedz
+    xhr.onreadystatechange = await function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                var response = xhr.responseText;
+                var status = cutStatus(response);
+                if (status === "success"){
+                    events = cutEvent(response);
+                    var timetable_content_container = document.getElementById("timetable-content-container");
+                    for (let item of events)
+                    {
+                        var timetable_content = document.createElement("div")
+                        timetable_content.id = "timetable-content";
+
+                        // przycisk do usuniecia zdarzenia
+                        var deleteButton = document.createElement("button");
+                        deleteButton.id = "delete-event";
+                        deleteButton.innerText = "X"
+                        deleteButton.onclick = function() {
+                            this_ = this
+                            deleteEvent(this_, date);
+                        };
+                        timetable_content.appendChild(deleteButton);
+
+                        var event_paragraph = document.createElement("p");
+                        event_paragraph.innerText = item;
+
+                        timetable_content.appendChild(event_paragraph)
+                        timetable_content_container.appendChild(timetable_content);
+                    }
+                }
+                else {
+                    errormsg += xhr.responseText;
+                }
+            } 
+            else {
+                errormsg += xhr.responseText;
+            }
+        }
+        else {
+            errormsg += xhr.responseText;
+        }
+        console.log(errormsg);
+        errormsg = "";
+        xhr.responseText = null;
+        dataAlreadySent= false;
+        
+    } 
 }
