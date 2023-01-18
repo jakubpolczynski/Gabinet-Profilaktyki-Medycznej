@@ -46,16 +46,16 @@
     </div>
   </div>
   <!-- okno modalne do dycji wydarzenia -->
-  <div id="event-edit-modal" class="modal">
+  <div id="event-edit-modal" class="edit-modal">
     <!-- treść okna modalnego -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
+    <div class="edit-modal-content">
+      <span class="edit-close">&times;</span>
       <h2>Edytuj wydarzenie</h2>
-      <form id="event-form">
-        <label for="event-name">Nazwa wydarzenia:</label><br>
-        <input type="text" id="event-name" name="event-name"><br>
-        <label for="event-time">Godzina:</label><br>
-        <input type="time" id="event-time" name="event-time"><br><br>
+      <form id="edit-event-form">
+        <label for="edit-event-name">Nazwa wydarzenia:</label><br>
+        <input type="text" id="edit-event-name" name="edit-event-name"><br>
+        <label for="edit-event-time">Godzina:</label><br>
+        <input type="time" id="edit-event-time" name="edit-event-time"><br><br>
         <button type="button" onclick="addEvent()">Dodaj</button>
       </form> 
     </div>

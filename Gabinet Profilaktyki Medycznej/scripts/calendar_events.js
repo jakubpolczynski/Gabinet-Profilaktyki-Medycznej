@@ -347,29 +347,7 @@ async function editEvent(date)
                 var response = xhr.responseText;
                 var status = cutStatus(response);
                 if (status === "success"){
-                    events = cutEvent(response);
-                    var timetable_content_container = document.getElementById("timetable-content-container");
-                    for (let item of events)
-                    {
-                        var timetable_content = document.createElement("div")
-                        timetable_content.id = "timetable-content";
-
-                        // przycisk do usuniecia zdarzenia
-                        var deleteButton = document.createElement("button");
-                        deleteButton.id = "delete-event";
-                        deleteButton.innerText = "X"
-                        deleteButton.onclick = function() {
-                            this_ = this
-                            deleteEvent(this_, date);
-                        };
-                        timetable_content.appendChild(deleteButton);
-
-                        var event_paragraph = document.createElement("p");
-                        event_paragraph.innerText = item;
-
-                        timetable_content.appendChild(event_paragraph)
-                        timetable_content_container.appendChild(timetable_content);
-                    }
+                    
                 }
                 else {
                     errormsg += xhr.responseText;
@@ -386,6 +364,5 @@ async function editEvent(date)
         errormsg = "";
         xhr.responseText = null;
         dataAlreadySent= false;
-        
     } 
 }
