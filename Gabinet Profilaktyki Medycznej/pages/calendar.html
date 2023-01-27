@@ -10,45 +10,90 @@
 </head>
 <body onload="loadCurrentDay()">
 
-  <ol>
-    <li><a href="#">dział - 1</a>
-      <ul>
-        <li><a href="#">link - 1</a></li>
-        <li><a href="#">link - 2</a></li>
-        <li><a href="#">link - 3</a></li>
-        <li><a href="#">link - 4</a></li>
-        <li><a href="#">link - 5</a></li>
-      </ul>
-    </li>
-
-    <li><a href="#">dział - 2</a>
-      <ul>
-        <li><a href="#">link - 1</a></li>
-        <li><a href="#">link - 2</a></li>
-        <li><a href="#">link - 3</a></li>
-      </ul>
-    </li>
-
-    <li><a href="#">dział - 3</a></li>
-
-    <li><a href="#">dział - 4</a>
-      <ul>
-        <li><a href="#">link - 1</a></li>
-        <li><a href="#">link - 2</a></li>
-        <li><a href="#">link - 3</a></li>
-        <li><a href="#">link - 4</a></li>
-      </ul>
-    </li>
-  </ol>
-
-  <h1>Terminarz</h1>
-  <div id="timetable-container">
-    <div id="timetable-head">Terminarz</div>
-    <div id="timetable-day"></div>
-    <div id="timetable-content-container">
+  <div class="naglowek">
+    <div class="lewa">
+      <h3>Gabinet<br>Pielęgniarki<br>Szkolnej</h3>
+      <img src="../images/logo.png"/>
     </div>
-    <div id="timetable-bottom">
-      <button id="btn-edit">Dodaj</button>
+    
+    <div class="prawa">
+      <ol>
+        <li><a href="#">Badania<span>&#9660;</span></a>
+          <ul>
+            <li><a href="#">Nowe badanie</a></li>
+            <li><a href="#">Badanie przesiewowe</a></li>
+            <li><a href="#">Fluoryzacja</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">Dokumenty<span>&#9660;</span></a>
+          <ul>
+            <li><a href="#">2020</a></li>
+            <li><a href="#">2021</a></li>
+            <li><a href="#">2022</a></li>
+            <li><a href="#">2023</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">Raporty<span>&#9660;</span></a>
+          <ul>
+            <li><a href="#">Raporty roczne</a></li>
+            <li><a href="#">Raporty miesięczne</a></li>
+            <li><a href="#">Raporty kwartalne</a></li>
+          </ul>
+
+        <li><a href="calendar.html"><canvas></canvas>Terminarz</a></li>
+
+        <li><a href="#">Historia badań</a></li>
+
+        <li><a href="#">Lista uczniów</a></li>
+      </ol>
+    </div>
+  </div>
+  <div class="terminarz">
+    <h1>Terminarz</h1>
+    <!-- graficzny blok terminarza -->
+    <div id="timetable-container">
+      <!-- <div id="timetable-head"></div> -->
+      <div id="timetable-day"></div>
+      <div id="timetable-content-container">
+      </div>
+      <div id="timetable-bottom">
+        <button id="btn-edit">Dodaj</button>
+      </div>
+    </div> 
+
+      <!-- okno modalne do dodawania wydarzenia -->
+    <div id="event-modal" class="modal">
+      <!-- treść okna modalnego -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Dodaj wydarzenie</h2>
+        <form id="event-form">
+          <label for="event-name">Nazwa wydarzenia:</label><br>
+          <input type="text" id="event-name" name="event-name"><br>
+          <label for="event-date">Data:</label><br>
+          <input type="text" id="event-date" name="event-date" disabled><br>
+          <label for="event-time">Godzina:</label><br>
+          <input type="time" id="event-time" name="event-time"><br><br>
+          <button type="button" onclick="addEvent()">Dodaj</button>
+        </form> 
+      </div>
+    </div>
+    <!-- okno modalne do edycji wydarzenia -->
+    <div id="event-edit-modal" class="edit-modal">
+      <!-- treść okna modalnego -->
+      <div class="edit-modal-content">
+        <span class="edit-close">&times;</span>
+        <h2>Edytuj wydarzenie</h2>
+        <form id="edit-event-form">
+          <label for="edit-event-name">Nazwa wydarzenia:</label><br>
+          <input type="text" id="edit-event-name" name="edit-event-name"><br>
+          <label for="edit-event-time">Godzina:</label><br>
+          <input type="time" id="edit-event-time" name="edit-event-time"><br><br>
+          <button type="button" onclick="addEvent()">Dodaj</button>
+        </form> 
+      </div>
     </div>
   </div>
   <!-- tabela z kalendarzem -->
@@ -62,36 +107,7 @@
   <div id="calendar-container"></div>
   <!-- okno modalne do dodawania wydarzenia -->
   <div id="event-modal" class="modal">
-    <!-- treść okna modalnego -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Dodaj wydarzenie</h2>
-      <form id="event-form">
-        <label for="event-name">Nazwa wydarzenia:</label><br>
-        <input type="text" id="event-name" name="event-name"><br>
-        <label for="event-date">Data:</label><br>
-        <input type="text" id="event-date" name="event-date" disabled><br>
-        <label for="event-time">Godzina:</label><br>
-        <input type="time" id="event-time" name="event-time"><br><br>
-        <button type="button" onclick="addEvent()">Dodaj</button>
-      </form> 
-    </div>
-  </div>
-  <!-- okno modalne do dycji wydarzenia -->
-  <div id="event-edit-modal" class="edit-modal">
-    <!-- treść okna modalnego -->
-    <div class="edit-modal-content">
-      <span class="edit-close">&times;</span>
-      <h2>Edytuj wydarzenie</h2>
-      <form id="edit-event-form">
-        <label for="edit-event-name">Nazwa wydarzenia:</label><br>
-        <input type="text" id="edit-event-name" name="edit-event-name"><br>
-        <label for="edit-event-time">Godzina:</label><br>
-        <input type="time" id="edit-event-time" name="edit-event-time"><br><br>
-        <button type="button" onclick="addEvent()">Dodaj</button>
-      </form> 
-    </div>
-  </div>
+   
   <div id="currMonthValue" style="display: none;"></div>
   <div id="currYearValue" style="display: none;"></div>
   <script src="../scripts/calendar_calendar.js"></script>

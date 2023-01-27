@@ -1,47 +1,109 @@
-/* MENU GÓRNE */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,800');
+
+* {
+	margin: auto;
+  padding:0;
+	box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(127.9deg, #1D4DF6 -55.09%, #7BF99E 127.82%);
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Ogólne style dla nagłówka */
+.naglowek {
+  display: flex; /* ustawienie w jednej linii */
+  padding: 12px; /* odstęp od krawędzi */
+  background-color: transparent;
+}
+
+/* wygląd lewej strony nagłówka (napis i logo) */
+.lewa {
+  display: flex;
+  width: 20vw;
+  height: 100%;
+}
+
+/* Style dla tekstu nagłówka */
+.naglowek h3 {
+  margin-left: 24px;
+  font-size: 1em; /* rozmiar czcionki */
+  font-family: 'Poppins';
+  letter-spacing: 1px;
+  font-weight: bold; /* grubość czcionki */
+  text-transform: uppercase;
+  color: white;
+  margin-right: 0;
+}
+
+/* Style dla obrazka w nagłówku */
+.naglowek img {
+  height: 70px; /* wysokość */
+  width: auto;
+  margin-left: 30px;
+}
+
+/* wygląd prawej strony nagłówka (menu główne) */
+.prawa {
+  display: flex;
+  width: 80vw;
+  height: 100%;
+}
+
+
 
 /* wygląd głównego elementu - ol */
 ol {
+  align-items: center;
   list-style-type:none;
-  padding:0;
-  margin:0;
-  background-color:#FFF;
-  font-size:18px;
-  height:2em;
-  line-height:2em;
-  text-align:center;
+  font-size:1.5em;
+  font-family: 'Poppins';
+  /* background-color: #408DD6; */
 }
 
 /* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
 ol a {
-  display:block;
+  display:flex;
   text-decoration:none;
-  color:#000;
-  padding:0 5px;
+  text-align: center;
+  margin-left: 1.5vw;
+  margin-right: 1.5vw;
+  color:rgb(255, 255, 255);
+}
+
+/* wygląd prostokąta nad obecnie otwartą stroną */
+ol a canvas {
+  position:absolute;
+  top:0;
+  margin-left: -10px;
+  vertical-align: top;
+  width:140px;
+  height: 6px;
+  background-color: white;
+}
+
+/* wygląd trójkąta */
+ol a span {
+  font-size: 70%;
+  margin-left: 1vw;
 }
 
 /* wygląd elementów - li - wszystkich dzieci elementu - ol */
 ol > li {
   float:left;
-  width:150px;
-  margin-left:1px;
-  background-color:#FDD700;
-  height:2em;
-}
-
-/* wygląd elementu - li - pierwszego dziecka elementu - ol */
-ol > li:first-child {
-  margin-left:0;
-}
-
-/* wygląd elementów - li - wszystkich dzieci elementu - ol - po najechaniu kursorem myszki na element - li */
-ol > li:hover {
-  background-color:#EEE;
+  background-color: transparent;
 }
 
 /* wygląd elementu - a - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
 ol > li:hover > a {
-  color:#09C;
+  color:#ffffff;
+}
+
+/* wygląd trójkąta po najechaniu na cały blok a */
+ol > li:hover > a span {
+  color:#212ad9;
 }
 
 /* wygląd elementu - ul - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
@@ -53,6 +115,7 @@ ol > li:hover > ul {
 
 /* wygląd głównych rozwijanych elementów - ul */
 ol > li > ul {
+  position: fixed;
   display:none;
   list-style-type:none;
   padding:0;
@@ -61,24 +124,104 @@ ol > li > ul {
 
 /* wygląd elementu - li - w części rozwijanej */
 ol > li > ul > li {
-  position:relative;
-  background-color:#EEE;
+  display: block;
+  padding: 16px;
+  min-width: 200px;
+  background-color:rgb(255, 255, 255);
 }
 
 /* wygląd elementu - a - w części rozwijanej */
 ol > li > ul > li > a {
-  border-top:1px solid #FFF;
+  /* border-top:1px solid rgb(0, 0, 0); */
+  color: #408DD6;
 }
 
 /* wygląd elementu - li - w części rozwijanej, po najechaniu kursorem myszki na dany element - li */
 ol > li > ul > li:hover {
-  background-color:#DDD;
+  background-color:#408DD6;
 }
 
 /* wygląd elementu - a - w części rozwijanej, po najechaniu kursorem myszki na element - li */
 ol > li > ul > li:hover > a {
-  color:#09C;
+  color:white;
 }
+
+/* ------------------------TERMINARZ------------------------ */
+
+.terminarz {
+  position: fixed;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+
+  padding-top: 6vh;
+  background-color: transparent;
+  }
+
+  h1 {
+    font-family: 'Poppins';
+    color: white;
+    font-size: 3.2em;
+    padding-bottom: 2vh;
+  }
+
+  #timetable-container {
+    width: 80%;
+    height: 50vh;
+    background-color: #ffffff;
+    border-radius: 40px;
+  }
+
+
+  #timetable-day {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(0, 180, 255);
+  }
+
+  #timetable-bottom {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  #timetable-content-container {
+    min-height: 100px;
+    background-color: rgb(0, 230, 255);
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  #timetable-content {
+    margin: 5%;
+    padding: 2%;
+  }
+
+  #delete-event {
+    max-width: 25px;
+    max-height: 25px;
+  }
+
+  #edit-event {
+    padding: 0;
+    max-width: 25px;
+    max-height: 25px;
+    justify-content: center;
+  }
+
+  #edit-event img {
+    max-width: 21px;
+    max-height: 21px;
+  }
+
 
 /* stylizacja tabeli i komórek */
 table {
@@ -129,7 +272,7 @@ table {
   }
  
   .sunday {
-    background-color: rgba(255, 125, 125, 0.75);
+    color: red;
   }
 
   .saturday
@@ -167,78 +310,4 @@ table {
     width: 60%;
     border: 1px solid #000;
     border-radius: 15px;
-  }
-
-  #timetable-container {
-    display: inline-block;
-    float: left;
-    width: 30%;
-    border: 1px solid #000;
-    border-radius: 15px;
-    margin-right: 20px;
-  }
-
-  #timetable-head {
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: rgb(0, 180, 255);
-    text-align: center;
-    font-size: 30px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-
-  #timetable-day {
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(0, 180, 255);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-
-  #timetable-bottom {
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    font-size: 30px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
-
-  #timetable-content-container {
-    min-height: 100px;
-    background-color: rgb(0, 230, 255);
-    margin-left: 5%;
-    margin-right: 5%;
-    border-radius: 15px;
-  }
-
-  #timetable-content {
-    margin: 5%;
-    padding: 2%;
-    border-bottom: 3px dashed black;
-  }
-
-  #delete-event {
-    max-width: 25px;
-    max-height: 25px;
-  }
-
-  #edit-event {
-    padding: 0;
-    max-width: 25px;
-    max-height: 25px;
-    justify-content: center;
-  }
-  
-  #edit-event img {
-    max-width: 21px;
-    max-height: 21px;
   }
