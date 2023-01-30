@@ -20,7 +20,7 @@ function createCalendar(now, currentDay, currentMonth, currentYear, daysInMonth,
     calendar.setAttribute("id", "calendar");
 
     // utwórz nagłówek tabeli z nazwami dni tygodnia
-    const weekdays = ["Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"];
+    const weekdays = ["PON", "WTO", "ŚRO", "CZW", "PIĄ", "SOB", "NIE"];
     const months = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
     const header = document.createElement("thead");
     const headerRow = document.createElement("tr");
