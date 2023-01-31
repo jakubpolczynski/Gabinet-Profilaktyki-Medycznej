@@ -36,11 +36,11 @@ function createEvents()
     // pobierz okno modalne
     const modal = document.getElementById("event-modal");
     // pobierz przycisk zamykania okna modalnego
+    const modal_edit = document.getElementById("event-edit-modal");
+    // pobierz przycisk zamykania okna modalnego
     const closeButton = document.querySelector(".close");
     // pobierz przycisk edytowania zdarzen 
     const btn_edit = document.getElementById("btn-edit");
-    // pobierz przycisk usuwania zdarzen
-    const btn_delete = document.getElementById("btn-delete");
 
     // dodaj obsługę kliknięcia na komórki kalendarza
     btn_edit.addEventListener("click", function() 
@@ -51,6 +51,7 @@ function createEvents()
         // pokaż okno modalne
         modal.style.display = "block";
     });
+
 
     // dodaj obsługę kliknięcia na komórki kalendarza
 
@@ -92,6 +93,7 @@ function createEvents()
     {
         // ukryj okno modalne
         modal.style.display = "none";
+        modal_edit.style.display = "none";
     });
 
     // dodaj obsługę kliknięcia poza oknem modalnym
@@ -100,6 +102,11 @@ function createEvents()
         if (event.target == modal) {
             // ukryj okno modalne
             modal.style.display = "none";
+
+        }
+        if (event.target == modal_edit) {
+            // ukryj okno modalne
+            modal_edit.style.display = "none";
         }
     });
 }
@@ -215,6 +222,7 @@ async function checkEvents(date) {
                         timetable_content.appendChild(deleteButton);
                         timetable_content.appendChild(editButton);
                         var event_paragraph = document.createElement("p");
+                        event_paragraph.id = "p_content";
                         event_paragraph.innerText = item;
 
                         timetable_content.appendChild(event_paragraph)
@@ -319,50 +327,28 @@ function deleteEvent(this_, date) {
         dataAlreadySent= false;
     }
 }
-async function editEvent(date)
+function editEvent(date)
 {
-    var timetable_content = this_.parentElement;
-    var time_name = timetable_content.querySelector("p")
-    temp = String(time_name.innerText)
-    temp = temp.split(" ")
-    var time = temp[0] + ":00"
-    var errormsg = "";
-    // Tworzenie nowego rządania
-    const xhr = new XMLHttpRequest();
-    // Otwieramy połączenie z serwerem
-    xhr.open('POST', '../php/edit_event_calendar.php');
-    // Ustawiamy nagłówki
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    // Przygotowanie danych
-    const data = `date=${date}&time=${time}`;
-    // Wysłanie żądania
-    if(!dataAlreadySent){
-        xhr.send(data);
-        dataAlreadySent = true;
-    }
-    // Oczekiwanie na odpowiedz
-    xhr.onreadystatechange = await function() {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                var response = xhr.responseText;
-                var status = cutStatus(response);
-                if (status === "success"){
-                    
-                }
-                else {
-                    errormsg += xhr.responseText;
-                }
-            } 
-            else {
-                errormsg += xhr.responseText;
-            }
-        }
-        else {
-            errormsg += xhr.responseText;
-        }
-        console.log(errormsg);
-        errormsg = "";
-        xhr.responseText = null;
-        dataAlreadySent= false;
-    } 
+    const modal = document.getElementById("event-edit-modal");
+    modal.style.display = "block";
+
+//         // pobierz dane wydarzenia z pól formularza
+//         const name = document.getElementById("event-name").value;
+//         const date = document.getElementById("event-date").value;
+//         const time = document.getElementById("event-time").value;
+
+//         // sprawdź, czy wszystkie pola formularza są wypełnione
+//         if (name && date && time) 
+//         {
+//             // wszystkie pola są wypełnione, więc można dodać wydarzenie
+//             submitForm(name, date, time);
+//             // ukryj okno modalne
+//             modal.style.display = "none";
+//             // wyświetl komunikat o pomyślnym dodaniu wydarzenia
+//         } 
+//         else 
+//         {
+//             // w przeciwnym razie wyświetl komunikat o błędzie
+//             alert("Wypełnij wszystkie pola formularza");
+//         }
 }
