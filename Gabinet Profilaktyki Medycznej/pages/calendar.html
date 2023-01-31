@@ -59,39 +59,39 @@
       <div id="timetable-content-container">
       </div>
       <div id="timetable-bottom">
-        <button id="btn-edit">Dodaj</button>
+        <button id="btn-add">Dodaj</button>
       </div>
     </div> 
 
       <!-- okno modalne do dodawania wydarzenia -->
-    <div id="event-modal" class="modal">
+    <div id="add-event-modal" class="add-event-modal">
       <!-- treść okna modalnego -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
+      <div class="add-modal-content">
+        <span class="add-event-modal-close">&times;</span>
         <h2>Dodaj wydarzenie</h2>
         <form id="event-form">
-          <label for="event-name">Nazwa wydarzenia:</label><br>
-          <input type="text" id="event-name" name="event-name"><br>
-          <label for="event-date">Data:</label><br>
-          <input type="text" id="event-date" name="event-date" disabled><br>
-          <label for="event-time">Godzina:</label><br>
-          <input type="time" id="event-time" name="event-time"><br><br>
+          <label for="add-event-name">Nazwa wydarzenia:</label><br>
+          <input type="text" id="add-event-name" name="add-event-name"><br>
+          <label for="add-event-date">Data:</label><br>
+          <input type="text" id="add-event-date" name="add-event-date" disabled><br>
+          <label for="add-event-time">Godzina:</label><br>
+          <input type="time" id="add-event-time" name="add-event-time"><br><br>
           <button type="button" onclick="addEvent()">Dodaj</button>
         </form> 
       </div>
     </div>
     <!-- okno modalne do edycji wydarzenia -->
-    <div id="event-edit-modal" class="modal">
+    <div id="edit-event-modal" class="edit-event-modal">
       <!-- treść okna modalnego -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
+      <div class="edit-modal-content">
+        <span class="edit-event-modal-close">&times;</span>
         <h2>Edytuj wydarzenie</h2>
         <form id="edit-event-form">
           <label for="edit-event-name">Nazwa wydarzenia:</label><br>
           <input type="text" id="edit-event-name" name="edit-event-name"><br>
           <label for="edit-event-time">Godzina:</label><br>
           <input type="time" id="edit-event-time" name="edit-event-time"><br><br>
-          <button type="button" onclick="addEvent()">Dodaj</button>
+          <button type="button" onclick="editEvent()">Edytuj</button>
         </form> 
       </div>
     </div>
