@@ -229,7 +229,7 @@ async function checkEvents(date) {
                         var editButton = document.createElement("button");
                         editButton.id = "edit-event-btn";
                         // editButton.innerHTML = "<img src='../images/edit-icon.png' alt='edit'>"
-                        editButton.innerText = "O"
+                        editButton.innerText = '\u21BA'
                         editButton.onclick = function() {
                             this_ = this
                             const modal_edit = document.getElementById("edit-event-modal");
