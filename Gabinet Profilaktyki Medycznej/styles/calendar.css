@@ -129,10 +129,10 @@ ol > li > ul > li {
   padding: 16px;
   min-width: 180px;
   background-color:rgba(255, 255, 255, 0.978);
-
+/* 
   margin-bottom: 2vh;
   border-radius: 50px;
-  border: 2px solid rgb(40, 90, 253);
+  border: 2px solid rgb(40, 90, 253); */
 }
 
 /* wygląd elementu - a - w części rozwijanej */
@@ -167,12 +167,15 @@ ol > li > ul > li:hover > a {
     font-family: 'Poppins';
     color: #ffffff;
     font-size: 3.2em;
+    filter: drop-shadow(3px 4px rgba(0, 0, 0, 0.25));
+    letter-spacing: 1px;
   }
 
   #timetable-container {
+    position: relative;
     width: 60%;
     height: 70vh;
-    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(10px 10px rgba(0, 0, 0, 0.25));
     background-color: #ffffff;
     border-radius: 40px;
     mix-blend-mode: luminosity;
@@ -189,23 +192,27 @@ ol > li > ul > li:hover > a {
   }
 
   #timetable-bottom {
+    position: absolute;
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
+    bottom: 0;
     text-align: center;
     font-size: 30px;
   }
 
   #timetable-content-container {
+    position: relative;
     min-height: 100px;
-    height: 75%;
+    max-height: 380px;
+    height: 380px;
     width: 88%;
     background: rgba(0, 0, 0, 0.11);
     border-radius: 40px;
+    overflow-y: scroll;
   }
 
   #btn-edit {
-    margin-bottom: 50px;
     width: 88%;
     height: 50px;
     background: rgba(0, 0, 0, 0.4);
@@ -221,6 +228,10 @@ ol > li > ul > li:hover > a {
     text-transform: uppercase;
     color: #FFFFFF;
 
+  }
+
+  #btn-edit:hover {
+    background: rgba(0, 0, 0, 0.3);
   }
 
   #timetable-content {
@@ -337,6 +348,19 @@ table {
     font-weight: bolder;
   }
 
+  #btn-month-prev:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  #btn-month-next:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  button:active {
+    position:relative;
+    top:2px;
+  }
+
   #btn-month-next {
     float: right;
     margin-right: 2vw;
@@ -381,7 +405,7 @@ table {
     border-radius: 60px;
   }
  
-  img {
+  #linia {
     margin-top: 4vh;
     width: 96%;
     margin-left: 2%;
