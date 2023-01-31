@@ -329,6 +329,7 @@ function deleteEvent(this_, date) {
 }
 function editEvent(date)
 {
+<<<<<<< Updated upstream
     const modal = document.getElementById("event-edit-modal");
     modal.style.display = "block";
 
@@ -352,3 +353,51 @@ function editEvent(date)
 //             alert("Wypełnij wszystkie pola formularza");
 //         }
 }
+=======
+    alert("AAAAAAAAAAAAAA")
+    // var timetable_content = this_.parentElement;
+    // var time_name = timetable_content.querySelector("p")
+    // temp = String(time_name.innerText)
+    // temp = temp.split(" ")
+    // var time = temp[0] + ":00"
+    // var errormsg = "";
+    // // Tworzenie nowego rządania
+    // const xhr = new XMLHttpRequest();
+    // // Otwieramy połączenie z serwerem
+    // xhr.open('POST', '../php/edit_event_calendar.php');
+    // // Ustawiamy nagłówki
+    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // // Przygotowanie danych
+    // const data = `date=${date}&time=${time}`;
+    // // Wysłanie żądania
+    // if(!dataAlreadySent){
+    //     xhr.send(data);
+    //     dataAlreadySent = true;
+    // }
+    // // Oczekiwanie na odpowiedz
+    // xhr.onreadystatechange = await function() {
+    //     if (xhr.readyState === 4) {
+    //         if (xhr.status === 200) {
+    //             var response = xhr.responseText;
+    //             var status = cutStatus(response);
+    //             if (status === "success"){
+                    
+    //             }
+    //             else {
+    //                 errormsg += xhr.responseText;
+    //             }
+    //         } 
+    //         else {
+    //             errormsg += xhr.responseText;
+    //         }
+    //     }
+    //     else {
+    //         errormsg += xhr.responseText;
+    //     }
+    //     console.log(errormsg);
+    //     errormsg = "";
+    //     xhr.responseText = null;
+    //     dataAlreadySent= false;
+    // } 
+}
+>>>>>>> Stashed changes
