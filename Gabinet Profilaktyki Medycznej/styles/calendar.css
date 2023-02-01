@@ -227,7 +227,6 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   color: #FFFFFF;
-
 }
 
 #btn-add:hover {
@@ -274,53 +273,16 @@ table {
   border-radius: 40px;
 
 }
+
 td {
   border: none;
   text-align: center;
   padding: 8px;
 }
+
 th {
   text-align: center;
   padding: 8px;
-}
-/* stylizacja okna modalnego */
-.add-event-modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.add-modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  margin-left: 120px;
-  padding: 20px;
-  width: 24%;
-  float: left;
-}
-.edit-event-modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.edit-modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  margin-left: 120px;
-  padding: 20px;
-  width: 24%;
-  float: left;
 }
 
 #calendar-month-container {
@@ -400,31 +362,6 @@ button:active {
   font-weight: bolder;
 }
 
-.add-event-modal-close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.add-event-modal-close:hover,
-.add-event-modal-close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-.edit-event-modal-close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.edit-event-modal-close:hover,
-.edit-event-modal-close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .sunday {
   color:rgb(0, 0, 0);
   /* background-color: rgba(0, 187, 255, 0.174); */
@@ -446,4 +383,75 @@ button:active {
   margin-top: 4vh;
   width: 96%;
   margin-left: 2%;
+}
+
+/* stylizacja okna modalnego */
+.add-event-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.add-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  margin-left: 120px;
+  padding: 20px;
+  width: 24%;
+  float: left;
+}
+
+.edit-event-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.edit-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  margin-left: 120px;
+  padding: 20px;
+  width: 24%;
+  float: left;
+}
+
+.add-event-modal-close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.add-event-modal-close:hover,
+.add-event-modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.edit-event-modal-close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.edit-event-modal-close:hover,
+.edit-event-modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
