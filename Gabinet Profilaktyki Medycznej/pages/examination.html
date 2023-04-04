@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabinet Profilaktyki Medycznej</title>
+    <link rel="shortcut icon" href="logo.svg">
+</head>
+<body>
+    <a href="examination.html">Badania pięlęgniarskie</a>
+    <a href="screening_test.html">Badania przesiewowe</a>
+    <a href="fluoridation.html">Fluoryzacja</a>
+
+    <h1>Nowe badanie</h1>
+
+    <form id="event-form">
+        <label for="add_examination_date">Data:</label>
+        <input type="text" id="add_examination_date" name="add_examination_date"><br>
+        <label for="add_examination_time">Godzina:</label>
+        <input type="text" id="add_examination_time" name="add_examination_time"><br>
+        <label for="add_examination_fname">Imię:</label>
+        <input type="text" id="add_examination_fname" name="add_examination_fname"><br>
+        <label for="add_examination_lname">Nazwisko:</label>
+        <input type="text" id="add_examination_lname" name="add_examination_lname"><br>
+        <label for="add_examination_pesel">PESEL (opcjonalnie):</label>
+        <input type="text" id="add_examination_pesel" name="add_examination_pesel"><br>
+        <label for="add_examination_nurse">Dane pielęgniarki:</label>
+        <input type="text" id="add_examination_nurse" name="add_examination_nurse"><br>
+        <label for="add_examination_reason">Przyczyna badania:</label>
+        <input type="text" id="add_examination_reason" name="add_examination_reason"><br>
+        <label for="add_examination_description">Opis wykonanych czynności:</label>
+        <input type="text" id="add_examination_description" name="add_examination_description"><br>
+        <label for="add_examination_comments">Uwagi:</label>
+        <input type="text" id="add_examination_comments" name="add_examination_comments"><br>
+
+        <button type="button" onclick="addExamination()">Dodaj</button>
+    </form>
+
+    <script src="../scripts/examination.js"></script>
+</body>
+</html>
