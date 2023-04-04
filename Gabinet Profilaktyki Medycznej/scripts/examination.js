@@ -25,6 +25,41 @@ function addExamination()
     }
 }
 
+async function submitAdd(date, time, fname, lname, pesel, nurse, reason, description, comments) {
+    var errormsg = "";
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '../php/add_examination.php');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    const data = `date=${date}&time=${time}&fname=${fname}&lname=${lname}&pesel=${pesel}&nurse=${nurse}&reason=${reason}&description=${description}&comments=${comments}`;
+    console.log(date, time, fname, lname, pesel, nurse, reason, description, comments)
+    xhr.send(data);
+    xhr.onreadystatechange = await function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                if (xhr.responseText === "success"){
+                    console.log("Dodawanie zakończone pomyślnie")
+                    alert("Badanie zostało dodane");
+                    // var tcc = document.getElementById("timetable-content-container");
+                    // while (tcc.hasChildNodes()) {
+                    //     tcc.removeChild(tcc.firstChild);
+                    // }
+                    // checkEvents(date);
+                }
+                else {
+                    errormsg += xhr.responseText;
+                }
+            } 
+            else {
+                errormsg += xhr.responseText;
+            }
+        }
+        else {
+            errormsg += xhr.responseText;
+        }
+        console.log(errormsg);
+    }
+}
+
 function cutStatus(response)
 {
     var index = response.indexOf("|");

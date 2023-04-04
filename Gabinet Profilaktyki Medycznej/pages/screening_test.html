@@ -10,10 +10,42 @@
 <body>
     <a href="examination.html">Badania pięlęgniarskie</a>
     <a href="screening_test.html">Badania przesiewowe</a>
-    <a href="fluoridation.html">Fluoryzacja</a>
 
+    <h1>Nowe badanie przsiewowe</h1>
 
-    
+    <form id="event-form">
+        <label for="add_screening_date">Data:</label>
+        <input type="date" id="add_screening_date" name="add_screening_date"><br>
+        <label for="add_screening_fname">Imię:</label>
+        <input type="text" id="add_screening_fname" name="add_screening_fname"><br>
+        <label for="add_screening_lname">Nazwisko:</label>
+        <input type="text" id="add_screening_lname" name="add_screening_lname"><br>
+        <label for="add_screening_pesel">PESEL (opcjonalnie):</label>
+        <input type="text" id="add_screening_pesel" name="add_screening_pesel"><br>
+        <label for="add_screening_nurse">Dane pielęgniarki:</label>
+        <input type="text" id="add_screening_nurse" name="add_screening_nurse"><br>
+        <label for="add_screening_height">Wzrost [w m]:</label>
+        <input type="text" id="add_screening_height" name="add_screening_height"><br>
+        <label for="add_screening_weight">Waga [w kg]:</label>
+        <input type="text" id="add_screening_weight" name="add_screening_weight"><br>
+        <label for="add_screening_sight">Wzrok:</label>
+        <input type="text" id="add_screening_sight" name="add_screening_sight"><br>
+        <label for="add_screening_hearing">Słuch:</label>
+        <input type="text" id="add_screening_hearing" name="add_screening_hearing"><br>
+        <label for="add_screening_bloodPressure">Ciśnienie:</label>
+        <input type="text" id="add_screening_bloodPressure" name="add_screening_bloodPressure"><br>
+        <label for="add_screening_statics">Statyka ciała:</label>
+        <input type="text" id="add_screening_statics" name="add_screening_statics"><br>
+        <label for="add_screening_speech">Wada wymowy:</label>
+        <input type="text" id="add_screening_speech" name="add_screening_speech"><br>
+        <label for="add_screening_comments">Uwagi:</label>
+        <input type="text" id="add_screening_comments" name="add_screening_comments"><br>
+        <label for="add_screening_presence">Obecność [1 - obecny, 0 - nieobecny]:</label>
+        <input type="text" id="add_screening_presence" name="add_screening_presence"><br>
+
+        <button type="button" onclick="addScreening()">Dodaj</button>
+    </form>
+
     <script src="../scripts/screening_test.js"></script>
 </body>
 </html>
