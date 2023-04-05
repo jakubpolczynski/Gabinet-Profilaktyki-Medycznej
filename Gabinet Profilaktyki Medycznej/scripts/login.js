@@ -1,3 +1,4 @@
+
 const form = document.querySelector('form');
 form.addEventListener('submit', validateForm);
 
@@ -39,7 +40,6 @@ function submitForm(event) {
                 if (xhr.responseText === "success"){
                     console.error("Logowanie powiodło się")
                     writeCookie('username',username.value)
-                    console.log(readCookie(username))
                     window.location.href = '../pages/start_page.html';
                 }
                 else {
@@ -65,19 +65,4 @@ function writeCookie(name,value) {
         expires = ""; 
     } 
     document.cookie = name + "=" + value + expires + "; path=/"; 
-}
-
-function readCookie(name) { 
-    var i, c, ca, nameEQ = name + "="; 
-    ca = document.cookie.split(';'); 
-    for(i=0;i < ca.length;i++) { 
-        c = ca[i]; 
-        while (c.charAt(0)==' ') { 
-            c = c.substring(1,c.length); 
-        } 
-        if (c.indexOf(nameEQ) == 0) { 
-            return c.substring(nameEQ.length,c.length); 
-        } 
-    } 
-    return ''; 
 }
