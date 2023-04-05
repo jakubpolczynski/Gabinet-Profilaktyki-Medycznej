@@ -13,14 +13,14 @@
     } 
 
     // Tworzymy zapytanie do bazy danych
-    $sql = "SELECT * FROM admini WHERE login='$username' AND haslo='$password'";
+    $sql = "SELECT * FROM logowanie WHERE login='$username' AND haslo='$password'";
     $result = mysqli_query($conn, $sql);
 
     // Jeśli znaleziono użytkownika, ustawiamy sesję i wysyłamy odpowiedź "success"
     if (mysqli_num_rows($result) > 0) {
-    session_start();
-    $_SESSION['logged_in'] = true;
-    $_SESSION['username'] = $username;
+    // session_start();
+    // $_SESSION['logged_in'] = true;
+    // $_SESSION['username'] = $username;
     echo "success";
     } else {
     // W przeciwnym razie wyświetlamy błąd
