@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabinet Profilaktyki Medycznej</title>
+    <link rel="shortcut icon" href="logo.svg">
+</head>
+<body>
+    <a href="calendar.html">Kalendarz</a>
+    <a href="examination.html">Badania pięlęgniarskie</a>
+    <a href="screening_test.html">Badania przesiewowe</a>
+
+    <h1>Wyszukaj badanie</h1>
+
+    <form id="event-form">
+        <label for="print_examination_dateL">Od:</label>
+        <input type="date" id="print_examination_dateL" name="print_examination_dateL"><br>
+        <label for="print_examination_dateR">Do:</label>
+        <input type="date" id="print_examination_dateR" name="print_examination_dateR"><br>
+        
+        <label for="print_examination_fname">Imię:</label>
+        <input type="text" id="print_examination_fname" name="print_examination_fname"><br>
+        <label for="print_examination_lname">Nazwisko:</label>
+        <input type="text" id="print_examination_lname" name="print_examination_lname"><br>
+
+        <button type="button" onclick="printExamination()">Szukaj</button>
+
+        <p id="examination-content"></p>
+    </form>
+
+    <script src="../scripts/examination_events.js"></script>
+</body>
+</html>
