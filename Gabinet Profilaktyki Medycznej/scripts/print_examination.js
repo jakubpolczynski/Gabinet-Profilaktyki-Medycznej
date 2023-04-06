@@ -33,8 +33,6 @@ async function printExaminations() {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
                     var response = xhr.responseText;
-                    var status = cutStatus(response);
-                    if (status === "success"){
                         events = cutEvent(response);
                         var ecc = document.getElementById("examination-content-container");
                         for (let items of events)
@@ -54,10 +52,6 @@ async function printExaminations() {
                             }
                            
                         }
-                    }
-                    else {
-                        errormsg += xhr.responseText;
-                    }
                 } 
                 else {
                     errormsg += xhr.responseText;
