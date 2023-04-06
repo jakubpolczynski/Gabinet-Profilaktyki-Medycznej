@@ -33,25 +33,25 @@ async function printExaminations() {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
                     var response = xhr.responseText;
-                        events = cutEvent(response);
-                        var ecc = document.getElementById("examination-content-container");
-                        for (let items of events)
+                    events = cutEvent(response);
+                    var ecc = document.getElementById("examination-content-container");
+                    for (let items of events)
+                    {
+                        arr = cutParts(items);
+                        for (let item of arr)
                         {
-                            arr = cutParts(items);
-                            for (let item of arr)
-                            {
-                                var examination_content = document.createElement("div")
-                                examination_content.id = "examination-content";
+                            var examination_content = document.createElement("div")
+                            examination_content.id = "examination-content";
     
-                                var examination_paragraph = document.createElement("p");
-                                examination_paragraph.id = "examination_p_content";
-                                examination_paragraph.innerText = item;
+                            var examination_paragraph = document.createElement("p");
+                            examination_paragraph.id = "examination_p_content";
+                            examination_paragraph.innerText = item;
     
-                                examination_content.appendChild(examination_paragraph)
-                                ecc.appendChild(examination_content);
-                            }
-                           
+                            examination_content.appendChild(examination_paragraph)
+                            ecc.appendChild(examination_content);
                         }
+                           
+                    }
                 } 
                 else {
                     errormsg += xhr.responseText;

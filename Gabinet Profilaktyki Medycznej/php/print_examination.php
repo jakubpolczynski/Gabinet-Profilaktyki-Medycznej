@@ -20,20 +20,27 @@
     // Tworzymy zapytanie do bazy danych
     if (!empty($fname) && empty($lname)) {
         $sql_student = "SELECT * FROM uczniowie WHERE imie='$fname'";
+        $setS = 1;
     }
     elseif (empty($fname) && !empty($lname)) {
         $sql_student = "SELECT * FROM uczniowie WHERE nazwisko='$lname'";
+        $setS = 1;
     }
     elseif (!empty($fname) && !empty($lname)) {
         $sql_student = "SELECT * FROM uczniowie WHERE imie='$fname' AND nazwisko='$lname'";
+        $setS = 1;
     }
-    $result_student = mysqli_query($conn_szkola, $sql_student);
+    
     
     // Jeśli znaleziono uczniów, wysyłamy opodwiedź "Znaleziono osoby"
-    if(mysqli_num_rows($result_student) > 0) {
-        while($row = mysqli_fetch_assoc($result_student))
-        {
-            $id_uczen = $row['id_uczen'];
+    if ($setS == 1)
+    {
+        $result_student = mysqli_query($conn_szkola, $sql_student);
+        if(mysqli_num_rows($result_student) > 0) {
+            while($row = mysqli_fetch_assoc($result_student))
+            {
+                $id_uczen = $row['id_uczen'];
+            }
         }
     }
 
@@ -145,6 +152,26 @@
         $sql = "SELECT * FROM badaniapielegniarskie WHERE dataBadania>'$dateL' AND dataBadania<'$dateR' AND id_klasy='$id_klasa' AND id_ucznia='$id_uczen'";
         $sql1 = "SELECT * FROM badaniaprzesiewowe WHERE dataBilansu>'$dateL' AND dataBilansu<'$dateR' AND id_klasy='$id_klasa' AND id_ucznia='$id_uczen'";
         $set = 1;
+    } elseif (!empty($dateL) && empty($dateR) && !empty($class) && !empty($fname) && empty($lname)) {
+        // Zostały wypełnione pola 1, 3, i 4
+        $sql = "SELECT * FROM badaniapielegniarskie WHERE dataBadania>'$dateL' AND id_klasy='$id_klasa' AND id_ucznia='$id_uczen'";
+        $sql1 = "SELECT * FROM badaniaprzesiewowe WHERE dataBilansu>'$dateL' AND id_klasy='$id_klasa' AND id_ucznia='$id_uczen'";
+        $set = 1;
+    } elseif (!empty($dateL) && empty($dateR) && !empty($class) && empty($fname) && !empty($lname)) {
+        // Zostały wypełnione pola 1, 3, i 5
+        $sql = "SELECT * FROM badaniapielegniarskie WHERE dataBadania>'$dateL' AND id_klasy='$id_klasa' AND id_ucznia='$id_uczen'";
+        $sql1 = "SELECT * FROM badaniaprzesiewowe WHERE dataBilansu>'$dateL' AND id_klasy='$id_klasa' AND id_ucznia='$id_uczen'";
+        $set = 1;
+    } elseif (!empty($dateL) && empty($dateR) && !empty($class) && !empty($fname) && !empty($lname)) {
+        // Zostały wypełnione pola 1, 3, 4 i 5
+        $sql = "SELECT * FROM badaniapielegniarskie WHERE dataBadania>'$dateL' AND id_klasy='$id_klasa' AND id_ucznia='$id_uczen'";
+        $sql1 = "SELECT * FROM badaniaprzesiewowe WHERE dataBilansu>'$dateL' AND id_klasy='$id_klasa' AND id_ucznia='$id_uczen'";
+        $set = 1;
+    } elseif (!empty($dateL) && empty($dateR) && empty($class) && !empty($fname) && !empty($lname)) {
+        // Zostały wypełnione pola 1, 4 i 5
+        $sql = "SELECT * FROM badaniapielegniarskie WHERE dataBadania>'$dateL' AND id_ucznia='$id_uczen'";
+        $sql1 = "SELECT * FROM badaniaprzesiewowe WHERE dataBilansu>'$dateL' AND id_ucznia='$id_uczen'";
+        $set = 1;
     } elseif (empty($dateL) && !empty($dateR) && !empty($class) && empty($fname) && empty($lname)) {
         // Zostały wypełnione pola 2 i 3
         $sql = "SELECT * FROM badaniapielegniarskie WHERE dataBadania<'$dateR' AND id_klasy='$id_klasa'";
@@ -174,6 +201,11 @@
         // Zostały wypełnione pola 2, 3, 4 i 5
         $sql = "SELECT * FROM badaniapielegniarskie WHERE dataBadania<'$dateR' AND id_klasy='$id_klasa' AND id_ucznia='$id_uczen'";
         $sql1 = "SELECT * FROM badaniaprzesiewowe WHERE dataBilansu<'$dateR' AND id_klasy='$id_klasa' AND id_ucznia='$id_uczen'";
+        $set = 1;
+    } elseif (empty($dateL) && !empty($dateR) && empty($class) && !empty($fname) && !empty($lname)) {
+        // Zostały wypełnione pola 2, 4 i 5
+        $sql = "SELECT * FROM badaniapielegniarskie WHERE dataBadania<'$dateR' AND id_ucznia='$id_uczen'";
+        $sql1 = "SELECT * FROM badaniaprzesiewowe WHERE dataBilansu<'$dateR' AND id_ucznia='$id_uczen'";
         $set = 1;
     } elseif (empty($dateL) && empty($dateR) && !empty($class) && !empty($fname) && empty($lname)) {
         // Zostały wypełnione pola 3 i 4
@@ -237,16 +269,15 @@
                 echo $row['uwagi']."|";
             }
         }
-        else {
-            echo "Brak wydarzeń";
-        }
+        
     
         // Tworzymy zapytanie do bazy danych
         $result1 = mysqli_query($conn, $sql1);
     
         // Jeśli znaleziono wydarzenia, wysyłamy opodwiedź "success"
         if(mysqli_num_rows($result1)>0) {
-    
+            echo "|";
+
             while($row = mysqli_fetch_assoc($result1))
             {
                 $id_ucznia = $row['id_ucznia'];
@@ -278,15 +309,7 @@
                 echo $row['inneUwagi']."|"; 
             }
         }
-        else {
-            echo "Brak wydarzeń";
-        }
     
-    
-        function sendEvent($row)
-        {
-          
-        }
         mysqli_close($conn1);
         mysqli_close($conn);
     }
