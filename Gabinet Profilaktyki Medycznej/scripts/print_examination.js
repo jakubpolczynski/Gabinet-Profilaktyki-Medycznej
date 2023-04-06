@@ -37,11 +37,12 @@ async function printExaminations() {
                     var ecc = document.getElementById("examination-content-container");
                     for (let items of events)
                     {
+                        var examination_content = document.createElement("div")
+                        examination_content.id = "examination-content";
                         arr = cutParts(items);
                         for (let item of arr)
                         {
-                            var examination_content = document.createElement("div")
-                            examination_content.id = "examination-content";
+
     
                             var examination_paragraph = document.createElement("p");
                             examination_paragraph.id = "examination_p_content";
