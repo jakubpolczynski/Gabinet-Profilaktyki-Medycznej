@@ -19,18 +19,20 @@
         <input type="date" id="print_examination_dateL" name="print_examination_dateL"><br>
         <label for="print_examination_dateR">Do:</label>
         <input type="date" id="print_examination_dateR" name="print_examination_dateR"><br>
-        
+
+        <label for="print_examination_class">Klasa:</label>
+        <input type="text" id="print_examination_class" name="print_examination_class"><br>
         <label for="print_examination_fname">Imię:</label>
         <input type="text" id="print_examination_fname" name="print_examination_fname"><br>
         <label for="print_examination_lname">Nazwisko:</label>
         <input type="text" id="print_examination_lname" name="print_examination_lname"><br>
 
-        <button type="button" onclick="printExamination()">Szukaj</button>
+        <button type="button" onclick="printExaminations()">Szukaj</button>
 
-        <div id="examination-content"></div>
+        <div id="examination-content-container"></div>
     </form>
 
-    <script src="../scripts/examination_events.js"></script>
+    <script src="../scripts/print_examination.js"></script>
     <script src="../scripts/verification.js"></script>
 </body>
 </html>
