@@ -13,7 +13,7 @@
 
     <h1>Nowe badanie</h1>
 
-    <form id="event-form">
+    <form id="event-form"></form>>
         <label for="add_examination_date">Data:</label>
         <input type="date" id="add_examination_date" name="add_examination_date"><br>
         <label for="add_examination_time">Godzina:</label>
@@ -24,8 +24,8 @@
         <input type="text" id="add_examination_lname" name="add_examination_lname"><br>
         <label for="add_examination_pesel">PESEL (opcjonalnie):</label>
         <input type="text" id="add_examination_pesel" name="add_examination_pesel"><br>
-        <label for="add_examination_nurse">Dane pielęgniarki:</label>
-        <input type="text" id="add_examination_nurse" name="add_examination_nurse"><br>
+        <label for="nurse_info">Dane pielęgniarki:</label>
+        <input type="text" id="nurse_info" name="nurse_info"><br>
         <label for="add_examination_reason">Przyczyna badania:</label>
         <input type="text" id="add_examination_reason" name="add_examination_reason"><br>
         <label for="add_examination_description">Opis wykonanych czynności:</label>
@@ -34,9 +34,11 @@
         <input type="text" id="add_examination_comments" name="add_examination_comments"><br>
 
         <button type="button" onclick="addExamination()">Dodaj</button>
+        
     </form>
 
     <script src="../scripts/examination.js"></script>
     <script src="../scripts/verification.js"></script>
+    <script src="../scripts/examination_events.js" defer></script>
 </body>
 </html>

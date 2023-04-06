@@ -78,9 +78,9 @@
     $sql = "SELECT * FROM badaniaprzesiewowe WHERE id_ucznia='$id_uczen' AND dataBilansu='$date'";
     $result = mysqli_query($conn, $sql);
 
-    // Jeśli nie znaleziono badania, wysyłamy opodwiedź "Dodano nowe badanie" oraz dodajemy badanie
-    if(mysqli_num_rows($result)>0) {
-        echo "Badanie już istnieje";
+    // Jeśli nie znaleziono badania oraz podano prawidłowe dane ucznia i pielęgniarki, wysyłamy odpodwiedź "Dodano nowe badanie" oraz dodajemy badanie
+    if(mysqli_num_rows($result)>0 || mysqli_num_rows($result_nurseID) < 1 || mysqli_num_rows($result_student) < 1) {
+        echo "Błedne dane";
     }
     else {
         $sql = "INSERT INTO badaniaprzesiewowe (

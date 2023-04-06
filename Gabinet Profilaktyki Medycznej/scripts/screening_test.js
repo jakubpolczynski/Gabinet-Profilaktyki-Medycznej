@@ -6,7 +6,7 @@ function addScreening()
     const fname = document.getElementById("add_screening_fname").value;
     const lname = document.getElementById("add_screening_lname").value;
     const pesel = document.getElementById("add_screening_pesel").value;
-    const nurse = document.getElementById("add_screening_nurse").value;
+    const nurse = readCookie('username');
     const height = document.getElementById("add_screening_height").value;
     const weight = document.getElementById("add_screening_weight").value;
     const BMI = weight/height^2;

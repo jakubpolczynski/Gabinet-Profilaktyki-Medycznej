@@ -7,7 +7,7 @@ function addExamination()
     const fname = document.getElementById("add_examination_fname").value;
     const lname = document.getElementById("add_examination_lname").value;
     const pesel = document.getElementById("add_examination_pesel").value;
-    const nurse = document.getElementById("add_examination_nurse").value;
+    const nurse = readCookie('username');
     const reason = document.getElementById("add_examination_reason").value;
     const description = document.getElementById("add_examination_description").value;
     const comments = document.getElementById("add_examination_comments").value;
