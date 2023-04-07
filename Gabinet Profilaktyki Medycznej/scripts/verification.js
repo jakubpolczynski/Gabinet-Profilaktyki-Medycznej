@@ -18,5 +18,3 @@ function verifyCookie(name) {
     if (readCookie('username') == 'error')
         window.location.href = '../index.html';
 }
-
-//window.onload = verifyCookie('username')

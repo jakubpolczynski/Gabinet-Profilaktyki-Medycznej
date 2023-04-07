@@ -4,6 +4,7 @@ let currentDate = 1;
 let currentTime;
 function loadCurrentDay()
 {
+    verifyCookie('username')
     let date = new Date();
     let cDay = date.getDate();
     currMonth = document.getElementById("currMonthValue").textContent;
