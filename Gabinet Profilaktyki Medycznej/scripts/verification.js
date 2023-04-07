@@ -18,3 +18,7 @@ function verifyCookie(name) {
     if (readCookie('username') == 'error')
         window.location.href = '../index.html';
 }
+function verifyAdmin(name) {
+    if(readCookie('username') != 'admin')
+        window.location.href = '../index.html';
+}

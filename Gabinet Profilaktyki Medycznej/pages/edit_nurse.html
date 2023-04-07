@@ -6,8 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body onload="verifyCookie('username')">
-    
+<body onload="verifyAdmin('username')">
+    <form id="event-form">
+        <label for="edit_nurse_username">Nazwa użytkownika pielęgniarki:</label>
+        <input type="text" id="edit_nurse_username" name="edit_nurse_username"><br>
+        <label for="edit_nurse_new_firstname">Nowe imię:</label>
+        <input type="text" id="edit_nurse_new_firstname" name="edit_nurse_new_firstname"><br>
+        <label for="edit_nurse_new_surname">Nowe nazwisko:</label>
+        <input type="text" id="edit_nurse_new_surname" name="edit_nurse_new_surname"><br>
+        <label for="edit_nurse_new_username">Nowa nazwa użytkownika pielęgniarki:</label>
+        <input type="text" id="edit_nurse_new_username" name="edit_nurse_new_username"><br>
+        <label for="edit_nurse_new_password">Nowe hasło pielęgniarki:</label>
+        <input type="text" id="edit_nurse_new_password" name="edit_nurse_new_password"><br>
+
+        <button type="button" onclick="editNurse()">Dodaj</button>
+        
+    </form>
+
+    <script src="../scripts/edit_nurse.js"></script>
     <script src="../scripts/verification.js"></script>
 </body>
 </html>
