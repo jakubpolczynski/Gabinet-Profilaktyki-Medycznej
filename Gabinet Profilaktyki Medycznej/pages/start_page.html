@@ -8,8 +8,89 @@
     <title>Gabinet Profilaktyki Medycznej</title>
     <link rel="shortcut icon" href="../images/logo.svg">
 </head>
-<body onload="verifyCookie('username')">
-    <a href="calendar.html">Terminarz</a>
+<body>
+<!--<body  onload="verifyCookie('username')" > -->
+    <!-- <a href="calendar.html">Terminarz</a> -->
+    <div class="naglowek">
+        <div class="lewa">
+          <canvas></canvas>
+          <h3>Gabinet<br>Pielęgniarki<br>Szkolnej</h3>
+          <img src="../images/logo.png"/>
+        </div>
+        
+        <div class="prawa">
+          <ol>
+            <li><a href="#">Badania<span>&#9660;</span></a>
+              <ul>
+                <li><a href="examination.html">Nowe badanie</a></li>
+                <li><a href="screening_test.html">Badanie przesiewowe</a></li>
+              </ul>
+            </li>
+    
+            <li><a href="#">Dokumenty<span>&#9660;</span></a>
+              <ul>
+                <li><a href="#">2020</a></li>
+                <li><a href="#">2021</a></li>
+                <li><a href="#">2022</a></li>
+                <li><a href="#">2023</a></li>
+              </ul>
+            </li>
+    
+            <li><a href="#">Raporty<span>&#9660;</span></a>
+              <ul>
+                <li><a href="#">Raporty roczne</a></li>
+                <li><a href="#">Raporty miesięczne</a></li>
+                <li><a href="#">Raporty kwartalne</a></li>
+              </ul>
+    
+            <li><a href="calendar.html">Terminarz</a></li>
+    
+            <li><a href="examination_history.html">Historia badań</a></li>
+    
+            <li><a href="#">Lista uczniów</a></li>
+          </ol>
+        </div>
+      </div>
+      <div class="zawartosc">
+        <div class="powitanie">
+            <h1>Witaj [imie pielęgniarki]</h1>
+
+<!-- Dodaj imię zalogowanej pielęgniarki pobierane z bazy(ewentualnie imie admina ale to opcjonalne) -->
+
+        </div>
+        <div class="lewazawartosc">
+            <p>
+                W świat niesiemy swe serca gorące,</br>
+                Najpiękniejszą głosimy ideę,</br>
+                Aby ludziom dać spokój i słońce,</br>
+                By cierpiącym przywrócić nadzieję...</br>
+            </p>
+            </br>
+            <p>
+                W służbie naszej przodować będziemy</br>
+                Dla Ojczyzny, Jej dobra pracować,</br>
+                A gdy trzeba i ginąć będziemy,</br>
+                Aby życie człowieka ratować.</br>
+            </p>
+        </div>
+        <div class="prawazawartosc">
+            <p>
+                Zawód nasz przeszedł wielkie dni chwały -</br>
+                Gdy o wolność się walki toczyły,</br>
+                Pielęgniarki na frontach też były</br>
+                I ofiarnie swą służbę pełniły.</br>
+            </p>
+            </br>
+            <p>
+                My nie chcemy ni wojen, ni bojów</br>
+                Dość krwi bratniej i ofiar faszyzmu</br>
+                My jesteśmy siostrami pokoju,</br>
+                Służyć chcemy idei humanizmu.</br>
+            </p>
+
+        </div>
+      </div>
+      <footer><h4>dzisiejsza data</h4></footer>
     <script src="../scripts/verification.js"></script>
 </body>
 </html>
