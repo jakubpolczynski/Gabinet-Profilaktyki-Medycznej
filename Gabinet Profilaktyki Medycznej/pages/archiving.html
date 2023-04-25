@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabinet Profilaktyki Medycznej</title>
+    <link rel="shortcut icon" href="logo.svg">
+</head>
+<body onload="verifyCookie('username')">
+    <a href="calendar.html">Kalendarz</a>
+
+    <h1>Archiwizuj badanie</h1>
+
+    <form id="event-form">
+        <label for="archive_examination_dateL">Od:</label>
+        <input type="date" id="archive_examination_dateL" name="archive_examination_dateL"><br>
+        <label for="archive_examination_dateR">Do:</label>
+        <input type="date" id="archive_examination_dateR" name="archive_examination_dateR"><br>
+
+        <label for="examination">Badania pielęgniarskie</label>
+        <input type="radio" id="radio_examination" name="examination_type" value="examination"><br>
+        <label for="screening_test">Badania przesiewowe</label>
+        <input type="radio" id="radio_screening_test" name="examination_type" value="screening_test"><br>
+
+        <button type="button" onclick="archiveExaminations()">Archiwizuj</button>
+
+        <div id="examination-content-container"></div>
+    </form>
+
+    <script src="../scripts/print_examination.js"></script>
+    <script src="../scripts/verification.js"></script>
+</body>
+</html>
