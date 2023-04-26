@@ -153,47 +153,17 @@ ol > li > ul > li:hover > a {
 }
 
 /* ------------------------STRONA GŁÓWNA------------------------ */
-.nawigacja {
-    position: relative;
-  }
-  
-  .nawigacja a {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .nawigacja a:first-child {
-    position: absolute;
-    left: 30px;
-    background-color: #ccc;
-    pointer-events: none;
-  }
-  
-  .nawigacja a:last-child {
-    position: absolute;
-    right: 30px;
-    background-color: #3770eb;
-  }
-  
-  .nawigacja a:last-child:hover {
-    background-color: #2d4373;
-  }
   
   .zawartosc {
     background-color: rgba(255, 255, 255, 0.703);
-    margin: 32px;
+    margin-left: 16vw;
+    margin-right: 16vw;
     border-radius: 40px;
+    width: 68vw;
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 32px;
     font-family: Poppins;
     color:#2c2c2c;
     margin-top: 10vh;
@@ -227,18 +197,13 @@ ol > li > ul > li:hover > a {
   input[type="date"],
   input[type="time"] {
     width: 100%;
-    padding: 5px;
+    padding: 4px;
     margin-bottom: 10px;
     border: 2px solid #aeaeae;
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 16px;
   }
-    #add_examination_reason,
-    #add_examination_description,
-    #add_examination_comments {
-    height: 60px;
-    }
 
     button[type="button"] {
       background-color: #0085d7; /* light green color */
@@ -250,6 +215,7 @@ ol > li > ul > li:hover > a {
       border: none; /* remove border */
       box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* add shadow */
       margin-bottom: 24px;
+      margin-left: 44%;
     }
     
     

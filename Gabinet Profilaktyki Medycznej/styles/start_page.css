@@ -162,10 +162,14 @@ ol > li > ul > li:hover > a {
   background-color: transparent;
   }
 
-  .powitanie{
+  .powitanie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 18vh;
     padding:32px;
   }
+  
 
   h1 {
     margin:16px;
@@ -179,15 +183,20 @@ ol > li > ul > li:hover > a {
   .lewazawartosc {
     float: left;
     width: 50%;
-    background-color: #325353;
+    background-color: transparent;
+    text-align: center;
   }
-
+  
   .prawazawartosc {
-    float: right;
+    float:left;
     width: 50%;
-    background-color: #7BF99E;
+    background-color: transparent;
+    text-align: center;
   }
+  
   p {
-    font-size: 24px;
+    font-size: 32px;
     font-family: 'Poppins';
+    line-height: 1.5;
+    margin-bottom: 10px;
   }

@@ -2,18 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/examination.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabinet Profilaktyki Medycznej</title>
     <link rel="shortcut icon" href="logo.svg">
+
 </head>
 <body onload="verifyCookie('username')">
-    <a href="examination.html">Badania pięlęgniarskie</a>
-    <a href="screening_test.html">Badania przesiewowe</a>
+    <div class="naglowek">
+        <div class="lewa">
+          <h3>Gabinet<br>Pielęgniarki<br>Szkolnej</h3>
+          <img src="../images/logo.png"/>
+        </div>
+        
+        <div class="prawa">
+          <ol>
+            <li><canvas></canvas><a href="#">Badania<span>&#9660;</span></a>
+              <ul>
+                <li><a href="examination.html">Nowe badanie</a></li>
+                <li><a href="screening_test.html">Badanie przesiewowe</a></li>
+              </ul>
+            </li>
+    
+            <li><a href="#">Dokumenty<span>&#9660;</span></a>
+              <ul>
+                <li><a href="#">2020</a></li>
+                <li><a href="#">2021</a></li>
+                <li><a href="#">2022</a></li>
+                <li><a href="#">2023</a></li>
+              </ul>
+            </li>
+    
+            <li><a href="#">Raporty<span>&#9660;</span></a>
+              <ul>
+                <li><a href="#">Raporty roczne</a></li>
+                <li><a href="#">Raporty miesięczne</a></li>
+                <li><a href="#">Raporty kwartalne</a></li>
+              </ul>
+    
+            <li><a href="calendar.html">Terminarz</a></li>
+    
+            <li><a href="examination_history.html">Historia badań</a></li>
+    
+            <li><a href="#">Lista uczniów</a></li>
+          </ol>
+        </div>
+      </div>
 
-    <h1>Nowe badanie</h1>
-
-    <form id="event-form"></form>>
+    <div class="nawigacja">
+        <a href="examination.html">Badania pięlęgniarskie</a>
+        <a href="screening_test.html">Badania przesiewowe</a>
+    </div>
+    <div class="zawartosc">
+        <h1>Badanie pielęgniarskie</h1>
+        <form id="event-form">
+        <div class="form-row">
+            <div class="form-column">
+            <label for="add_examination_date">Data:</label>
+            <input type="date" id="add_examination_date" name="add_examination_date"><br>
+            <label for="add_examination_time">Godzina:</label>
+            <input type="time" id="add_examination_time" name="add_examination_time"><br>
+            <label for="add_examination_fname">Imię:</label>
+            <input type="text" id="add_examination_fname" name="add_examination_fname"><br>
+            <label for="add_examination_lname">Nazwisko:</label>
+            <input type="text" id="add_examination_lname" name="add_examination_lname"><br>
+            <label for="add_examination_pesel">PESEL (opcjonalnie):</label>
+            <input type="text" id="add_examination_pesel" name="add_examination_pesel"><br>
+            </div>
+            <div class="form-column">
+            <label for="nurse_info">Dane pielęgniarki:</label>
+            <input type="text" id="nurse_info" name="nurse_info"><br>
+            <label for="add_examination_reason">Przyczyna badania:</label>
+            <input type="text" id="add_examination_reason" name="add_examination_reason"><br>
+            <label for="add_examination_description">Opis wykonanych czynności:</label>
+            <input type="text" id="add_examination_description" name="add_examination_description"><br>
+            <label for="add_examination_comments">Uwagi:</label>
+            <input type="text" id="add_examination_comments" name="add_examination_comments"><br>
+            </div>
+        </div>
+        <button type="button" onclick="addExamination()">Dodaj</button>
+        </form>
+    </div>
+    <!-- <h1>Nowe badanie pielęgniarskie</h1>
+    <form id="event-form"></form>
         <label for="add_examination_date">Data:</label>
         <input type="date" id="add_examination_date" name="add_examination_date"><br>
         <label for="add_examination_time">Godzina:</label>
@@ -35,7 +107,7 @@
 
         <button type="button" onclick="addExamination()">Dodaj</button>
         
-    </form>
+    </form> -->
 
     <script src="../scripts/examination.js"></script>
     <script src="../scripts/verification.js"></script>

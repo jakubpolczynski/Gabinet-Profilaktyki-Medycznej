@@ -3,35 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../styles/examination_history.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabinet Profilaktyki Medycznej</title>
     <link rel="shortcut icon" href="logo.svg">
 </head>
 <body onload="verifyCookie('username')">
-    <a href="calendar.html">Kalendarz</a>
-    <a href="examination.html">Badania pięlęgniarskie</a>
-    <a href="screening_test.html">Badania przesiewowe</a>
+    <div class="naglowek">
+        <div class="lewa">
+          <h3>Gabinet<br>Pielęgniarki<br>Szkolnej</h3>
+          <img src="../images/logo.png"/>
+        </div>
+        
+        <div class="prawa">
+          <ol>
+            <li><canvas></canvas><a href="#">Badania<span>&#9660;</span></a>
+              <ul>
+                <li><a href="examination.html">Nowe badanie</a></li>
+                <li><a href="screening_test.html">Badanie przesiewowe</a></li>
+              </ul>
+            </li>
+    
+            <li><a href="#">Dokumenty<span>&#9660;</span></a>
+              <ul>
+                <li><a href="#">2020</a></li>
+                <li><a href="#">2021</a></li>
+                <li><a href="#">2022</a></li>
+                <li><a href="#">2023</a></li>
+              </ul>
+            </li>
+    
+            <li><a href="#">Raporty<span>&#9660;</span></a>
+              <ul>
+                <li><a href="#">Raporty roczne</a></li>
+                <li><a href="#">Raporty miesięczne</a></li>
+                <li><a href="#">Raporty kwartalne</a></li>
+              </ul>
+    
+            <li><a href="calendar.html">Terminarz</a></li>
+    
+            <li><a href="examination_history.html">Historia badań</a></li>
+    
+            <li><a href="#">Lista uczniów</a></li>
+          </ol>
+        </div>
+      </div>
+      <div class="zawartosc">
+        <h1>Wyszukaj badanie</h1>
 
-    <h1>Wyszukaj badanie</h1>
+        <form id="event-form">
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="print_examination_dateL">Od:</label>
+                    <input type="date" id="print_examination_dateL" name="print_examination_dateL"><br>
+                    <label for="print_examination_dateR">Do:</label>
+                    <input type="date" id="print_examination_dateR" name="print_examination_dateR"><br>
+                    <label for="print_examination_class">Klasa:</label>
+                    <input type="text" id="print_examination_class" name="print_examination_class"><br>
+                    <label for="print_examination_fname">Imię:</label>
+                    <input type="text" id="print_examination_fname" name="print_examination_fname"><br>
+                    <label for="print_examination_lname">Nazwisko:</label>
+                    <input type="text" id="print_examination_lname" name="print_examination_lname"><br>
+                </div>
+            </div>
 
-    <form id="event-form">
-        <label for="print_examination_dateL">Od:</label>
-        <input type="date" id="print_examination_dateL" name="print_examination_dateL"><br>
-        <label for="print_examination_dateR">Do:</label>
-        <input type="date" id="print_examination_dateR" name="print_examination_dateR"><br>
+            <button type="button" onclick="printExaminations()">Szukaj</button>
 
-        <label for="print_examination_class">Klasa:</label>
-        <input type="text" id="print_examination_class" name="print_examination_class"><br>
-        <label for="print_examination_fname">Imię:</label>
-        <input type="text" id="print_examination_fname" name="print_examination_fname"><br>
-        <label for="print_examination_lname">Nazwisko:</label>
-        <input type="text" id="print_examination_lname" name="print_examination_lname"><br>
-
-        <button type="button" onclick="printExaminations()">Szukaj</button>
-
-        <div id="examination-content-container"></div>
-    </form>
-
+            <div id="examination-content-container"></div>
+        </form>
+      </div>
     <script src="../scripts/print_examination.js"></script>
     <script src="../scripts/verification.js"></script>
 </body>

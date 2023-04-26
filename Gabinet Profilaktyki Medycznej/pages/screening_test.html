@@ -2,50 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/screening_test.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabinet Profilaktyki Medycznej</title>
     <link rel="shortcut icon" href="logo.svg">
 </head>
 <body onload="verifyCookie('username')">
-    <a href="examination.html">Badania pięlęgniarskie</a>
-    <a href="screening_test.html">Badania przesiewowe</a>
+    <body onload="verifyCookie('username')">
+        <div class="naglowek">
+            <div class="lewa">
+              <h3>Gabinet<br>Pielęgniarki<br>Szkolnej</h3>
+              <img src="../images/logo.png"/>
+            </div>
+            
+            <div class="prawa">
+              <ol>
+                <li><canvas></canvas><a href="#">Badania<span>&#9660;</span></a>
+                  <ul>
+                    <li><a href="examination.html">Nowe badanie</a></li>
+                    <li><a href="screening_test.html">Badanie przesiewowe</a></li>
+                  </ul>
+                </li>
+        
+                <li><a href="#">Dokumenty<span>&#9660;</span></a>
+                  <ul>
+                    <li><a href="#">2020</a></li>
+                    <li><a href="#">2021</a></li>
+                    <li><a href="#">2022</a></li>
+                    <li><a href="#">2023</a></li>
+                  </ul>
+                </li>
+        
+                <li><a href="#">Raporty<span>&#9660;</span></a>
+                  <ul>
+                    <li><a href="#">Raporty roczne</a></li>
+                    <li><a href="#">Raporty miesięczne</a></li>
+                    <li><a href="#">Raporty kwartalne</a></li>
+                  </ul>
+        
+                <li><a href="calendar.html">Terminarz</a></li>
+        
+                <li><a href="examination_history.html">Historia badań</a></li>
+        
+                <li><a href="#">Lista uczniów</a></li>
+              </ol>
+            </div>
+          </div>
+    
+        <div class="nawigacja">
+            <a href="examination.html">Badania pięlęgniarskie</a>
+            <a href="screening_test.html">Badania przesiewowe</a>
+        </div>
+        <div class="zawartosc">
+            <h1>Nowe badanie przesiewowe</h1>
 
-    <h1>Nowe badanie przsiewowe</h1>
-
-    <form id="event-form">
-        <label for="add_screening_date">Data:</label>
-        <input type="date" id="add_screening_date" name="add_screening_date"><br>
-        <label for="add_screening_fname">Imię:</label>
-        <input type="text" id="add_screening_fname" name="add_screening_fname"><br>
-        <label for="add_screening_lname">Nazwisko:</label>
-        <input type="text" id="add_screening_lname" name="add_screening_lname"><br>
-        <label for="add_screening_pesel">PESEL (opcjonalnie):</label>
-        <input type="text" id="add_screening_pesel" name="add_screening_pesel"><br>
-        <label for="nurse_info">Dane pielęgniarki:</label>
-        <input type="text" id="nurse_info" name="nurse_info"><br>
-        <label for="add_screening_height">Wzrost [w m]:</label>
-        <input type="text" id="add_screening_height" name="add_screening_height"><br>
-        <label for="add_screening_weight">Waga [w kg]:</label>
-        <input type="text" id="add_screening_weight" name="add_screening_weight"><br>
-        <label for="add_screening_sight">Wzrok:</label>
-        <input type="text" id="add_screening_sight" name="add_screening_sight"><br>
-        <label for="add_screening_hearing">Słuch:</label>
-        <input type="text" id="add_screening_hearing" name="add_screening_hearing"><br>
-        <label for="add_screening_bloodPressure">Ciśnienie:</label>
-        <input type="text" id="add_screening_bloodPressure" name="add_screening_bloodPressure"><br>
-        <label for="add_screening_statics">Statyka ciała:</label>
-        <input type="text" id="add_screening_statics" name="add_screening_statics"><br>
-        <label for="add_screening_speech">Wada wymowy:</label>
-        <input type="text" id="add_screening_speech" name="add_screening_speech"><br>
-        <label for="add_screening_comments">Uwagi:</label>
-        <input type="text" id="add_screening_comments" name="add_screening_comments"><br>
-        <label for="add_screening_presence">Obecność [1 - obecny, 0 - nieobecny]:</label>
-        <input type="text" id="add_screening_presence" name="add_screening_presence"><br>
-
-        <button type="button" onclick="addScreening()">Dodaj</button>
-    </form>
-
+            <form id="event-form">
+                <div class="form-row">
+                    <div class="form-column">
+                        <label for="add_screening_date">Data:</label>
+                        <input type="date" id="add_screening_date" name="add_screening_date"><br>
+                        <label for="add_screening_fname">Imię:</label>
+                        <input type="text" id="add_screening_fname" name="add_screening_fname"><br>
+                        <label for="add_screening_lname">Nazwisko:</label>
+                        <input type="text" id="add_screening_lname" name="add_screening_lname"><br>
+                        <label for="add_screening_pesel">PESEL (opcjonalnie):</label>
+                        <input type="text" id="add_screening_pesel" name="add_screening_pesel"><br>
+                        <label for="nurse_info">Dane pielęgniarki:</label>
+                        <input type="text" id="nurse_info" name="nurse_info"><br>
+                        <label for="add_screening_height">Wzrost [w m]:</label>
+                        <input type="text" id="add_screening_height" name="add_screening_height"><br>
+                        <label for="add_screening_weight">Waga [w kg]:</label>
+                        <input type="text" id="add_screening_weight" name="add_screening_weight"><br>
+                    </div>
+                    <div class="form-column">
+                        <label for="add_screening_sight">Wzrok:</label>
+                        <input type="text" id="add_screening_sight" name="add_screening_sight"><br>
+                        <label for="add_screening_hearing">Słuch:</label>
+                        <input type="text" id="add_screening_hearing" name="add_screening_hearing"><br>
+                        <label for="add_screening_bloodPressure">Ciśnienie:</label>
+                        <input type="text" id="add_screening_bloodPressure" name="add_screening_bloodPressure"><br>
+                        <label for="add_screening_statics">Statyka ciała:</label>
+                        <input type="text" id="add_screening_statics" name="add_screening_statics"><br>
+                        <label for="add_screening_speech">Wada wymowy:</label>
+                        <input type="text" id="add_screening_speech" name="add_screening_speech"><br>
+                        <label for="add_screening_comments">Uwagi:</label>
+                        <input type="text" id="add_screening_comments" name="add_screening_comments"><br>
+                        <label for="add_screening_presence">Obecność [1 - obecny, 0 - nieobecny]:</label>
+                        <input type="text" id="add_screening_presence" name="add_screening_presence"><br>
+                    </div>
+                </div>
+                <button type="button" onclick="addScreening()">Dodaj</button>
+            </form>
+        </div>
     <script src="../scripts/screening_test.js"></script>
     <script src="../scripts/verification.js"></script>
     <script src="../scripts/examination_events.js"></script>
