@@ -42,6 +42,50 @@ window.onload = async function checkNurse() {
     
 }
 
+async function startPageNurse() {
+    username = readCookie('username')
+
+    var errormsg = "";
+    // Tworzenie nowego rządania
+    const xhr = new XMLHttpRequest();
+    // Otwieramy połączenie z serwerem
+    xhr.open('POST', '../php/get_nurse_info.php');
+    // Ustawiamy nagłówki
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // Przygotowanie danych
+    const data = `login=${username}`;
+    // Wysłanie żądania
+    dataAlreadySent = false;
+    if(!dataAlreadySent){
+        xhr.send(data);
+        dataAlreadySent = true;
+    }
+    // Oczekiwanie na odpowiedz
+    xhr.onreadystatechange = await function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                var response = xhr.responseText;
+
+                const node = document.createElement("p");
+                const textnode = document.createTextNode(response);
+                node.appendChild(textnode);
+                document.getElementById("nurse_info_startPage").appendChild(node);
+            } 
+            else {
+                errormsg += xhr.responseText;
+            }
+        }
+        else {
+            errormsg += xhr.responseText;
+        }
+        console.log(errormsg);
+        errormsg = "";
+        xhr.responseText = null;
+        dataAlreadySent= false;
+    }
+    
+}
+
 function cutStatus(response)
 {
     var index = response.indexOf("|");

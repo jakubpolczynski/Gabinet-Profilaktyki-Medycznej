@@ -8,7 +8,7 @@
     <title>Gabinet Profilaktyki Medycznej</title>
     <link rel="shortcut icon" href="../images/logo.svg">
 </head>
-<body>
+<body onload="startPageNurse()">
 <!--<body  onload="verifyCookie('username')" > -->
     <!-- <a href="calendar.html">Terminarz</a> -->
     <div class="naglowek">
@@ -53,7 +53,9 @@
       </div>
       <div class="zawartosc">
         <div class="powitanie">
-            <h1>Witaj admin</h1>
+            <h1>
+              <div id="nurse_info_startPage"></div>
+            </h1>
 
 <!-- Dodaj imię zalogowanej pielęgniarki pobierane z bazy(ewentualnie imie admina ale to opcjonalne) -->
 
@@ -90,6 +92,7 @@
 
         </div>
       </div>
+    <script src="../scripts/start_page.js"></script>
     <script src="../scripts/verification.js"></script>
 </body>
 </html>
