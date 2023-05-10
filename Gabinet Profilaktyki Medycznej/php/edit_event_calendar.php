@@ -16,7 +16,7 @@
     } 
 
     // Tworzymy zapytanie do bazy danych
-    $sql = "SELECT id FROM terminarz WHERE data='$currentDate' AND godzina='$currentTime'";
+    $sql = "SELECT id FROM terminarz WHERE data='$currentDate' AND godzina='$newTime'";
     $result=mysqli_query($conn, $sql);
     if(mysqli_num_rows($result)>0)
     {
