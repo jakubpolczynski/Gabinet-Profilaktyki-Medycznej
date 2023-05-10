@@ -10,6 +10,7 @@ body {
   background: linear-gradient(127.9deg, #1D4DF6 -55.09%, #7BF99E 127.82%);
   width: 100%;
   height: auto;
+  min-height: 100vh;
 }
 
 /* Ogólne style dla nagłówka */
