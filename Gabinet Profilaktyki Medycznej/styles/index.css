@@ -94,7 +94,7 @@ p {
 	line-height: 20px;
 	letter-spacing: 0.5px;
     text-align: center;
-    display: none;
+    /* display: none; */
 }
 
 a {
