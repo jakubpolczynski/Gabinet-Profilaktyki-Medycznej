@@ -19,16 +19,17 @@
         <input type="date" id="archive_examination_dateR" name="archive_examination_dateR"><br>
 
         <label for="examination">Badania pielęgniarskie</label>
-        <input type="radio" id="radio_examination" name="examination_type" value="examination"><br>
+        <input type="radio" id="radio_examination" name="examination_type" value="badaniapielegniarskie"><br>
         <label for="screening_test">Badania przesiewowe</label>
-        <input type="radio" id="radio_screening_test" name="examination_type" value="screening_test"><br>
+        <input type="radio" id="radio_screening_test" name="examination_type" value="badaniaprzesiewowe"><br>
 
         <button type="button" onclick="archiveExaminations()">Archiwizuj</button>
 
         <div id="examination-content-container"></div>
+        
     </form>
 
-    <script src="../scripts/print_examination.js"></script>
+    <script src="../scripts/archive_examination.js"></script>
     <script src="../scripts/verification.js"></script>
 </body>
 </html>
