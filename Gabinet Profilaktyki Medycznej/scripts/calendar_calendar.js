@@ -55,9 +55,6 @@ function createCalendar(now, currentDay, currentMonth, currentYear, daysInMonth,
     }
 
     let firstDay = (new Date(currentYear, currentMonth)).getDay() - 1;
-    if (firstDay <= 0) {
-        firstDay = 6
-    } 
 
     let date = 1;
     for (let i = 0; i < 6; i++) {
@@ -121,7 +118,7 @@ document.getElementById("btn-month-prev").onclick = function() {
 
     const now = new Date();
     const currentDay = now.getDay();
-    const currentMonth = now.getMonth()+counter;
+    const currentMonth = counter;
     const currentYear = now.getFullYear();
     const daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
     createCalendar(now, currentDay, currentMonth, currentYear, daysInMonth, counter);
@@ -137,7 +134,7 @@ document.getElementById("btn-month-next").onclick = function() {
 
     const now = new Date();
     const currentDay = now.getDay();
-    const currentMonth = now.getMonth()+counter;
+    const currentMonth = counter;
     const currentYear = now.getFullYear();
     const daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
     createCalendar(now, currentDay, currentMonth, currentYear, daysInMonth, counter);
