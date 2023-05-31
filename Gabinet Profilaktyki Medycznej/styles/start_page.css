@@ -21,7 +21,7 @@ body {
 
 /* wygląd lewej strony nagłówka (napis i logo) */
 .lewa {
-  display: flex;
+  display: block;
   width: 20vw;
   height: 100%;
 }
@@ -58,7 +58,7 @@ body {
 ol {
   align-items: center;
   list-style-type:none;
-  font-size:1.5em;
+  font-size:1.3em;
   font-family: 'Poppins';
   /* background-color: #408DD6; */
 }
@@ -68,8 +68,9 @@ ol a {
   display:flex;
   text-decoration:none;
   text-align: center;
-  margin-left: 1.5vw;
-  margin-right: 1.5vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 1.1vh;
   color:rgb(255, 255, 255);
 }
 
