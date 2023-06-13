@@ -1,101 +1,91 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,800');
 
 * {
-	margin: auto;
+	margin: 0;
   padding:0;
 	box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: linear-gradient(127.9deg, #1D4DF6 -55.09%, #7BF99E 127.82%);
   width: 100%;
-  height: auto;
-  min-height: 100vh;
+  height: 100vh;
+  background: linear-gradient(127.9deg, #1D4DF6 -55.09%, #7BF99E 127.82%);
 }
 
 /* Ogólne style dla nagłówka */
 .naglowek {
   display: flex; /* ustawienie w jednej linii */
-  padding: 12px; /* odstęp od krawędzi */
-  background-color: transparent;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px; /* odstęp od krawędzi */
+  padding-bottom: 24px;
 }
 
 /* wygląd lewej strony nagłówka (napis i logo) */
 .lewa {
   display: flex;
-  width: 20vw;
-  height: 100%;
+  width: 16%;
 }
 
-/* Style dla tekstu nagłówka */
+/* Style dla tekstu-loga nagłówka */
 .naglowek h3 {
   margin-left: 24px;
   font-size: 1em; /* rozmiar czcionki */
-  font-family: 'Poppins';
   letter-spacing: 1px;
   font-weight: bold; /* grubość czcionki */
   text-transform: uppercase;
   color: white;
-  margin-right: 0;
 }
+/* Style dla tekstu-loga nagłówka po najechaniu kursorem (nie dla strony głównej)*/
+/* .naglowek h3:hover {
+} */
 
 /* Style dla obrazka w nagłówku */
 .naglowek img {
-  height: 70px; /* wysokość */
-  width: auto;
-  margin-left: 30px;
+  height: 70px;
+  margin-left: 32px;
 }
 
 /* wygląd prawej strony nagłówka (menu główne) */
 .prawa {
   display: flex;
-  width: 80vw;
-  height: 100%;
-}
-
-
-
-/* wygląd głównego elementu - ol */
-ol {
-  align-items: center;
-  list-style-type:none;
-  font-size:1.5em;
-  font-family: 'Poppins';
-  /* background-color: #408DD6; */
-}
-
-/* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
-ol a {
-  display:flex;
-  text-decoration:none;
-  text-align: center;
-  margin-left: 1.5vw;
-  margin-right: 1.5vw;
-  color:rgb(255, 255, 255);
 }
 
 /* wygląd prostokąta nad obecnie otwartą stroną */
-canvas {
+.lewa canvas {
   position: absolute;
-  top: 0;
-  left: 1080px;
-  margin-left: 0px;
-  vertical-align: top;
-  width:200px;
+  top:0;
+  left:0;
+  width:inherit;
   height: 6px;
   background-color: white;
 }
 
+/* wygląd wszystkich elementów ol */
+ol {
+  list-style-type: none;
+}
+
+/* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
+ol a {
+  text-decoration:none;
+  text-align: center;
+  margin-left: 1.1vw;
+  margin-right: 1.4vw;
+  font-size:1.35em;
+  color:#ffffff;
+}
+
 /* wygląd trójkąta */
 ol a span {
-  font-size: 70%;
-  margin-left: 1vw;
+  font-size: 0.8em;
+  margin-left: 8px;
 }
 
 /* wygląd elementów - li - wszystkich dzieci elementu - ol */
 ol > li {
-  float:left;
-  background-color: transparent;
+  display: inline-block;
 }
 
 /* wygląd elementu - a - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
@@ -108,21 +98,19 @@ ol > li:hover > a span {
   color:#3c7dff;
 }
 
+/* ------------------------CZĘŚĆ-ROZWIJANA-MENU------------------------ */
 /* wygląd elementu - ul - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
 ol > li:hover > ul {
-  display:block;
+  display: block;
+  padding-top: 8px;
 }
-
-/* ------------------------CZĘŚĆ-ROZWIJANA-MENU------------------------ */
 
 /* wygląd głównych rozwijanych elementów - ul */
 ol > li > ul {
   position: fixed;
   display:none;
   list-style-type:none;
-  padding:0;
-  margin:0;
-  z-index: 2;
+  z-index: 10;
 }
 
 /* wygląd elementu - li - w części rozwijanej */
