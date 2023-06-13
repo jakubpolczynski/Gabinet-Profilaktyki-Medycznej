@@ -9,7 +9,7 @@
 
 body {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(127.9deg, #1D4DF6 -55.09%, #7BF99E 127.82%);
 }
 
@@ -26,6 +26,11 @@ body {
 .lewa {
   display: flex;
   width: 16%;
+}
+
+/* usunięcie podkreślenia z linka do strony głównej */
+.lewa > a {
+  text-decoration:none;
 }
 
 /* Style dla tekstu-loga nagłówka */
@@ -52,28 +57,19 @@ body {
   display: flex;
 }
 
-/* wygląd prostokąta nad obecnie otwartą stroną */
-.lewa canvas {
-  position: absolute;
-  top:0;
-  left:0;
-  width:inherit;
-  height: 6px;
-  background-color: white;
-}
-
 /* wygląd wszystkich elementów ol */
 ol {
   list-style-type: none;
+  padding:16px;
 }
 
 /* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
 ol a {
   text-decoration:none;
   text-align: center;
-  margin-left: 1.1vw;
-  margin-right: 1.4vw;
-  font-size:1.35em;
+  margin-left: 1.8vw;
+  margin-right: 1.8vw;
+  font-size:1.6em;
   color:#ffffff;
 }
 
@@ -88,9 +84,19 @@ ol > li {
   display: inline-block;
 }
 
+/* wygląd prostokąta nad obecnie otwartą stroną */
+ol > li > canvas{
+  position: absolute;
+  top: 0;
+  left:inherit;
+  width: 12vw;
+  height: 6px;
+  background-color: white;
+}
+
 /* wygląd elementu - a - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
 ol > li:hover > a {
-  color:#ffffff;
+  color:#144dbe;
 }
 
 /* wygląd trójkąta po najechaniu na cały blok a */
@@ -143,53 +149,56 @@ ol > li > ul > li:hover > a {
 
 /* ------------------------STRONA GŁÓWNA------------------------ */
 .nawigacja {
-    position: relative;
-  }
-  
-  .nawigacja a {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .nawigacja a:first-child {
-    position: absolute;
-    left: 30px;
-    background-color: #3770eb;
-  }
-  
-  .nawigacja a:last-child {
-    position: absolute;
-    right: 30px;
-    background-color: #ccc;
-    pointer-events: none;
-  }
-  
-  .nawigacja a:first-child:hover {
-    background-color: #2d4373;
-  }
-  
-  .zawartosc {
-    background-color: rgba(255, 255, 255, 0.703);
-    margin: 32px;
-    border-radius: 40px;
-  }
+  position: relative;
+}
 
-  h1 {
-    font-size: 24px;
-    font-family: Poppins;
-    color:#2c2c2c;
-    margin-top: 10vh;
-    margin-bottom: 20px;
-    padding-top: 12px;
-    text-align: center;
-  }
+.nawigacja a {
+  display: inline-block;
+  padding: 8px 16px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nawigacja a:first-child {
+  position: absolute;
+  left: 30px;
+  background-color: #3770eb;
+}
+
+.nawigacja a:last-child {
+  position: absolute;
+  right: 30px;
+  background-color: #ccc;
+  pointer-events: none;
+}
+
+.nawigacja a:first-child:hover {
+  background-color: #2d4373;
+}
+
+.zawartosc {
+  background-color: rgba(255, 255, 255, 0.703);
+  margin-top: 0px;
+  margin-bottom: 12px;
+  margin-left: 32px;
+  margin-right: 32px;
+  border-radius: 40px;
+}
+
+h1 {
+  font-size: 1.6em;
+  color:#2c2c2c;
+  margin-top: 8vh;
+  margin-bottom: 8px;
+  padding-top: 12px;
+  text-align: center;
+}
+
   #event-form {
     display: flex;
     flex-wrap: wrap;
@@ -203,7 +212,7 @@ ol > li > ul > li:hover > a {
   
   .form-column {
     flex: 1;
-    padding: 32px;
+    padding: 12px 32px;
   }
   
   label {
@@ -225,9 +234,13 @@ ol > li > ul > li:hover > a {
   }
    
   button[type="button"] {
+    width: 8%;
+    margin-left: 46%;
+    text-align: center;
+    text-transform: uppercase;
     background-color: #0085d7; /* light green color */
     color: #fff; /* white text color */
-    padding: 15px 25px; /* increase padding for bigger button */
+    padding: 8px 12px; /* increase padding for bigger button */
     border-radius: 50px; /* make the button more round */
     font-size: 1.6rem; /* increase font size */
     cursor: pointer;

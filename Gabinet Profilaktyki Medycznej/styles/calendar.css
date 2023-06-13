@@ -28,6 +28,11 @@ body {
   width: 16%;
 }
 
+/* usunięcie podkreślenia z linka do strony głównej */
+.lewa > a {
+  text-decoration:none;
+}
+
 /* Style dla tekstu-loga nagłówka */
 .naglowek h3 {
   margin-left: 24px;
@@ -52,28 +57,19 @@ body {
   display: flex;
 }
 
-/* wygląd prostokąta nad obecnie otwartą stroną */
-.lewa canvas {
-  position: absolute;
-  top:0;
-  left:0;
-  width:inherit;
-  height: 6px;
-  background-color: white;
-}
-
 /* wygląd wszystkich elementów ol */
 ol {
   list-style-type: none;
+  padding:16px;
 }
 
 /* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
 ol a {
   text-decoration:none;
   text-align: center;
-  margin-left: 1.1vw;
-  margin-right: 1.4vw;
-  font-size:1.35em;
+  margin-left: 1.8vw;
+  margin-right: 1.8vw;
+  font-size:1.6em;
   color:#ffffff;
 }
 
@@ -88,9 +84,19 @@ ol > li {
   display: inline-block;
 }
 
+/* wygląd prostokąta nad obecnie otwartą stroną */
+ol > li > canvas{
+  position: absolute;
+  top: 0;
+  left:inherit;
+  width: 12vw;
+  height: 6px;
+  background-color: white;
+}
+
 /* wygląd elementu - a - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
 ol > li:hover > a {
-  color:#ffffff;
+  color:#144dbe;
 }
 
 /* wygląd trójkąta po najechaniu na cały blok a */
@@ -148,31 +154,31 @@ ol > li > ul > li:hover > a {
   display: flex;
   flex-direction: column;
   width: 40vw;
-  padding-top: 1vh;
-  background-color: transparent;
+  height: 100%;
+  align-items: center;
+  /* background-color: #000; */
   mix-blend-mode: luminosity;
   }
 
 h1 {
   font-family: 'Poppins';
+  text-align: center;
   color: #ffffff;
-  font-size: 3.2em;
+  font-size: 2.6em;
   filter: drop-shadow(3px 4px rgba(0, 0, 0, 0.25));
   letter-spacing: 1px;
 }
 
 #timetable-container {
   position: relative;
-  width: 60%;
-  height: 70vh;
-  filter: drop-shadow(10px 10px rgba(0, 0, 0, 0.25));
+  width: 400px;
+  height: 68vh;
+  filter: drop-shadow(6px 8px rgba(0, 0, 0, 0.25));
   background-color: #ffffff;
   border-radius: 40px;
-  mix-blend-mode: luminosity;
 }
 
 #timetable-day {
-  width: 100%;
   padding-top: 10px;
   background-color: transparent;
   text-align: center;
@@ -192,11 +198,11 @@ h1 {
 }
 
 #timetable-content-container {
-  position: relative;
   min-height: 100px;
-  max-height: 380px;
-  height: 380px;
-  width: 88%;
+  max-height: 360px;
+  height: 360px;
+  width: 90%;
+  margin-left: 5%;
   background: rgba(0, 0, 0, 0.11);
   border-radius: 40px;
   overflow-y: scroll;
@@ -259,9 +265,8 @@ h1 {
 table {
   background-color: #ffffff;
   border-collapse: collapse;
-  width: 92%;
-  margin: 4%;
-  border-radius: 40px;
+  width: 94%;
+  margin: 3%;
 
 }
 
@@ -277,7 +282,7 @@ th {
 }
 
 #calendar-month-container {
-  margin-top: 11vh;
+  margin-top: 3vh;
   float:right;
   width: 50%;
   margin-right: 6vw;
