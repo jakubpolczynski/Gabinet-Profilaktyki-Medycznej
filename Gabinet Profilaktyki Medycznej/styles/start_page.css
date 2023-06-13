@@ -65,15 +65,16 @@ body {
 /* wygląd wszystkich elementów ol */
 ol {
   list-style-type: none;
+  padding:16px;
 }
 
 /* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
 ol a {
   text-decoration:none;
   text-align: center;
-  margin-left: 1.1vw;
-  margin-right: 1.4vw;
-  font-size:1.35em;
+  margin-left: 1.8vw;
+  margin-right: 1.8vw;
+  font-size:1.6em;
   color:#ffffff;
 }
 
@@ -90,7 +91,7 @@ ol > li {
 
 /* wygląd elementu - a - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
 ol > li:hover > a {
-  color:#ffffff;
+  color:#144dbe;
 }
 
 /* wygląd trójkąta po najechaniu na cały blok a */
