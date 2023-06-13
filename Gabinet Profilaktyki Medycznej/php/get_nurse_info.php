@@ -24,7 +24,12 @@
         }
     }
     else {
-        echo "Brak pielęgniarek";
+        if ($username == 'admin') {
+            echo "administratorze \u{1F604}\u{1F64C}";
+        }
+        else {
+            echo "";
+        }
     }
 
     mysqli_close($conn);
