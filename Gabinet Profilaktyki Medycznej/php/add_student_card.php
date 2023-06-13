@@ -49,14 +49,14 @@
     $zalecenia=$_POST['zalecenia'];
     $imie_ucznia=$_POST['imie_ucznia'];
     $nazwisko_ucznia=$_POST['nazwisko_ucznia'];
-
+    $id_uczen = "Brak ucznia";
     $conn_szkola = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname_szkola);
-
+    
     if (!$conn_szkola) {
         die("Connection failed: " . mysqli_connect_error());
     } 
 
-    $sql_student = "SELECT * FROM uczniowe WHERE imie=`$imie_ucznia` AND nazwisko=`$nazwisko_ucznia`"
+    $sql_student = "SELECT * FROM uczniowie WHERE imie='$imie_ucznia' AND nazwisko='$nazwisko_ucznia'";
     $result_student = mysqli_query($conn_szkola, $sql_student);
 
     if(mysqli_num_rows($result_student) > 0) {
@@ -65,123 +65,121 @@
             $id_uczen = $row['id_uczen'];
 
         }
+        $conn = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname);
+
+        $sql = "INSERT INTO kartaucznia (
+            id_ucznia,
+            imie_ojca,
+            imie_matki,
+            wyksztalcenie_ojca,
+            wyksztalcenie_matki,
+            zawod_ojca,
+            zawod_matki,
+            stan_zdrowia_ojca,
+            stan_zdrowia_matki,
+            rok_urodzenia_rodzenstwa_dziecka,
+            stan_zdrowia_rodzenstwa_dziecka,
+            warunki_mieszkaniowe,
+            problemy_w_rodzinie,
+            zachowanie_zdrowotne_i_antyzdrowotne_w_rodzinie,
+            przebyte_choroby,
+            uczulenia,
+            objawy_uczulenia,
+            sluch,
+            wzrok,
+            zez,
+            uzywanie,
+            leki,
+            dolegliwosci_objawy,
+            uwagi_rodzicow,
+            inne_uwagi,
+            wymowa,
+            sprawnosc_fizyczna,
+            uzdolnienia,
+            zachowanie,
+            wyniki_w_nauce,
+            absencja_szkolna,
+            trudnosci_szkolne,
+            relacje_z_rowiesnikami,
+            inne_uwagi_wychowawcy,
+            rozwoj_fizyczny,
+            dojrzewanie_plciowe,
+            tarczyca,
+            rozwoj_psychospoleczny,
+            uklad_ruchu,
+            skora,
+            jama_ustna,
+            pozostale_uklady,
+            problem_zdrowotny,
+            grupa_na_wf,
+            moze_uczestniczyc_w_zawodach,
+            ograniczenie_dotyczace_wyboru_i_nauki_zawodu,
+            zalecenia
+        ) VALUES (
+            $id_uczen,
+            '$imie_ojca',
+            '$imie_matki',
+            '$wyksztalcenie_ojca',
+            '$wyksztalcenie_matki',
+            '$zawod_ojca',
+            '$zawod_matki',
+            '$stan_zdrowia_ojca',
+            '$stan_zdrowia_matki',
+            '$rok_urodzenia_rodzenstwa_dziecka',
+            '$stan_zdrowia_rodzenstwa_dziecka',
+            '$warunki_mieszkaniowe',
+            '$problemy_w_rodzinie',
+            '$zachowanie_zdrowotne_i_antyzdrowotne_w_rodzinie',
+            '$przebyte_choroby',
+            '$uczulenia',
+            '$objawy_uczulenia',
+            '$sluch',
+            '$wzrok',
+            '$zez',
+            '$uzywanie',
+            '$leki',
+            '$dolegliwosci_objawy',
+            '$uwagi_rodzicow',
+            '$inne_uwagi',
+            '$wymowa',
+            '$sprawnosc_fizyczna',
+            '$uzdolnienia',
+            '$zachowanie',
+            '$wyniki_w_nauce',
+            '$absencja_szkolna',
+            '$trudnosci_szkolne',
+            '$relacje_z_rowiesnikami',
+            '$inne_uwagi_wychowawcy',
+            '$rozwoj_fizyczny',
+            '$dojrzewanie_plciowe',
+            '$tarczyca',
+            '$rozwoj_psychospoleczny',
+            '$uklad_ruchu',
+            '$skora',
+            '$jama_ustna',
+            '$pozostale_uklady',
+            '$problem_zdrowotny',
+            '$grupa_na_wf',
+            '$moze_uczestniczyc_w_zawodach',
+            '$ograniczenie_dotyczace_wyboru_i_nauki_zawodu',
+            '$zalecenia'
+        )";
+
+        if($conn->query($sql) === TRUE){
+            echo "Dodano karte ucznia";
+        }
+        else{
+            echo "Błąd dodawania danych";
+        }
+        mysqli_close($conn);
     }
     else{
         echo "Brak osob";
     }
-
     mysqli_close($conn_szkola);
 
-    $conn = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname);
 
-    $sql = "INSERT INTO kartaucznia (
-        imie_ojca,
-        imie_matki,
-        wyksztalcenie_ojca,
-        wyksztalcenie_matki,
-        zawod_ojca,
-        zawod_matki,
-        stan_zdrowia_ojca,
-        stan_zdrowia_matki,
-        rok_urodzenia_rodzenstwa_dziecka,
-        stan_zdrowia_rodzenstwa_dziecka,
-        warunki_mieszkaniowe,
-        problemy_w_rodzinie,
-        zachowanie_zdrowotne_i_antyzdrowotne_w_rodzinie,
-        przebyte_choroby,
-        uczulenia,
-        objawy_uczulenia,
-        sluch,
-        wzrok,
-        zez,
-        uzywanie,
-        leki,
-        dolegliwosci_objawy,
-        uwagi_rodzicow,
-        inne_uwagi,
-        wymowa,
-        sprawnosc_fizyczna,
-        uzdolnienia,
-        zachowanie,
-        wyniki_w_nauce,
-        absencja_szkolna,
-        trudnosci_szkolne,
-        relacje_z_rowiesnikami,
-        inne_uwagi_wychowawcy,
-        rozwoj_fizyczny,
-        dojrzewanie_plciowe,
-        tarczyca,
-        rozwoj_psychospoleczny,
-        uklad_ruchu,
-        skora,
-        jama_ustna,
-        pozostale_uklady,
-        problem_zdrowotny,
-        grupa_na_wf,
-        moze_uczestniczyc_w_zawodach,
-        ograniczenie_dotyczace_wyboru_i_nauki_zawodu,
-        zalecenia,
-        imie_ucznia,
-        nazwisko_ucznia
-    ) VALUES (
-        '$id_uczen',
-        '$imie_ojca',
-        '$imie_matki',
-        '$wyksztalcenie_ojca',
-        '$wyksztalcenie_matki',
-        '$zawod_ojca',
-        '$zawod_matki',
-        '$stan_zdrowia_ojca',
-        '$stan_zdrowia_matki',
-        '$rok_urodzenia_rodzenstwa_dziecka',
-        '$stan_zdrowia_rodzenstwa_dziecka',
-        '$warunki_mieszkaniowe',
-        '$problemy_w_rodzinie',
-        '$zachowanie_zdrowotne_i_antyzdrowotne_w_rodzinie',
-        '$przebyte_choroby',
-        '$uczulenia',
-        '$objawy_uczulenia',
-        '$sluch',
-        '$wzrok',
-        '$zez',
-        '$uzywanie',
-        '$leki',
-        '$dolegliwosci_objawy',
-        '$uwagi_rodzicow',
-        '$inne_uwagi',
-        '$wymowa',
-        '$sprawnosc_fizyczna',
-        '$uzdolnienia',
-        '$zachowanie',
-        '$wyniki_w_nauce',
-        '$absencja_szkolna',
-        '$trudnosci_szkolne',
-        '$relacje_z_rowiesnikami',
-        '$inne_uwagi_wychowawcy',
-        '$rozwoj_fizyczny',
-        '$dojrzewanie_plciowe',
-        '$tarczyca',
-        '$rozwoj_psychospoleczny',
-        '$uklad_ruchu',
-        '$skora',
-        '$jama_ustna',
-        '$pozostale_uklady',
-        '$problem_zdrowotny',
-        '$grupa_na_wf',
-        '$moze_uczestniczyc_w_zawodach',
-        '$ograniczenie_dotyczace_wyboru_i_nauki_zawodu',
-        '$zalecenia',
-        '$imie_ucznia',
-        '$nazwisko_ucznia'
-    )";
-
-    if($conn->query($sql) === TRUE){
-        echo "Dodano karte ucznia";
-    }
-    else{
-        echo "Błąd dodawania danych";
-    }
-    mysqli_close($conn);
+    
 
 
 
