@@ -49,60 +49,12 @@ function addStudentCard(){
     const zalecenia = document.getElementById("zalecenia").value;
 
     //sprawdz czy wszystkie pola formularza sa wypelnione
-    if (imie_ucznia&
-        nazwisko_ucznia&
-        imie_ojca&
-        imie_matki&
-        wyksztalcenie_ojca&
-        wyksztalcenie_matki&
-        zawod_ojca&
-        zawod_matki&
-        stan_zdrowia_ojca&
-        stan_zdrowia_matki&
-        rok_urodzenia_rodzenstwa_dziecka&
-        stan_zdrowia_rodzenstwa_dziecka&
-        warunki_mieszkaniowe&
-        problemy_w_rodzinie&
-        zachowanie_zdrowotne_i_antyzdrowotne_w_rodzinie&
-        przebyte_choroby&
-        uczulenia&
-        objawy_uczulenia&
-        sluch&
-        wzrok&
-        zez&
-        uzywanie&
-        leki&
-        dolegliwosci_objawy&
-        uwagi_rodzicow&
-        inne_uwagi&
-        wymowa&
-        sprawnosc_fizyczna&
-        uzdolnienia&
-        zachowanie&
-        wyniki_w_nauce&
-        absencja_szkolna&
-        trudnosci_szkolne&
-        relacje_z_rowiesnikami&
-        inne_uwagi_wychowawcy&
-        rozwoj_fizyczny&
-        dojrzewanie_plciowe&
-        tarczyca&
-        rozwoj_psychospoleczny&
-        uklad_ruchu&
-        skora&
-        jama_ustna&
-        pozostale_uklady&
-        problem_zdrowotny&
-        grupa_na_wf&
-        moze_uczestniczyc_w_zawodach&
-        ograniczenie_dotyczace_wyboru_i_nauki_zawodu&
-        zalecenia){
+    if (imie_ucznia && nazwisko_ucznia && imie_ojca && imie_matki && wyksztalcenie_ojca && wyksztalcenie_matki && zawod_ojca && zawod_matki && stan_zdrowia_ojca && stan_zdrowia_matki && rok_urodzenia_rodzenstwa_dziecka && stan_zdrowia_rodzenstwa_dziecka && warunki_mieszkaniowe && problemy_w_rodzinie && zachowanie_zdrowotne_i_antyzdrowotne_w_rodzinie && przebyte_choroby && uczulenia && objawy_uczulenia && sluch && wzrok && zez && uzywanie && leki && dolegliwosci_objawy && uwagi_rodzicow && inne_uwagi && wymowa && sprawnosc_fizyczna && uzdolnienia && zachowanie && wyniki_w_nauce && absencja_szkolna && trudnosci_szkolne && relacje_z_rowiesnikami && inne_uwagi_wychowawcy && rozwoj_fizyczny && dojrzewanie_plciowe && tarczyca && rozwoj_psychospoleczny && uklad_ruchu && skora && jama_ustna && pozostale_uklady && problem_zdrowotny && grupa_na_wf && moze_uczestniczyc_w_zawodach && ograniczenie_dotyczace_wyboru_i_nauki_zawodu && zalecenia ){
         // wszystko wypelnione
         submitAdd(imie_ojca,imie_matki,wyksztalcenie_ojca,wyksztalcenie_matki,zawod_ojca,zawod_matki,stan_zdrowia_ojca,stan_zdrowia_matki,rok_urodzenia_rodzenstwa_dziecka,stan_zdrowia_rodzenstwa_dziecka,warunki_mieszkaniowe,problemy_w_rodzinie,zachowanie_zdrowotne_i_antyzdrowotne_w_rodzinie,przebyte_choroby,uczulenia,objawy_uczulenia,sluch,wzrok,zez,uzywanie,leki,dolegliwosci_objawy,uwagi_rodzicow,inne_uwagi,wymowa,sprawnosc_fizyczna,uzdolnienia,zachowanie,wyniki_w_nauce,absencja_szkolna,trudnosci_szkolne,relacje_z_rowiesnikami,inne_uwagi_wychowawcy,rozwoj_fizyczny,dojrzewanie_plciowe,tarczyca,rozwoj_psychospoleczny,uklad_ruchu,skora,jama_ustna,pozostale_uklady,problem_zdrowotny,grupa_na_wf,moze_uczestniczyc_w_zawodach,ograniczenie_dotyczace_wyboru_i_nauki_zawodu,zalecenia,imie_ucznia,nazwisko_ucznia)
     }
     else{
         //nie wypelnione
-        console.log(imie_ojca,imie_matki,wyksztalcenie_ojca,wyksztalcenie_matki,zawod_ojca,zawod_matki,stan_zdrowia_ojca,stan_zdrowia_matki,rok_urodzenia_rodzenstwa_dziecka,stan_zdrowia_rodzenstwa_dziecka,warunki_mieszkaniowe,problemy_w_rodzinie,zachowanie_zdrowotne_i_antyzdrowotne_w_rodzinie,przebyte_choroby,uczulenia,objawy_uczulenia,sluch,wzrok,zez,uzywanie,leki,dolegliwosci_objawy,uwagi_rodzicow,inne_uwagi,wymowa,sprawnosc_fizyczna,uzdolnienia,zachowanie,wyniki_w_nauce,absencja_szkolna,trudnosci_szkolne,relacje_z_rowiesnikami,inne_uwagi_wychowawcy,rozwoj_fizyczny,dojrzewanie_plciowe,tarczyca,rozwoj_psychospoleczny,uklad_ruchu,skora,jama_ustna,pozostale_uklady,problem_zdrowotny,grupa_na_wf,moze_uczestniczyc_w_zawodach,ograniczenie_dotyczace_wyboru_i_nauki_zawodu,zalecenia,imie_ucznia,nazwisko_ucznia)
         alert("Wypełnij wszystkie pola formularza");
     }
 
@@ -116,8 +68,10 @@ function addStudentCard(){
         xhr.send(data);
         xhr.onreadystatechange = await function(){
             if (xhr.readyState === 4) {
-                if (xhr.status === 2000) {
-                    if (xhr.responseText === "success"){
+                if (xhr.status === 200) {
+                    console.log(xhr.responseText)
+                    if (xhr.responseText === "Dodano karte ucznia"){
+
                         console.log("Dodawanie zakończone pomyślnie")
                         alert("Badanie zostało dodane");
                     }
@@ -132,7 +86,7 @@ function addStudentCard(){
             else{
                 errormsg += xhr.responseText;
             }
-        }
+        }   
         console.log(errormsg);
     }
 }
