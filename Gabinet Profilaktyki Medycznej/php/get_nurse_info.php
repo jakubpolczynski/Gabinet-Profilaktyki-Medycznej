@@ -25,7 +25,7 @@
     }
     else {
         if ($username == 'admin') {
-            echo "administratorze \u{1F604}\u{1F64C}";
+            echo "admin";
         }
         else {
             echo "";
