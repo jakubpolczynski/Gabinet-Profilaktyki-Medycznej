@@ -58,112 +58,114 @@
             <h1>Dodatkowe informacje o dziecku</h1>
 
             <form id="event-form">
-                <div class="form-row">
-                    <div class="form-column">
-                        <h2>Informacje rodzica o dziecku</h2>
-                        <label for="imie_ojca">Imię ojca</label>
-                        <input type="text">
-                        <label for="imie_matki">Imię matki</label>
-                        <input type="text">
-                        <label for="wyksztalcenie_ojca">Wykształcenie ojca</label>
-                        <input type="text">
-                        <label for="wyksztalcenie_matki">Wykształcenie matki</label>
-                        <input type="text">
-                        <label for="zawod_ojca">Zawód ojca</label>
-                        <input type="text">
-                        <label for="zawod_matki">Zawód matki</label>
-                        <input type="text">
-                        <label for="stan_zdrowia_ojca">Stan zdrowia ojca</label>
-                        <input type="text">
-                        <label for="stan_zdrowia_matki">Stan zdrowia matki</label>
-                        <input type="text">
-                        <label for="rok_urodzenia_rodzenstwa_dziecka">Rok urodzenia rodzeństwa dziecka</label>
-                        <input type="date">
-                        <label for="stan_zdrowia_rodzenstwa_dziecka">Stan zdrowia rodzeństwa dziecka</label>
-                        <input type="text">
-                        <label for="warunki_mieszkaniowe">Warunki mieszkaniowe</label>
-                        <input type="text">
-                        <label for="problemy_w_rodzinie">Problemy w rodzinie(zdrowotne, bytowe)</label>
-                        <input type="text">
-                        <label for="zachowanie_zdrowotne_i_antyzdrowotne_w_rodzinie">Zachowania zdrowotne i antyzdrowotne w rodzinie</label>
-                        <input type="text">
-                        <label for="przebyte_choroby">Przebyte przez dziecko choroby, urazy, operacje</label>
-                        <input type="text">
-                        <label for="uczulenia">Ma uczulenie? Na co?</label>
-                        <input type="text">
-                        <label for="objawy_uczulenia">Objawy uczulenia</label>
-                        <input type="text">
-                        <label for="sluch">Słuch</label>
-                        <input type="text">
-                        <label for="wzrok">Wzrok</label>
-                        <input type="text">
-                        <label for="zez">Zez</label>
-                        <input type="text">
-                        <label for="uzywanie">Używa: okulary, aparat ortopedyczny, wkładki ortopedyczne</label>
-                        <input type="text">
-                        <label for="leki">Przyjmuje leki? Jakie?</label>
-                        <input type="text">
-                        <label for="dolegliwosci_objawy">Dolegliwości i objawy, które występowały u dziecka w ostatnich 12 meisiącach</label>
-                        <input type="text">
-                        <label for="uwagi_rodzicow">Czy rodziców niepokoi zachowanie dziecka? Co?</label>
-                        <input type="text">
-                        <label for="inne_uwagi">Inne uwagi i życzenia rodziców</label>
-                        <input type="text">
-                        </div>
-                    <div class="form-column">
-                        <h2>Informacje wychowawcy klasy</h2>
-                        <label for="wymowa">Wymowa (jaka?)</label>
-                        <input type="text">
-                        <label for="sprawnosc_fizyczna">Sprawność fizyczna: powyżej przeciętnej, przeciętna, poniżej przeciętnej</label>
-                        <input type="text">
-                        <label for="uzdoleninia">Uzdolnienia</label>
-                        <input type="text">
-                        <label for="zachowanie">Zachowanie</label>
-                        <input type="text">
-                        <label for="wyniki_w_nauce">Wyniki w nauce: bardzo dobre, dobre, przeciętne, poniżej przeciętnej</label>
-                        <input type="text">
-                        <label for="Absencja_szkolna">Absencja szkolna: powyżej przeciętnej, przeciętna, poniżej przeciętnej</label>
-                        <input type="text">
-                        <label for="trudnosci_szkolne">Trudności szkolne (jakie?)</label>
-                        <input type="text">
-                        <label for="relacjie_z_rowiesnikami">Relacje z rówieśnikami (jakie?)</label>
-                        <input type="text">
-                        <label for="inne_uwagi">Inne uwagi</label>
-                        <input type="text">
-                        <h2>Wyniki badania lekarskiego</h2>
-                        <label for="rozwoj_fifzyczny">Rozwój fizyczny</label>
-                        <input type="text">
-                        <label for="dojrzewanie_plciowe">Dojrzewanie płciowe</label>
-                        <input type="text">
-                        <label for="tarczyca">Tarczyca</label>
-                        <input type="text">
-                        <label for="rozwoj_psychospoleczny">Rozwój psychospołeczny</label>
-                        <input type="text">
-                        <label for="uklad_ruchu">Układ ruchu</label>
-                        <input type="text">
-                        <label for="skora">Skóra</label>
-                        <input type="text">
-                        <label for="jama_ustna">Jama ustna</label>
-                        <input type="text">
-                        <label for="pozostale_uklady">Pozostałe układy</label>
-                        <input type="text">
-                        <label for="problem_zdrowotny">Problem zdrowotny</label>
-                        <input type="text">
-                        <label for="grupa_na_wf">Grupa na zajęchiach wf</label>
-                        <input type="text">
-                        <label for="moze_uczestniczyc_w_zawodach">Może uczestniczyć w zawodach sportowych i sprawdzianach</label>
-                        <input type="text">
-                        <label for="ograniczanie_dotyczace_wyboru_i_nauki_zawodu">Ograniczenia dotyczące wyboru i nauki zawodu (jakie?)</label>
-                        <input type="text">
-                        <label for="zalecenia">Zalecenia</label>
-                        <input type="text">
-                    </div>
+                <div class="form-column">
+                    <h2>Informacje o uczniu</h2>
+                    <label for="imie_ucznia">Imię ucznia</label>
+                    <input type="text" id="imie_ucznia" class="imie_ucznia">
+                    <label for="nazwisko_ucznia">Nazwisko ucznia</label>
+                    <input type="text" id="nazwisko_ucznia" class="nazwisko_ucznia">
+                    <h2>Informacje rodzica o dziecku</h2>
+                    <label for="imie_ojca">Imię ojca</label>
+                    <input type="text" id="imie_ojca" name="imie_ojca">
+                    <label for="imie_matki">Imię matki</label>
+                    <input type="text" id="imie_matki" name="imie_matki">
+                    <label for="wyksztalcenie_ojca">Wykształcenie ojca</label>
+                    <input type="text" id="wyksztalcenie_ojca" name="wyksztalcenie_ojca">
+                    <label for="wyksztalcenie_matki">Wykształcenie matki</label>
+                    <input type="text" id="wyksztalcenie_matki" name="wyksztalcenie_matki">
+                    <label for="zawod_ojca">Zawód ojca</label>
+                    <input type="text" id="zawod_ojca" name="zawod_ojca">
+                    <label for="zawod_matki">Zawód matki</label>
+                    <input type="text" id="zawod_matki" name="zawod_matki">
+                    <label for="stan_zdrowia_ojca">Stan zdrowia ojca</label>
+                    <input type="text" id="stan_zdrowia_ojca" name="stan_zdrowia_ojca">
+                    <label for="stan_zdrowia_matki">Stan zdrowia matki</label>
+                    <input type="text" id="stan_zdrowia_matki" name="stan_zdrowia_matki">
+                    <label for="rok_urodzenia_rodzenstwa_dziecka">Rok urodzenia rodzeństwa dziecka</label>
+                    <input type="text" id="rok_urodzenia_rodzenstwa_dziecka" name="rok_urodzenia_rodzenstwa_dziecka">
+                    <label for="stan_zdrowia_rodzenstwa_dziecka">Stan zdrowia rodzeństwa dziecka</label>
+                    <input type="text" id="stan_zdrowia_rodzenstwa_dziecka" name="stan_zdrowia_rodzenstwa_dziecka">
+                    <label for="warunki_mieszkaniowe">Warunki mieszkaniowe</label>
+                    <input type="text" id="warunki_mieszkaniowe" name="warunki_mieszkaniowe">
+                    <label for="problemy_w_rodzinie">Problemy w rodzinie(zdrowotne, bytowe)</label>
+                    <input type="text" id="problemy_w_rodzinie" name="problemy_w_rodzinie">
+                    <label for="zachowanie_zdrowotne_i_antyzdrowotne_w_rodzinie">Zachowania zdrowotne i antyzdrowotne w rodzinie</label>
+                    <input type="text" id="zachowanie_zdrowotne_i_antyzdrowotne_w_rodzinie" name="zachowanie_zdrowotne_i_antyzdrowotne_w_rodzinie">
+                    <label for="przebyte_choroby">Przebyte przez dziecko choroby, urazy, operacje</label>
+                    <input type="text" id="przebyte_choroby" name="przebyte_choroby">
+                    <label for="uczulenia">Ma uczulenie? Na co?</label>
+                    <input type="text" id="uczulenia" name="uczulenia">
+                    <label for="objawy_uczulenia">Objawy uczulenia</label>
+                    <input type="text" id="objawy_uczulenia" name="objawy_uczulenia">
+                    <label for="sluch">Słuch</label>
+                    <input type="text" id="sluch" name="sluch">
+                    <label for="wzrok">Wzrok</label>
+                    <input type="text" id="wzrok" name="wzrok">
+                    <label for="zez">Zez</label>
+                    <input type="text" id="zez" name="zez">
+                    <label for="uzywanie">Używa: okulary, aparat ortopedyczny, wkładki ortopedyczne</label>
+                    <input type="text" id="uzywanie" name="uzywanie">
+                    <label for="leki">Przyjmuje leki? Jakie?</label>
+                    <input type="text" id="leki" name="leki">
+                    <label for="dolegliwosci_objawy">Dolegliwości i objawy, które występowały u dziecka w ostatnich 12 meisiącach</label>
+                    <input type="text" id="dolegliwosci_objawy" name="dolegliwosci_objawy">
+                    <label for="uwagi_rodzicow">Czy rodziców niepokoi zachowanie dziecka? Co?</label>
+                    <input type="text" id="uwagi_rodzicow" name="uwagi_rodzicow">
+                    <label for="inne_uwagi">Inne uwagi i życzenia rodziców</label>
+                    <input type="text" id="inne_uwagi" name="inne_uwagi">
                 </div>
-                <button type="button" onclick="addStudentCard()">Dodaj</button>
+                <div class="form-column">
+                    <h2>Informacje wychowawcy klasy</h2>
+                    <label for="wymowa">Wymowa (jaka?)</label>
+                    <input type="text" id="wymowa" name="wymowa">
+                    <label for="sprawnosc_fizyczna">Sprawność fizyczna: powyżej przeciętnej, przeciętna, poniżej przeciętnej</label>
+                    <input type="text" id="sprawnosc_fizyczna" name="sprawnosc_fizyczna">
+                    <label for="uzdoleninia">Uzdolnienia</label>
+                    <input type="text" id="uzdolnienia" name="uzdolnienia">
+                    <label for="zachowanie">Zachowanie</label>
+                    <input type="text" id="zachowanie" name="zachowanie">
+                    <label for="wyniki_w_nauce">Wyniki w nauce: bardzo dobre, dobre, przeciętne, poniżej przeciętnej</label>
+                    <input type="text" id="wyniki_w_nauce" name="wyniki_w_nauce">
+                    <label for="absencja_szkolna">Absencja szkolna: powyżej przeciętnej, przeciętna, poniżej przeciętnej</label>
+                    <input type="text" id="absencja_szkolna" name="absencja_szkolna">
+                    <label for="trudnosci_szkolne">Trudności szkolne (jakie?)</label>
+                    <input type="text" id="trudnosci_szkolne" name="trudnosci_szkolne">
+                    <label for="relacje_z_rowiesnikami">Relacje z rówieśnikami (jakie?)</label>
+                    <input type="text" id="relacje_z_rowiesnikami" name="relacje_z_rowiesnikami">
+                    <label for="inne_uwagi_wychowawcy">Inne uwagi</label>
+                    <input type="text" id="inne_uwagi_wychowawcy" name="inne_uwagi_wychowawcy">
+                    <h2>Wyniki badania lekarskiego</h2>
+                    <label for="rozwoj_fizyczny">Rozwój fizyczny</label>
+                    <input type="text" id="rozwoj_fizyczny" name="rozwoj_fizyczny">
+                    <label for="dojrzewanie_plciowe">Dojrzewanie płciowe</label>
+                    <input type="text" id="dojrzewanie_plciowe" name="dojrzewanie_plciowe">
+                    <label for="tarczyca">Tarczyca</label>
+                    <input type="text" id="tarczyca" name="tarczyca">
+                    <label for="rozwoj_psychospoleczny">Rozwój psychospołeczny</label>
+                    <input type="text" id="rozwoj_psychospoleczny" name="rozwoj_psychospoleczny">
+                    <label for="uklad_ruchu">Układ ruchu</label>
+                    <input type="text" id="uklad_ruchu" name="uklad_ruchu">
+                    <label for="skora">Skóra</label>
+                    <input type="text" id="skora" name="skora">
+                    <label for="jama_ustna">Jama ustna</label>
+                    <input type="text" id="jama_ustna" name="jama_ustna">
+                    <label for="pozostale_uklady">Pozostałe układy</label>
+                    <input type="text" id="pozostale_uklady" name="pozostale_uklady">
+                    <label for="problem_zdrowotny">Problem zdrowotny</label>
+                    <input type="text" id="problem_zdrowotny" name="problem_zdrowotny">
+                    <label for="grupa_na_wf">Grupa na zajęchiach wf</label>
+                    <input type="text" id="grupa_na_wf" name="grupa_na_wf">
+                    <label for="moze_uczestniczyc_w_zawodach">Może uczestniczyć w zawodach sportowych i sprawdzianach</label>
+                    <input type="text" id="moze_uczestniczyc_w_zawodach" name="moze_uczestniczyc_w_zawodach">
+                    <label for="ograniczenie_dotyczace_wyboru_i_nauki_zawodu">Ograniczenia dotyczące wyboru i nauki zawodu (jakie?)</label>
+                    <input type="text" id="ograniczenie_dotyczace_wyboru_i_nauki_zawodu" name="ograniczenie_dotyczace_wyboru_i_nauki_zawodu">
+                    <label for="zalecenia">Zalecenia</label>
+                    <input type="text" id="zalecenia" name="zalecenia">
+                    <button type="button" onclick="addStudentCard()">Dodaj</button>
+               </div>
             </form>
         </div>
     <script src="../scripts/student_card.js"></script>
     <script src="../scripts/verification.js"></script>
-    <script src="../scripts/examination_events.js"></script>
 </body>
 </html>
