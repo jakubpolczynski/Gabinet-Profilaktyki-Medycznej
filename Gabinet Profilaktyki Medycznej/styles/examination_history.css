@@ -28,6 +28,11 @@ body {
   width: 16%;
 }
 
+/* usunięcie podkreślenia z linka do strony głównej */
+.lewa > a {
+  text-decoration:none;
+}
+
 /* Style dla tekstu-loga nagłówka */
 .naglowek h3 {
   margin-left: 24px;
@@ -52,28 +57,19 @@ body {
   display: flex;
 }
 
-/* wygląd prostokąta nad obecnie otwartą stroną */
-.lewa canvas {
-  position: absolute;
-  top:0;
-  left:0;
-  width:inherit;
-  height: 6px;
-  background-color: white;
-}
-
 /* wygląd wszystkich elementów ol */
 ol {
   list-style-type: none;
+  padding:16px;
 }
 
 /* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
 ol a {
   text-decoration:none;
   text-align: center;
-  margin-left: 1.1vw;
-  margin-right: 1.4vw;
-  font-size:1.35em;
+  margin-left: 1.8vw;
+  margin-right: 1.8vw;
+  font-size:1.6em;
   color:#ffffff;
 }
 
@@ -88,9 +84,19 @@ ol > li {
   display: inline-block;
 }
 
+/* wygląd prostokąta nad obecnie otwartą stroną */
+ol > li > canvas{
+  position: absolute;
+  top: 0;
+  left:inherit;
+  width: 16vw;
+  height: 6px;
+  background-color: white;
+}
+
 /* wygląd elementu - a - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
 ol > li:hover > a {
-  color:#ffffff;
+  color:#144dbe;
 }
 
 /* wygląd trójkąta po najechaniu na cały blok a */
