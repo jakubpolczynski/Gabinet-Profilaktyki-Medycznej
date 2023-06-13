@@ -167,8 +167,7 @@ ol > li > ul > li:hover > a {
   .nawigacja a:first-child {
     position: absolute;
     left: 30px;
-    background-color: #ccc;
-    pointer-events: none;
+    background-color: #0084ff;
   }
   
   .nawigacja a:last-child {
@@ -179,6 +178,10 @@ ol > li > ul > li:hover > a {
   
   .nawigacja a:last-child:hover {
     background-color: #2d4373;
+  }
+
+  .nawigacja a:first-child:hover {
+    background-color: #0c2251;
   }
   
   .zawartosc {

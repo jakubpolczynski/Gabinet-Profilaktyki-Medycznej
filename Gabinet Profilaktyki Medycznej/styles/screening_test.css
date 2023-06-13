@@ -173,12 +173,15 @@ ol > li > ul > li:hover > a {
 .nawigacja a:last-child {
   position: absolute;
   right: 30px;
-  background-color: #ccc;
-  pointer-events: none;
+  background-color: #0084ff;
 }
 
 .nawigacja a:first-child:hover {
   background-color: #2d4373;
+}
+
+.nawigacja a:last-child:hover {
+  background-color: #0c2251;
 }
 
 .zawartosc {
