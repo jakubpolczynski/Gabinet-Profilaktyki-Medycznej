@@ -227,7 +227,6 @@ ol > li > ul > li:hover > a {
     bottom: 0;
     width: 100%;
     box-sizing: border-box;
-    text-align: center;
     background-color: #f1f1f1; /* Kolor tła */
     padding: 20px; /* Wewnętrzny margines */
     border: 1px solid #ccc; /* Ramka */
@@ -235,6 +234,19 @@ ol > li > ul > li:hover > a {
     font-family: Arial, sans-serif; /* Czcionka */
     font-size: 14px; /* Rozmiar czcionki */
     color: #333; /* Kolor tekstu */
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   }
+
+   #student_card-names {
+    flex: 50%;
+    margin-bottom: 2rem;
+   }
+
+   #student_card-content {
+    flex: 50%;
    }
 
    button:active {

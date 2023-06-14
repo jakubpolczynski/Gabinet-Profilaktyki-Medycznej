@@ -233,14 +233,12 @@ ol > li > ul > li:hover > a {
     font-family: Arial, sans-serif; /* Czcionka */
     font-size: 14px; /* Rozmiar czcionki */
     color: #333; /* Kolor tekstu */
-    width: 100%;
     margin-top: 3rem;
 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
    }
 
    #examination-names {

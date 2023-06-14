@@ -24,14 +24,25 @@ async function printStudentCard(){
                     events = cutEvent(response);
                     var ecc = document.getElementById('student_card-content-container')
                     for (let items of events){
+                        var student_card_names = document.createElement("div");
+                        student_card_names.id = "student_card-names";
+
                         var student_card_content = document.createElement("div");
-                        student_card_content.id = "student_card_content";
+                        student_card_content.id = "student_card-content";
                         arr = cutParts(items);
                         for (let item of arr){
-                            var student_card_paragraph = document.createElement('p');
-                            student_card_paragraph.id = "student_card_paragraph";
-                            student_card_paragraph.innerText = item;
-                            student_card_content.appendChild(student_card_paragraph);
+                            var student_card_paragraph1 = document.createElement('p');
+                            student_card_paragraph1.id = "student_card_paragraph";
+                            student_card_paragraph1.innerText = item.split(" - ")[0];
+
+                            var student_card_paragraph2 = document.createElement('p');
+                            student_card_paragraph2.id = "student_card_paragraph";
+                            student_card_paragraph2.innerText = item.split(" - ")[1];
+
+                            student_card_names.appendChild(student_card_paragraph1);
+                            student_card_content.appendChild(student_card_paragraph2);
+
+                            ecc.appendChild(student_card_names);
                             ecc.appendChild(student_card_content);
                         }
                     }
