@@ -37,18 +37,26 @@ async function printExaminations() {
                     var ecc = document.getElementById("examination-content-container");
                     for (let items of events)
                     {
+                        var examination_names = document.createElement("div")
+                        examination_names.id = "examination-names";
+
                         var examination_content = document.createElement("div")
                         examination_content.id = "examination-content";
                         arr = cutParts(items);
                         for (let item of arr)
                         {
+                            var examination_paragraph1 = document.createElement("p");
+                            examination_paragraph1.id = "examination_p_content";
+                            examination_paragraph1.innerText = item.split(" - ")[0];
 
+                            var examination_paragraph2 = document.createElement("p");
+                            examination_paragraph2.id = "examination_p_content";
+                            examination_paragraph2.innerText = item.split(" - ")[1];
     
-                            var examination_paragraph = document.createElement("p");
-                            examination_paragraph.id = "examination_p_content";
-                            examination_paragraph.innerText = item;
-    
-                            examination_content.appendChild(examination_paragraph)
+                            examination_names.appendChild(examination_paragraph1)
+                            examination_content.appendChild(examination_paragraph2)
+
+                            ecc.appendChild(examination_names);
                             ecc.appendChild(examination_content);
                         }
                            

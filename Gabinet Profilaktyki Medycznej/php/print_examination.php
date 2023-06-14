@@ -251,22 +251,22 @@
                 $result_u = mysqli_query($conn1, $sql_uczen);
                 $result_k = mysqli_query($conn1, $sql_klasa);
     
-                echo "Badanie pielęgniarskie;";
+                echo "Rodzaj badania - Badanie pielęgniarskie;";
                 while($row_u = mysqli_fetch_assoc($result_u))
                 {
-                    echo $row_u['imie'].";";
-                    echo $row_u['nazwisko'].";";
+                    echo 'Imie - '.$row_u['imie'].";";
+                    echo 'Nazwisko - '.$row_u['nazwisko'].";";
                 }
                 while($row_k = mysqli_fetch_assoc($result_k))
                 {
-                    echo $row_k['nazwaKlasy'].";";
+                    echo 'Klasa - '.$row_k['nazwaKlasy'].";";
                 }
     
-                echo $row['dataBadania'].";";
-                echo $row['godzinaBadania'].";";
-                echo $row['powodBadania'].";";
-                echo $row['przeprowadzoneCzynnosci'].";"; 
-                echo $row['uwagi']."|";
+                echo 'Data badania - '.$row['dataBadania'].";";
+                echo 'Godzina badania - '.$row['godzinaBadania'].";";
+                echo 'Powód badania - '.$row['powodBadania'].";";
+                echo 'Przeprowadzone czynności - '.$row['przeprowadzoneCzynnosci'].";"; 
+                echo 'Uwagi - '.$row['uwagi']."|";
             }
         }
         
@@ -276,7 +276,6 @@
     
         // Jeśli znaleziono wydarzenia, wysyłamy opodwiedź "success"
         if(mysqli_num_rows($result1)>0) {
-            echo "|";
 
             while($row = mysqli_fetch_assoc($result1))
             {
@@ -291,22 +290,22 @@
                 $result_u = mysqli_query($conn1, $sql_uczen);
                 $result_k = mysqli_query($conn1, $sql_klasa);
     
-                echo "Badanie przesiewowe;";
+                echo "Rodzaj badania - Badanie przesiewowe;";
                 while($row_u = mysqli_fetch_assoc($result_u))
                 {   
-                    echo $row_u['imie'].";";
-                    echo $row_u['nazwisko'].";";
+                    echo 'Imie - '.$row_u['imie'].";";
+                    echo 'Nazwisko - '.$row_u['nazwisko'].";";
                 }
                 while($row_k = mysqli_fetch_assoc($result_k))
                 {
-                    echo $row_k['nazwaKlasy'].";";
+                    echo 'Klasa - '.$row_k['nazwaKlasy'].";";
                 }
     
-                echo $row['dataBilansu'].";";
-                echo $row['wzrost'].";";
-                echo $row['waga'].";"; 
-                echo $row['cisnienie'].";"; 
-                echo $row['inneUwagi']."|"; 
+                echo 'Data badania - '.$row['dataBilansu'].";";
+                echo 'Wzrost - '.$row['wzrost'].";";
+                echo 'Waga - '.$row['waga'].";"; 
+                echo 'Ciśnienie - '.$row['cisnienie'].";"; 
+                echo 'Uwagi - '.$row['inneUwagi']."|"; 
             }
         }
     
