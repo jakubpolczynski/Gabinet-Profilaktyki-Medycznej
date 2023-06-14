@@ -183,13 +183,13 @@ ol > li > ul > li:hover > a {
   }
 
   .radio_bttn label {
-    display: block;
-    background-color: black;
+    display: flex;
+    align-items: center;
   }
   
   .radio_bttn input[type="radio"] {
-    display: inline-block;
-  }
+    margin-left: 10px;
+  }  
   
   input[type="text"],
   input[type="date"],
