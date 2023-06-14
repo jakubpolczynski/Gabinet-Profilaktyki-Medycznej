@@ -18,7 +18,7 @@ $name = basename($file);
 $from_name = $_POST['nurse'];
 $from_mail = "ipz.gabinet@gmail.com";
 $replyto = "ipz.gabinet@gmail.com";
-$to = "czewho@gmail.com";
+$to = "xspoczko111@gmail.com";
 $subject = "Badanie - ".$name_surname;
 $message = "Badanie z dnia: ".$date;
 
