@@ -223,7 +223,7 @@ ol > li > ul > li:hover > a {
     }
 
    #student_card-content-container {
-    display:none;
+    /* display:none; */
     bottom: 0;
     width: 100%;
     box-sizing: border-box;

@@ -224,18 +224,3 @@ ol > li > ul > li:hover > a {
     button[type="button"]:hover {
       background-color: rgb(25, 0, 186);
     }
-
-    #examination-content-container {
-        display:none;
-        bottom: 0;
-        width: 100%;
-        box-sizing: border-box;
-        text-align: center;
-        background-color: #f1f1f1; /* Kolor tła */
-        padding: 20px; /* Wewnętrzny margines */
-        border: 1px solid #ccc; /* Ramka */
-        border-radius: 4px; /* Zaokrąglenie rogów */
-        font-family: Arial, sans-serif; /* Czcionka */
-        font-size: 14px; /* Rozmiar czcionki */
-        color: #333; /* Kolor tekstu */
-       }

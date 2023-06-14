@@ -30,7 +30,8 @@ async function archiveExaminations() {
         xhr.onreadystatechange = await function() {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
-                    console.log("Archiwizacja przebiegła pomyślnie")
+                    console.log("Archiwizacja przebiegła pomyddfsdfdślnie")
+                    alert("Archiwizacja przebiegła pomyślnie");
                     var response = xhr.responseText;
                     events = cutEvent(response);
                     var ecc = document.getElementById("examination-content-container");
