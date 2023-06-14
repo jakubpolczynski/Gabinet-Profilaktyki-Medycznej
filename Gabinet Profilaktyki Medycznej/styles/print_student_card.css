@@ -236,3 +236,8 @@ ol > li > ul > li:hover > a {
     font-size: 14px; /* Rozmiar czcionki */
     color: #333; /* Kolor tekstu */
    }
+
+   button:active {
+    position:relative;
+    top:2px;
+  }
