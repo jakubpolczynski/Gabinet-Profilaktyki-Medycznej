@@ -24,7 +24,12 @@
         }
     }
     else {
-        echo "Brak pielęgniarek";
+        if ($username == 'admin') {
+            echo "admin";
+        }
+        else {
+            echo "";
+        }
     }
 
     mysqli_close($conn);

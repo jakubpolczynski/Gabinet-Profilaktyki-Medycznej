@@ -89,7 +89,7 @@ ol > li > canvas{
   position: absolute;
   top: 0;
   left:inherit;
-  width: 16vw;
+  width: 20vw;
   height: 6px;
   background-color: white;
 }
@@ -147,10 +147,11 @@ ol > li > ul > li:hover > a {
   color:white;
 }
 
-/* ------------------------STRONA GŁÓWNA------------------------ */
-  
-  .zawartosc {
+/* ------------------------ARCHIWIZACJA------------------------ */
+
+.zawartosc {
     background-color: rgba(255, 255, 255, 0.703);
+    margin-top: 10vh;
     margin-left: 25vw;
     margin-right: 25vw;
     border-radius: 40px;
@@ -163,7 +164,7 @@ ol > li > ul > li:hover > a {
     padding:  24px;
     text-align: center;
   }
-
+  
   #event-form {
     display: flex;
     flex-wrap: wrap;
@@ -180,12 +181,15 @@ ol > li > ul > li:hover > a {
     padding: 32px;
     padding-top: 0px;
   }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+
+  .radio_bttn label {
+    display: flex;
+    align-items: center;
   }
+  
+  .radio_bttn input[type="radio"] {
+    margin-left: 10px;
+  }  
   
   input[type="text"],
   input[type="date"],
@@ -200,9 +204,9 @@ ol > li > ul > li:hover > a {
   }
 
   button[type="button"] {
-    width: 20%;
-    margin-left: 40%;
-    margin-bottom: 2vh;
+    width: 30%;
+    margin-left: 35%;
+    margin-bottom: 4vh;
     text-align: center;
     text-transform: uppercase;
     background-color: #0085d7; /* light green color */
@@ -221,17 +225,17 @@ ol > li > ul > li:hover > a {
       background-color: rgb(25, 0, 186);
     }
 
-   #examination-content-container {
-    display:none;
-    bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-    background-color: #f1f1f1; /* Kolor tła */
-    padding: 20px; /* Wewnętrzny margines */
-    border: 1px solid #ccc; /* Ramka */
-    border-radius: 4px; /* Zaokrąglenie rogów */
-    font-family: Arial, sans-serif; /* Czcionka */
-    font-size: 14px; /* Rozmiar czcionki */
-    color: #333; /* Kolor tekstu */
-   }
+    #examination-content-container {
+        display:none;
+        bottom: 0;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: #f1f1f1; /* Kolor tła */
+        padding: 20px; /* Wewnętrzny margines */
+        border: 1px solid #ccc; /* Ramka */
+        border-radius: 4px; /* Zaokrąglenie rogów */
+        font-family: Arial, sans-serif; /* Czcionka */
+        font-size: 14px; /* Rozmiar czcionki */
+        color: #333; /* Kolor tekstu */
+       }

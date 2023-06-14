@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,800');
+
+* {
+	margin: 0;
+  padding:0;
+	box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(127.9deg, #1D4DF6 -55.09%, #7BF99E 127.82%);
+}
+
+.zawartosc {
+    background-color: rgba(255, 255, 255, 0.703);
+    margin-left: 25vw;
+    margin-right: 25vw;
+    border-radius: 40px;
+    width: 50vw;
+  }
+
+  h1 {
+    font-size: 32px;
+    color:#2c2c2c;
+    padding:  24px;
+    text-align: center;
+  }
+
+  #event-form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .form-column {
+    flex: 1;
+    padding: 32px;
+    padding-top: 0px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 24px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="time"] {
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 10px;
+    border: 2px solid #aeaeae;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  button[type="button"] {
+    width: 20%;
+    margin-left: 40%;
+    margin-bottom: 2vh;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #0085d7; /* light green color */
+    color: #fff; /* white text color */
+    padding: 8px 12px; /* increase padding for bigger button */
+    border-radius: 50px; /* make the button more round */
+    font-size: 1.6rem; /* increase font size */
+    cursor: pointer;
+    border: none; /* remove border */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* add shadow */
+    /* padding-bottom: 10px; */
+  }
+    
+    
+    button[type="button"]:hover {
+      background-color: rgb(25, 0, 186);
+    }

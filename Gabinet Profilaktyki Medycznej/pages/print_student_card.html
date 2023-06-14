@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../styles/examination_history.css">
+    <link rel="stylesheet" href="../styles/print_student_card.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabinet Profilaktyki Medycznej</title>
     <link rel="shortcut icon" href="../images/logo.svg">
@@ -27,42 +27,35 @@
 
         <li><a href="calendar.html">Terminarz</a></li>
 
-        <li><canvas></canvas><a href="examination_history.html">Historia badań</a></li>
+        <li><a href="examination_history.html">Historia badań</a></li>
 
         <li><a href="archiving.html">Archiwizacja badań</a></li>
 
-        <li><a href="print_student_card.html">Karta ucznia</a></li>
+        <li><canvas></canvas><a href="print_student_card.html">Karta ucznia</a></li>
       </ol>
     </div>
   </div>
-
       <div class="zawartosc">
-        <h1>Wyszukaj badanie</h1>
+        <h1>Wyszukaj karte ucznia</h1>
 
         <form id="event-form">
             <div class="form-row">
                 <div class="form-column">
-                    <label for="print_examination_dateL">Od:</label>
-                    <input type="date" id="print_examination_dateL" name="print_examination_dateL"><br>
-                    <label for="print_examination_dateR">Do:</label>
-                    <input type="date" id="print_examination_dateR" name="print_examination_dateR"><br>
-                    <label for="print_examination_class">Klasa:</label>
-                    <input type="text" id="print_examination_class" name="print_examination_class"><br>
-                    <label for="print_examination_fname">Imię:</label>
-                    <input type="text" id="print_examination_fname" name="print_examination_fname"><br>
-                    <label for="print_examination_lname">Nazwisko:</label>
-                    <input type="text" id="print_examination_lname" name="print_examination_lname"><br>
+                    <label for="fname">Imię ucznia:</label>
+                    <input type="text" id="fname" name="fname"><br>
+                    <label for="lname">Nazwisko ucznia:</label>
+                    <input type="text" id="lname" name="lname"><br>
                 </div>
             </div>
 
-            <button type="button" onclick="printExaminations()">Szukaj</button>
+            <button type="button" onclick="printStudentCard()">Szukaj</button>
 
             
 
-            <div id="examination-content-container"></div>
+            <div id="student_card-content-container"></div>
         </form>
       </div>
-    <script src="../scripts/print_examination.js"></script>
+    <script src="../scripts/print_student_card.js"></script>
     
     <script src="../scripts/verification.js"></script>
 </body>

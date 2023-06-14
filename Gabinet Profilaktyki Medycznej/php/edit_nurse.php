@@ -17,7 +17,7 @@
     //Sprawdzamy czy pielegniarka istnieje
     $sql = "SELECT imie, nazwisko FROM pielegniarki WHERE login='$username'";
     $result = mysqli_query($conn, $sql);
-    if(!mysqli_num_rows($result)>0){
+    if(!mysqli_num_rows($result)>0) {
         echo "Pielegniarka nie istnieje";
     }
     else {
@@ -28,7 +28,14 @@
             echo "Błąd edycji";
         }
         else
-            echo "success";
+            $sql = "UPDATE logowanie SET login='$newUsername', haslo='$newPassword'";
+            $result = mysqli_query($conn, $sql);
+            if($result != 1) {
+                echo "Błąd edycji";
+            }
+            else {
+                echo "success";
+            }
     }
 
 
