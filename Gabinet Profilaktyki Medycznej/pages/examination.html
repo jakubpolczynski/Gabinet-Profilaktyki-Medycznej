@@ -81,7 +81,7 @@
             <input type="text" id="add_examination_comments" name="add_examination_comments"><br>
             </div>
         </div>
-        <button type="button" onclick="addExamination()">Dodaj</button>
+        <button type="button" onclick="createPDF(); sendMail()">Dodaj</button>
         </form>
     </div>
     <!-- <h1>Nowe badanie pielęgniarskie</h1>
@@ -112,5 +112,7 @@
     <script src="../scripts/examination.js"></script>
     <script src="../scripts/verification.js"></script>
     <script src="../scripts/examination_events.js" defer></script>
+    <script src="../scripts/pdf_badanie.js" defer></script>
+    <script src="../scripts/mail_badanie.js" defer></script>
 </body>
 </html>
