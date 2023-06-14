@@ -187,7 +187,7 @@ ol > li > ul > li:hover > a {
 .zawartosc {
   background-color: rgba(255, 255, 255, 0.703);
   margin-top: 0px;
-  margin-bottom: 12px;
+  margin-bottom: 32px;
   margin-left: 32px;
   margin-right: 32px;
   border-radius: 40px;
@@ -229,7 +229,7 @@ h1 {
   input[type="time"] {
     width: 100%;
     padding: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     border: 2px solid #aeaeae;
     border-radius: 4px;
     box-sizing: border-box;

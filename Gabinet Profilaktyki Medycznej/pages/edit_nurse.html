@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="../styles/edit_nurse.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pane Administratora</title>
+    <link rel="shortcut icon" href="../images/logo.svg">
 </head>
 <body onload="verifyAdmin('username')">
-    <form id="event-form">
-        <label for="edit_nurse_username">Nazwa użytkownika pielęgniarki:</label>
-        <input type="text" id="edit_nurse_username" name="edit_nurse_username"><br>
-        <label for="edit_nurse_new_firstname">Nowe imię:</label>
-        <input type="text" id="edit_nurse_new_firstname" name="edit_nurse_new_firstname"><br>
-        <label for="edit_nurse_new_surname">Nowe nazwisko:</label>
-        <input type="text" id="edit_nurse_new_surname" name="edit_nurse_new_surname"><br>
-        <label for="edit_nurse_new_username">Nowa nazwa użytkownika pielęgniarki:</label>
-        <input type="text" id="edit_nurse_new_username" name="edit_nurse_new_username"><br>
-        <label for="edit_nurse_new_password">Nowe hasło pielęgniarki:</label>
-        <input type="text" id="edit_nurse_new_password" name="edit_nurse_new_password"><br>
-
-        <button type="button" onclick="editNurse()">Dodaj</button>
-        
-    </form>
-
+    <h1>Edytuj dane pielęgniarki</h1>
+    <div class="zawartosc">
+        <form id="event-form">
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="edit_nurse_username">Nazwa użytkownika pielęgniarki:</label>
+                    <input type="text" id="edit_nurse_username" name="edit_nurse_username"><br>
+                    <label for="edit_nurse_new_firstname">Nowe imię:</label>
+                    <input type="text" id="edit_nurse_new_firstname" name="edit_nurse_new_firstname"><br>
+                    <label for="edit_nurse_new_surname">Nowe nazwisko:</label>
+                    <input type="text" id="edit_nurse_new_surname" name="edit_nurse_new_surname"><br>
+                    <label for="edit_nurse_new_username">Nowa nazwa użytkownika pielęgniarki:</label>
+                    <input type="text" id="edit_nurse_new_username" name="edit_nurse_new_username"><br>
+                    <label for="edit_nurse_new_password">Nowe hasło pielęgniarki:</label>
+                    <input type="text" id="edit_nurse_new_password" name="edit_nurse_new_password"><br>
+                </div>
+            </div>
+            <button type="button" onclick="editNurse()">Edytuj</button>
+            
+        </form>
+    </div>
     <script src="../scripts/edit_nurse.js"></script>
     <script src="../scripts/verification.js"></script>
 </body>

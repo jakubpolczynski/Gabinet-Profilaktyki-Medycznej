@@ -1,34 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="../styles/archiving.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabinet Profilaktyki Medycznej</title>
-    <link rel="shortcut icon" href="logo.svg">
+    <link rel="shortcut icon" href="../images/logo.svg">
 </head>
 <body onload="verifyCookie('username')">
-    <a href="calendar.html">Kalendarz</a>
-
+    <div class="naglowek">
+        <div class="lewa">
+          <a href="start_page.html"><h3>Gabinet<br>Pielęgniarki<br>Szkolnej</h3></a>
+          <img src="../images/logo.png"/>
+        </div>
+        
+        <div class="prawa">
+          <ol>
+            <li><a href="#">Badania<span>&#9660;</span></a>
+              <ul>
+                <li><a href="examination.html">Nowe badanie</a></li>
+                <li><a href="screening_test.html">Badanie przesiewowe</a></li>
+                <li><a href="student_card.html">Uzupełnij kartę ucznia</a></li>
+              </ul>
+            </li>
+    
+            <li><a href="calendar.html">Terminarz</a></li>
+    
+            <li><a href="examination_history.html">Historia badań</a></li>
+    
+            <li><canvas></canvas><a href="archiving.html">Archiwizacja badań</a></li>
+    
+            <li><a href="print_student_card.html">Karta ucznia</a></li>
+          </ol>
+        </div>
+      </div>
+<div class="zawartosc">
     <h1>Archiwizuj badanie</h1>
 
     <form id="event-form">
-        <label for="archive_examination_dateL">Od:</label>
-        <input type="date" id="archive_examination_dateL" name="archive_examination_dateL"><br>
-        <label for="archive_examination_dateR">Do:</label>
-        <input type="date" id="archive_examination_dateR" name="archive_examination_dateR"><br>
-
-        <label for="examination">Badania pielęgniarskie</label>
-        <input type="radio" id="radio_examination" name="examination_type" value="badaniapielegniarskie"><br>
-        <label for="screening_test">Badania przesiewowe</label>
-        <input type="radio" id="radio_screening_test" name="examination_type" value="badaniaprzesiewowe"><br>
-
+        <div class="form-row">
+            <div class="form-column">
+                <label for="archive_examination_dateL">Od:</label>
+                <input type="date" id="archive_examination_dateL" name="archive_examination_dateL"><br>
+                <label for="archive_examination_dateR">Do:</label>
+                <input type="date" id="archive_examination_dateR" name="archive_examination_dateR"><br>
+                <div class="radio_bttn">
+                    <label for="examination">Badania pielęgniarskie</label>
+                    <input type="radio" id="radio_examination" name="examination_type" value="badaniapielegniarskie"><br>
+                    <label for="screening_test">Badania przesiewowe</label>
+                    <input type="radio" id="radio_screening_test" name="examination_type" value="badaniaprzesiewowe"><br>
+                </div>
+            </div>
+        </div>
         <button type="button" onclick="archiveExaminations()">Archiwizuj</button>
 
         <div id="examination-content-container"></div>
         
     </form>
-
+</div>
     <script src="../scripts/archive_examination.js"></script>
     <script src="../scripts/verification.js"></script>
 </body>

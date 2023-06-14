@@ -89,7 +89,7 @@ ol > li > canvas{
   position: absolute;
   top: 0;
   left:inherit;
-  width: 16vw;
+  width: 15vw;
   height: 6px;
   background-color: white;
 }
@@ -151,6 +151,7 @@ ol > li > ul > li:hover > a {
   
   .zawartosc {
     background-color: rgba(255, 255, 255, 0.703);
+    margin-top: 10vh;
     margin-left: 25vw;
     margin-right: 25vw;
     border-radius: 40px;
@@ -163,7 +164,7 @@ ol > li > ul > li:hover > a {
     padding:  24px;
     text-align: center;
   }
-
+  
   #event-form {
     display: flex;
     flex-wrap: wrap;
@@ -221,7 +222,7 @@ ol > li > ul > li:hover > a {
       background-color: rgb(25, 0, 186);
     }
 
-   #examination-content-container {
+   #student_card-content-container {
     display:none;
     bottom: 0;
     width: 100%;
