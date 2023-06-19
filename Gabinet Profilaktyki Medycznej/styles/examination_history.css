@@ -223,17 +223,24 @@ ol > li > ul > li:hover > a {
 
    #examination-content-container {
     display:none;
-    bottom: 0;
-    width: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 15vw;
+    top: 17vh;
+    width: 70vw;
+    height: auto;
+    overflow: auto;
     box-sizing: border-box;
-    background-color: #f1f1f1; /* Kolor tła */
-    padding: 20px; /* Wewnętrzny margines */
-    border-bottom: 1px solid #ccc; /* Ramka */
-    border-left: 1px solid #ccc; /* Ramka */
-    border-right: 1px solid #ccc; /* Ramka */
-    border-radius: 4px; /* Zaokrąglenie rogów */
+    text-align: center;
+    background-color: #fbfbfb; /* Kolor tła */
+    padding: 36px; /* Wewnętrzny margines */
+    padding-top: 72px;
+    border-bottom: 1px solid #ababab; /* Ramka */
+    border-left: 1px solid #ababab; /* Ramka */
+    border-right: 1px solid #ababab; /* Ramka */
+    border-radius: 40px; /* Zaokrąglenie rogów */
     font-family: Arial, sans-serif; /* Czcionka */
-    font-size: 14px; /* Rozmiar czcionki */
+    font-size: 16px; /* Rozmiar czcionki */
     color: #333; /* Kolor tekstu */
 
     /* display: flex; */
@@ -257,23 +264,24 @@ ol > li > ul > li:hover > a {
   }
 
 #examination-statistics{
-    display:none;
-    bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #f1f1f1; /* Kolor tła */
-    padding: 20px; /* Wewnętrzny margines */
-    border-top: 1px solid #ccc; /* Ramka */
-    border-left: 1px solid #ccc; /* Ramka */
-    border-right: 1px solid #ccc; /* Ramka */
-    border-radius: 4px; /* Zaokrąglenie rogów */
-    font-family: Arial, sans-serif; /* Czcionka */
-    font-size: 14px; /* Rozmiar czcionki */
-    color: #333; /* Kolor tekstu */
-    margin-top: 3rem;
+  display:none;
+  position: absolute;
+  z-index: 2;
+  left: 15vw;
+  top: 16vh;
+  width: 70vw;
+  height: auto;
+  overflow: auto;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: transparent; /* Kolor tła */
+  padding: 24px; /* Wewnętrzny margines */
+  font-family: Arial, sans-serif; /* Czcionka */
+  font-size: 18px; /* Rozmiar czcionki */
+  color: #333; /* Kolor tekstu */
 
-    /* display: flex; */
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  /* display: flex; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
