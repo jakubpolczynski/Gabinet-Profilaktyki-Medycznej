@@ -46,6 +46,7 @@ async function printStudentCard(){
                             ecc.appendChild(student_card_content);
                         }
                     }
+                    ecc.style.display = "flex"
                 }
                 else {
                     errormsg += xhr.responseText;

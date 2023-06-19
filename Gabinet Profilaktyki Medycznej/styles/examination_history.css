@@ -222,20 +222,21 @@ ol > li > ul > li:hover > a {
     }
 
    #examination-content-container {
-    /* display:none; */
+    display:none;
     bottom: 0;
     width: 100%;
     box-sizing: border-box;
     background-color: #f1f1f1; /* Kolor tła */
     padding: 20px; /* Wewnętrzny margines */
-    border: 1px solid #ccc; /* Ramka */
+    border-bottom: 1px solid #ccc; /* Ramka */
+    border-left: 1px solid #ccc; /* Ramka */
+    border-right: 1px solid #ccc; /* Ramka */
     border-radius: 4px; /* Zaokrąglenie rogów */
     font-family: Arial, sans-serif; /* Czcionka */
     font-size: 14px; /* Rozmiar czcionki */
     color: #333; /* Kolor tekstu */
-    margin-top: 3rem;
 
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -254,3 +255,25 @@ ol > li > ul > li:hover > a {
     position:relative;
     top:2px;
   }
+
+#examination-statistics{
+    display:none;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f1f1f1; /* Kolor tła */
+    padding: 20px; /* Wewnętrzny margines */
+    border-top: 1px solid #ccc; /* Ramka */
+    border-left: 1px solid #ccc; /* Ramka */
+    border-right: 1px solid #ccc; /* Ramka */
+    border-radius: 4px; /* Zaokrąglenie rogów */
+    font-family: Arial, sans-serif; /* Czcionka */
+    font-size: 14px; /* Rozmiar czcionki */
+    color: #333; /* Kolor tekstu */
+    margin-top: 3rem;
+
+    /* display: flex; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

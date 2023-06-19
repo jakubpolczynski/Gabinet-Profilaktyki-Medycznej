@@ -223,7 +223,7 @@ ol > li > ul > li:hover > a {
     }
 
    #student_card-content-container {
-    /* display:none; */
+    display:none;
     bottom: 0;
     width: 100%;
     box-sizing: border-box;
@@ -235,7 +235,7 @@ ol > li > ul > li:hover > a {
     font-size: 14px; /* Rozmiar czcionki */
     color: #333; /* Kolor tekstu */
 
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     flex-wrap: wrap;
    }

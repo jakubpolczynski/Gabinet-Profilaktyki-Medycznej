@@ -59,8 +59,11 @@ async function printExaminations() {
                             ecc.appendChild(examination_names);
                             ecc.appendChild(examination_content);
                         }
-                           
                     }
+                    var examination_statistics = document.getElementById('examination-statistics');
+                    examination_statistics.innerText = "Ilość wykonanych badań to: " + ecc.childElementCount/2;
+                    examination_statistics.style.display = "flex"
+                    ecc.style.display = "flex"
                 } 
                 else {
                     errormsg += xhr.responseText;
