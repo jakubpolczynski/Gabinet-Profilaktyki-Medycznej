@@ -229,7 +229,7 @@
         $set = 1;
     }
 
-   
+   echo "|";
     if ($set == 1)
     {
         $result = mysqli_query($conn, $sql);
